@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
-		F56410862A87852C00182050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410852A87852C00182050 /* ViewController.swift */; };
 		F564108B2A87852D00182050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F564108A2A87852D00182050 /* Assets.xcassets */; };
 		F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F564108C2A87852D00182050 /* LaunchScreen.storyboard */; };
 		F56410972A87894F00182050 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F56410962A87894F00182050 /* .gitignore */; };
+		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
+		F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F56410852A87852C00182050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F564108A2A87852D00182050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F564108D2A87852D00182050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F564108F2A87852D00182050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56410962A87894F00182050 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F56410982A87908D00182050 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinlee.app; path = "/Users/vlad/Desktop/Coinlee/build/Debug-iphoneos/Coinlee.app"; sourceTree = "<absolute>"; };
+		F5A40AE52A87C30200E91AF5 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				20BDB4AA13453CB1D781EC71 /* Pods */,
+				F5A40AE52A87C30200E91AF5 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,12 +71,58 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
-				F56410852A87852C00182050 /* ViewController.swift */,
-				F564108A2A87852D00182050 /* Assets.xcassets */,
+				F5A40AF02A87C5C000E91AF5 /* Extensions */,
+				F5A40AE62A87C36200E91AF5 /* Supporting Files */,
+				F5A40AE72A87C3CE00E91AF5 /* Resources */,
+			);
+			path = Coinlee;
+			sourceTree = "<group>";
+		};
+		F5A40AE62A87C36200E91AF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				F564108C2A87852D00182050 /* LaunchScreen.storyboard */,
 				F564108F2A87852D00182050 /* Info.plist */,
 			);
-			path = Coinlee;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5A40AE72A87C3CE00E91AF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5A40AE82A87C3E100E91AF5 /* Fonts */,
+				F51E88062A88F6A600FF20CE /* Icons.swift */,
+				F564108A2A87852D00182050 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5A40AE82A87C3E100E91AF5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F5A40AEE2A87C43200E91AF5 /* Fonts.swift */,
+				F5A40AE92A87C3F500E91AF5 /* Inter */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F5A40AE92A87C3F500E91AF5 /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */,
+				F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */,
+				F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */,
+				F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
+		F5A40AF02A87C5C000E91AF5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,7 +144,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F56410982A87908D00182050 /* Coinlee.app */;
+			productReference = F5A40AE52A87C30200E91AF5 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F56410862A87852C00182050 /* ViewController.swift in Sources */,
+				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
+				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
+				F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +386,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQ3NGD79KV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Coinlee/Info.plist;
+				INFOPLIST_FILE = "Coinlee/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Coinlee;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -363,7 +420,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQ3NGD79KV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Coinlee/Info.plist;
+				INFOPLIST_FILE = "Coinlee/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Coinlee;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
