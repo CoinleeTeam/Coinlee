@@ -18,4 +18,6 @@ extension UIColor {
     static let goldenrod = UIColor(red: 236/255, green: 192/255, blue: 96/255, alpha: 1)
     static let paleLimeGreen = UIColor(red: 181/255, green: 209/255, blue: 146/255, alpha: 1)
     static let salmonPink = UIColor(red: 244/255, green: 125/255, blue: 125/255, alpha: 1)
+    static let dimGrey = UIColor(red: 149/255, green: 149/255, blue: 149/255, alpha: 1)
+    static let silverChalice = UIColor(red: 209/255, green: 209/255, blue: 214/255, alpha: 1)
 }
