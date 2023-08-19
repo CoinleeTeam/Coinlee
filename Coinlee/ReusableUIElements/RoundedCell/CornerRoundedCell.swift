@@ -53,16 +53,17 @@ class CornerRoundedCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    // MARK: Subviews setup
-    private func setUpInnerContentView() {
-        contentView.addSubview(innerContentView)
-    }
-    
+    // MARK: Layers setup
     private func setUpLayerForInnerContentView() {
         innerContentView.layer.cornerRadius = 15
         innerContentView.layer.shadowOpacity = 0.2
         innerContentView.layer.shadowRadius = 5
         innerContentView.layer.shadowPath = CGPath(rect: CGRect(x: 5, y: 10, width: innerContentView.frame.width - 10, height: innerContentView.frame.height - 5), transform: nil)
+    }
+    
+    // MARK: Subviews setup
+    private func setUpInnerContentView() {
+        contentView.addSubview(innerContentView)
     }
     
     private func setUpStackViews() {

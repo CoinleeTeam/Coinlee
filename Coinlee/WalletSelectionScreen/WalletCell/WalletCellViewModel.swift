@@ -17,4 +17,12 @@ final class WalletCellViewModel: WalletCellViewModelType {
         self.headerTitle = wallet.name
         self.iconImageName = wallet.icon.rawValue
     }
+    
+    func formattedBalance() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.currencyCode = wallet.currency
+        numberFormatter.roundingMode = .down
+        return numberFormatter.string(from: NSNumber(value: wallet.balance)) ?? "Unknown balance"
+    }
 }

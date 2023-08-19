@@ -9,4 +9,6 @@ import Foundation
 
 protocol WalletCellViewModelType: CornerRoundedCellViewModelType {
     var wallet: Wallet { get }
+    
+    func formattedBalance() -> String
 }

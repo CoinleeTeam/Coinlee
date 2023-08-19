@@ -16,6 +16,7 @@ enum WalletType: String {
 struct Wallet {
     var name: String
     var balance: Double
+    var currency: String
     var icon: Icons.Wallet
     var type: WalletType
     var isActive: Bool
