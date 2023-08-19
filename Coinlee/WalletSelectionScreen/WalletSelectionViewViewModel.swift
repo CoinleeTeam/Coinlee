@@ -39,6 +39,7 @@ final class WalletSelectionViewViewModel: WalletSelectionViewViewModelType {
     }
     
     func walletCellHeaderViewViewModel(forSection section: Int) -> WalletCellHeaderViewViewModelType? {
-        return WalletCellHeaderViewViewModel(walletType: array[section].first!.type)
+        guard let walletType = array[section].first?.type else { return nil }
+        return WalletCellHeaderViewViewModel(walletType: walletType)
     }
 }
