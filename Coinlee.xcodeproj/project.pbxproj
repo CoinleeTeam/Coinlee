@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
+		F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */; };
 		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
+		F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCellViewModelType.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F51D1D392A90F407002B3FE7 /* ReusableUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				F51D1D3A2A90F424002B3FE7 /* RoundedCell */,
+			);
+			path = ReusableUIElements;
+			sourceTree = "<group>";
+		};
+		F51D1D3A2A90F424002B3FE7 /* RoundedCell */ = {
+			isa = PBXGroup;
+			children = (
+				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
+				F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */,
+			);
+			path = RoundedCell;
+			sourceTree = "<group>";
+		};
 		F56410752A87852C00182050 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +119,7 @@
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
+				F51D1D392A90F407002B3FE7 /* ReusableUIElements */,
 				F5A40AF02A87C5C000E91AF5 /* Extensions */,
 				F5A40AE62A87C36200E91AF5 /* Supporting Files */,
 				F5A40AE72A87C3CE00E91AF5 /* Resources */,
@@ -306,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
+				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
@@ -314,6 +337,7 @@
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
+				F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
