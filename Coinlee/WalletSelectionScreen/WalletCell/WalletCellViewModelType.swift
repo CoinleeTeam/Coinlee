@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WalletCellViewModelType {
+protocol WalletCellViewModelType: CornerRoundedCellViewModelType {
     var wallet: Wallet { get }
 }
