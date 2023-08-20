@@ -13,22 +13,22 @@ class CornerRoundedCell: UITableViewCell {
     let hStack = UIStackView()
     
     let iconImageView = UIImageView()
-    let headerLabel = UILabel()
+    let titleLabel = UILabel()
     
     var viewModel: CornerRoundedCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             iconImageView.image = UIImage(named: viewModel.iconImageName)
-            headerLabel.text = viewModel.headerTitle
+            titleLabel.text = viewModel.title
         }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        iconImageView.contentMode = .scaleAspectFit
         setUpCell()
         setUpInnerContentView()
         setUpStackViews()
-        setUpIconImageView()
         setUpHeaderLabel()
         addConstraints()
     }
@@ -68,7 +68,7 @@ class CornerRoundedCell: UITableViewCell {
     
     private func setUpStackViews() {
         // vStack
-        vStack.addArrangedSubview(headerLabel)
+        vStack.addArrangedSubview(titleLabel)
         vStack.axis = .vertical
         vStack.spacing = 0
         vStack.alignment = .leading
@@ -84,15 +84,11 @@ class CornerRoundedCell: UITableViewCell {
         hStack.distribution = .fill
     }
     
-    private func setUpIconImageView() {
-        iconImageView.contentMode = .scaleAspectFit
-    }
-    
     private func setUpHeaderLabel() {
-        headerLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
-        headerLabel.textColor = .charcoal
-        headerLabel.textAlignment = .left
-        headerLabel.numberOfLines = 0
+        titleLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
+        titleLabel.textColor = .charcoal
+        titleLabel.textAlignment = .left
+        titleLabel.numberOfLines = 0
     }
     
     // MARK: Subviews' constraints

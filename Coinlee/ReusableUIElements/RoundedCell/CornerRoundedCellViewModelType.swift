@@ -8,6 +8,6 @@
 import Foundation
 
 protocol CornerRoundedCellViewModelType {
-    var headerTitle: String { get }
+    var title: String { get }
     var iconImageName: String { get }
 }

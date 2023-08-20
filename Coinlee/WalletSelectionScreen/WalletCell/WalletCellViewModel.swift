@@ -8,13 +8,13 @@
 import Foundation
 
 final class WalletCellViewModel: WalletCellViewModelType {
-    let headerTitle: String
+    let title: String
     let iconImageName: String
     let wallet: Wallet
     
     init(wallet: Wallet) {
         self.wallet = wallet
-        self.headerTitle = wallet.name
+        self.title = wallet.name
         self.iconImageName = wallet.icon.rawValue
     }
     
