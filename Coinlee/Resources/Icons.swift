@@ -8,7 +8,7 @@
 import Foundation
 
 enum Icons {
-    enum CategoryIcons: String, CaseIterable {
+    enum Category: String, CaseIterable {
         case accomodation
         case billsUtilities
         case birthday
@@ -70,7 +70,7 @@ enum Icons {
         case workshop
     }
     
-    enum WalletIcons: String, CaseIterable {
+    enum Wallet: String, CaseIterable {
         case bankBuilding
         case billing
         case bitcoinAccepted
@@ -89,7 +89,7 @@ enum Icons {
         case cardsWallet
     }
     
-    enum LinearIcons: String {
+    enum Linear: String {
         case account
         case calendar
         case checkMark

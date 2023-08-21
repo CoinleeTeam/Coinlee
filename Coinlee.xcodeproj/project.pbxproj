@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
+		F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */; };
 		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
@@ -15,11 +17,28 @@
 		F56410972A87894F00182050 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F56410962A87894F00182050 /* .gitignore */; };
 		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
 		F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */; };
+		F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */; };
+		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
+		F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */; };
+		F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241292A8D383600C7FAC5 /* Wallet.swift */; };
+		F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */; };
+		F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D72A8B914500555859 /* WalletSelectionView.swift */; };
+		F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D92A8B919500555859 /* WalletSelectionViewViewModel.swift */; };
+		F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0DC2A8B957900555859 /* WalletSelectionViewViewModelType.swift */; };
+		F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0E02A8B9F0700555859 /* WalletCell.swift */; };
+		F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0E22A8B9F3800555859 /* WalletCellViewModel.swift */; };
+		F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0E42A8B9F4500555859 /* WalletCellViewModelType.swift */; };
+		F5EFA0E62A8BBAF700555859 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */; };
+		F5EFA0E72A8BBAF700555859 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */; };
+		F5EFA0E82A8BBAF700555859 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */; };
+		F5EFA0E92A8BBAF700555859 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
+		F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCellViewModelType.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,13 +46,24 @@
 		F564108D2A87852D00182050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F564108F2A87852D00182050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56410962A87894F00182050 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F5A40AE52A87C30200E91AF5 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colors.swift"; sourceTree = "<group>"; };
+		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
+		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
+		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
+		F5E241292A8D383600C7FAC5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		F5EFA0D12A8B8BFA00555859 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewController.swift; sourceTree = "<group>"; };
+		F5EFA0D72A8B914500555859 /* WalletSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionView.swift; sourceTree = "<group>"; };
+		F5EFA0D92A8B919500555859 /* WalletSelectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewViewModel.swift; sourceTree = "<group>"; };
+		F5EFA0DC2A8B957900555859 /* WalletSelectionViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewViewModelType.swift; sourceTree = "<group>"; };
+		F5EFA0E02A8B9F0700555859 /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
+		F5EFA0E22A8B9F3800555859 /* WalletCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModel.swift; sourceTree = "<group>"; };
+		F5EFA0E42A8B9F4500555859 /* WalletCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +86,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F51D1D392A90F407002B3FE7 /* ReusableUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				F51D1D3A2A90F424002B3FE7 /* RoundedCell */,
+			);
+			path = ReusableUIElements;
+			sourceTree = "<group>";
+		};
+		F51D1D3A2A90F424002B3FE7 /* RoundedCell */ = {
+			isa = PBXGroup;
+			children = (
+				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
+				F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */,
+			);
+			path = RoundedCell;
+			sourceTree = "<group>";
+		};
 		F56410752A87852C00182050 = {
 			isa = PBXGroup;
 			children = (
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				20BDB4AA13453CB1D781EC71 /* Pods */,
-				F5A40AE52A87C30200E91AF5 /* Coinlee.app */,
+				F5EFA0D12A8B8BFA00555859 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +118,8 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
+				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
+				F51D1D392A90F407002B3FE7 /* ReusableUIElements */,
 				F5A40AF02A87C5C000E91AF5 /* Extensions */,
 				F5A40AE62A87C36200E91AF5 /* Supporting Files */,
 				F5A40AE72A87C3CE00E91AF5 /* Resources */,
@@ -109,10 +158,10 @@
 		F5A40AE92A87C3F500E91AF5 /* Inter */ = {
 			isa = PBXGroup;
 			children = (
-				F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */,
-				F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */,
 				F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */,
+				F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */,
 				F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */,
+				F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */,
 			);
 			path = Inter;
 			sourceTree = "<group>";
@@ -123,6 +172,40 @@
 				F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5E241222A8D294F00C7FAC5 /* WalletCellHeader */ = {
+			isa = PBXGroup;
+			children = (
+				F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */,
+				F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */,
+				F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */,
+			);
+			path = WalletCellHeader;
+			sourceTree = "<group>";
+		};
+		F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F5E241292A8D383600C7FAC5 /* Wallet.swift */,
+				F5EFA0D72A8B914500555859 /* WalletSelectionView.swift */,
+				F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */,
+				F5EFA0D92A8B919500555859 /* WalletSelectionViewViewModel.swift */,
+				F5EFA0DC2A8B957900555859 /* WalletSelectionViewViewModelType.swift */,
+				F5E241222A8D294F00C7FAC5 /* WalletCellHeader */,
+				F5EFA0DE2A8B9EDC00555859 /* WalletCell */,
+			);
+			path = WalletSelectionScreen;
+			sourceTree = "<group>";
+		};
+		F5EFA0DE2A8B9EDC00555859 /* WalletCell */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFA0E02A8B9F0700555859 /* WalletCell.swift */,
+				F5EFA0E22A8B9F3800555859 /* WalletCellViewModel.swift */,
+				F5EFA0E42A8B9F4500555859 /* WalletCellViewModelType.swift */,
+			);
+			path = WalletCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +227,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F5A40AE52A87C30200E91AF5 /* Coinlee.app */;
+			productReference = F5EFA0D12A8B8BFA00555859 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,8 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EFA0E62A8BBAF700555859 /* Inter-SemiBold.ttf in Resources */,
+				F5EFA0E72A8BBAF700555859 /* Inter-Bold.ttf in Resources */,
 				F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */,
 				F56410972A87894F00182050 /* .gitignore in Resources */,
+				F5EFA0E92A8BBAF700555859 /* Inter-Medium.ttf in Resources */,
+				F5EFA0E82A8BBAF700555859 /* Inter-Regular.ttf in Resources */,
 				F564108B2A87852D00182050 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,11 +327,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
+				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
+				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
+				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
+				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
+				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
+				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
+				F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */,
+				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
+				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
+				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
 				F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */,
+				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
+				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
