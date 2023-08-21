@@ -27,33 +27,33 @@ final class WalletSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        walletSelectionView.assignWalletsTableViewDelegates(to: self)
+        walletSelectionView.assignWalletsCollectionViewDelegates(to: self)
     }
 }
 
 // MARK: UICollectionViewDataSource
-extension WalletSelectionViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension WalletSelectionViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfWallets(inSection: section)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: WalletCellHeaderView.reuseIdentifier) as? WalletCellHeaderView else { return nil }
-        headerView.viewModel = viewModel.walletCellHeaderViewViewModel(forSection: section)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: WalletCellHeaderView.reuseIdentifier, for: indexPath) as? WalletCellHeaderView else { return UICollectionReusableView() }
+        headerView.viewModel = viewModel.walletCellHeaderViewViewModel(forSection: indexPath.section)
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WalletCell.reuseIdentifier, for: indexPath) as? WalletCell else { return UITableViewCell() }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalletCell.reuseIdentifier, for: indexPath) as? WalletCell else { return UICollectionViewCell() }
         cell.viewModel = viewModel.walletCellViewModel(at: indexPath)
         return cell
     }
 }
 
 // MARK: UITableViewDelegate
-extension WalletSelectionViewController: UITableViewDelegate {
+extension WalletSelectionViewController: UICollectionViewDelegate {
 }

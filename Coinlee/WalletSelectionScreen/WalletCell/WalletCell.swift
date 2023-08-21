@@ -21,13 +21,17 @@ final class WalletCell: CornerRoundedCell {
         }
     }
     
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUpSelectionMarkImageView()
         setUpBalanceLabel()
     }
     
-    // MARK: Subviews setup
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Subviews' setup
     private func setUpSelectionMarkImageView() {
         hStack.addArrangedSubview(selectionMarkImageView)
         selectionMarkImageView.image = UIImage(named: Icons.Linear.checkMark.rawValue)

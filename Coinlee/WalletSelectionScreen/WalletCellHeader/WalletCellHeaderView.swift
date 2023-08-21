@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class WalletCellHeaderView: UITableViewHeaderFooterView {
+final class WalletCellHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "WalletCellHeaderView"
     
     let walletTypeLabel = UILabel()
@@ -19,17 +19,17 @@ final class WalletCellHeaderView: UITableViewHeaderFooterView {
         }
     }
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        setUpWalletTypeLabel()
-        addConstraints()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+            setUpWalletTypeLabel()
+            addConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Subviews setup
+    // MARK: Subviews' setup
     private func setUpWalletTypeLabel() {
         addSubview(walletTypeLabel)
         walletTypeLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
@@ -41,9 +41,9 @@ final class WalletCellHeaderView: UITableViewHeaderFooterView {
     // MARK: Subviews' constraints
     private func addConstraints() {
         walletTypeLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-4)
-            make.leading.equalToSuperview().offset(8)
+            make.bottom.top.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(20)
         }
     }
 }
