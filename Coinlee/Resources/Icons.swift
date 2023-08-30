@@ -91,6 +91,8 @@ enum Icons {
     
     enum Linear: String {
         case account
+        case angleLeft
+        case angleRight
         case calendar
         case checkMark
         case dollar
@@ -98,6 +100,7 @@ enum Icons {
         case expandAngle
         case home
         case list
+        case magnifyingGlass
         case plus
         case report
     }

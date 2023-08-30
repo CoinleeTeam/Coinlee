@@ -47,7 +47,7 @@ final class WalletSelectionView: UIView {
         }
     }
     
-    // MARK: ImageResultsCollectionViewLayout
+    // MARK: WalletsCollectionViewLayout
     private func walletsCollectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
