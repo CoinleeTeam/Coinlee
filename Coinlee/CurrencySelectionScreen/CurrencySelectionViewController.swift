@@ -24,10 +24,11 @@ class CurrencySelectionScreenViewController: UIViewController {
         super.loadView()
         view = currencySelectionView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currencySelectionView.assignCurrenciesTableViewDelegates(to: self)
+        currencySelectionView.assignSearchTextFieldDelegate(to: self)
     }
 }
 
@@ -46,10 +47,26 @@ extension CurrencySelectionScreenViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension CurrencySelectionScreenViewController: UITableViewDelegate {
     
 }
+
+extension CurrencySelectionScreenViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let searchedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        
+        if searchedText.isEmpty {
+            viewModel.filteredCurrencies = viewModel.currencies
+        } else {
+            viewModel.updateFilteredCurrenciesWithSearchText(searchedText)
+        }
+        
+        currencySelectionView.currenciesTableView.reloadData()
+    
+        return true
+    }
+}
+
+

@@ -8,6 +8,10 @@
 import Foundation
 
 protocol CurrencyTableViewViewModelType {
+    var currencies: [Currency] { get }
+    var filteredCurrencies: [Currency] { get set }
+    
+    func updateFilteredCurrenciesWithSearchText(_ searchText: String)
     func numberOfRows(forSection section: Int) -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> CurrencyTableViewCellViewModelType?
 }

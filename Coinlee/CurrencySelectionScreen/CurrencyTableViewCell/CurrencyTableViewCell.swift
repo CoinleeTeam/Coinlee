@@ -51,7 +51,6 @@ class CurrencyTableViewCell: UITableViewCell {
         }
         
         vStack.snp.makeConstraints { make in
-//            make.centerY.equalToSuperview()
             make.top.equalToSuperview().offset(0)
             make.leading.equalTo(flagImageView.snp.trailing).offset(16)
             make.height.equalTo(50)
