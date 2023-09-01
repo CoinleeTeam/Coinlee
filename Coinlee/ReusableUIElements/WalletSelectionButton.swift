@@ -10,67 +10,66 @@ import UIKit
 class WalletSelectionButton: UIButton {
     let rightImageView = UIImageView()
     
-    convenience init() {
-        self.init(type: .system)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUpButton()
         setUpRightImageView()
-        addConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func updateConfiguration() {
+        super.updateConfiguration()
+        guard let configuration = configuration else { return }
         
-        subviews.compactMap({ $0 as? UIButton }).forEach {
-            $0.configurationUpdateHandler = { button in
-                guard let config = button.configuration else { return }
-                button.setConfiguration(config, duration: 2)
+        if state == .highlighted {
+            let highlitedAlpha = 0.3
+            var newConfiguration = configuration
+            
+            newConfiguration.attributedTitle?.foregroundColor = .white.withAlphaComponent(highlitedAlpha)
+            newConfiguration.image = newConfiguration.image?.withAlpha(highlitedAlpha)
+            rightImageView.alpha = highlitedAlpha
+            self.configuration = newConfiguration
+            
+        } else if state == .normal {
+            UIView.animate(withDuration: 0.25) {
+                self.rightImageView.alpha = 1
             }
+            setConfigurationWithAnimation(configuration)
         }
     }
+    
     
     private func setUpButton() {
         titleLabel?.font = UIFont(name: Fonts.Inter.semiBold.rawValue, size: 15)
         setTitleColor(.white, for: .normal)
         contentHorizontalAlignment = .left
         
-        
-        configuration = .plain()
-        addAction(actionLOL(), for: .touchUpInside)
+        configuration = defaultConfiguration()
     }
     
     private func setUpRightImageView() {
-        titleLabel!.addSubview(rightImageView)
-        rightImageView.image = UIImage(named: Icons.Linear.expandAngle.rawValue)
+        addSubview(rightImageView)
+        rightImageView.image = UIImage(named: Icons.Linear.angleRight.rawValue)
         rightImageView.tintColor = .white
         rightImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(titleLabel!.snp.trailing).offset(4)
+            make.leading.equalTo(snp.trailing).offset(-24)
         }
     }
     
-    // MARK: Constraints
-    private func addConstraints() {
-//        snp.makeConstraints { make in
-//            make.width.equalTo(112)
-//        }
-        
-        imageView?.snp.makeConstraints({ make in
-            make.height.width.equalTo(40)
-        })
-    }
-    
-    func actionLOL() -> UIAction {
-        return UIAction { action in
-            if var config = self.configuration {
-                config.background.backgroundColor = .red
-                config.baseForegroundColor = .white
-                self.configuration = config
-            }
+    private func defaultConfiguration() -> UIButton.Configuration {
+        var configuration = UIButton.Configuration.plain()
+        configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incomingContainer in
+            var outgoingContainer = incomingContainer
+            outgoingContainer.font = UIFont(name: Fonts.Inter.semiBold.rawValue, size: 15)
+            return outgoingContainer
         }
-    }
-}
-
-
-extension UIButton {
-    func setConfiguration(_ configuration: UIButton.Configuration, duration: Double = 0.25, completion: ((Bool) -> Void)? = nil) {
-        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve) {
-            self.configuration? = configuration
-        } completion: { completion?($0) }
+        configuration.imagePadding = 6
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 6, leading: 6, bottom: 6, trailing: 28)
+        configuration.baseForegroundColor = .white
+        return configuration
     }
 }

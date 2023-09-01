@@ -11,6 +11,8 @@
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
 		F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */; };
 		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
+		F53160062AA24F4500E5672F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160052AA24F4500E5672F /* UIButton.swift */; };
+		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
 		F564108B2A87852D00182050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F564108A2A87852D00182050 /* Assets.xcassets */; };
@@ -22,7 +24,7 @@
 		F57935C82A99F0680075A44D /* TransactionsViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C72A99F0680075A44D /* TransactionsViewViewModelType.swift */; };
 		F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */; };
 		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
-		F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */; };
+		F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor.swift */; };
 		F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */; };
 		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
 		F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */; };
@@ -47,6 +49,8 @@
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
 		F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCellViewModelType.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		F53160052AA24F4500E5672F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F564108A2A87852D00182050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +67,7 @@
 		F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colors.swift"; sourceTree = "<group>"; };
+		F5A40AF12A87C5E500E91AF5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
@@ -195,7 +199,9 @@
 		F5A40AF02A87C5C000E91AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */,
+				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
+				F53160052AA24F4500E5672F /* UIButton.swift */,
+				F53160072AA2509E00E5672F /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -358,11 +364,13 @@
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
+				F53160062AA24F4500E5672F /* UIButton.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */,
 				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
 				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
+				F53160082AA2509E00E5672F /* UIImage.swift in Sources */,
 				F57935C82A99F0680075A44D /* TransactionsViewViewModelType.swift in Sources */,
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
@@ -373,7 +381,7 @@
 				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
-				F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */,
+				F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */,
 				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,

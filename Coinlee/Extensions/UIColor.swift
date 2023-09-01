@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: UIColor
 extension UIColor {
     static let charcoal = UIColor(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
     static let silver = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1)

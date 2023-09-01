@@ -73,7 +73,9 @@ final class TransactionsView: UIView {
     private func setUpTopButtons() {
         // WalletButton
         topView.addSubview(walletButton)
-        walletButton.layer.borderWidth = 1
+        walletButton.imageView?.layer.transform = CATransform3DMakeScale(1.15, 1.15, 1.15)
+
+//        walletButton.layer.borderWidth = 1
         
         // SearchButton
         topView.addSubview(searchButton)
@@ -156,13 +158,12 @@ final class TransactionsView: UIView {
         }
         
         walletButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(8)
-            make.leading.equalToSuperview().offset(12)
+            make.top.leading.equalTo(safeAreaLayoutGuide).offset(8)
         }
         
         searchButton.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(16)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(24)
         }
         
         topViewStack.snp.makeConstraints { make in
