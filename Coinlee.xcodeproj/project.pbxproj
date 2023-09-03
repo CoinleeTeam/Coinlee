@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F50A34CB2A9BAC9E00AC3631 /* WalletSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A34CA2A9BAC9E00AC3631 /* WalletSelectionButton.swift */; };
+		F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */; };
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
 		F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */; };
 		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
-		F53160062AA24F4500E5672F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160052AA24F4500E5672F /* UIButton.swift */; };
 		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
@@ -45,11 +44,10 @@
 /* Begin PBXFileReference section */
 		BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
-		F50A34CA2A9BAC9E00AC3631 /* WalletSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionButton.swift; sourceTree = "<group>"; };
+		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
 		F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCellViewModelType.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
-		F53160052AA24F4500E5672F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */,
-				F50A34CA2A9BAC9E00AC3631 /* WalletSelectionButton.swift */,
+				F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */,
 				F51D1D3A2A90F424002B3FE7 /* RoundedCell */,
 			);
 			path = ReusableUIElements;
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
-				F53160052AA24F4500E5672F /* UIButton.swift */,
 				F53160072AA2509E00E5672F /* UIImage.swift */,
 			);
 			path = Extensions;
@@ -360,11 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
-				F50A34CB2A9BAC9E00AC3631 /* WalletSelectionButton.swift in Sources */,
+				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
-				F53160062AA24F4500E5672F /* UIButton.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */,
 				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,

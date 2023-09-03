@@ -12,8 +12,8 @@ final class TransactionsView: UIView {
     // MARK: TopView
     private let topView = BottomCornerRoundedView()
     
-    let walletButton = WalletSelectionButton()
-    let searchButton = UIButton(type: .system)
+    let walletButton = ConfigurableButton()
+    let searchButton = ConfigurableButton()
     // MARK: TopViewStack
     private let topViewStack = UIStackView()
     // MARK: BalanceStack
@@ -23,9 +23,9 @@ final class TransactionsView: UIView {
     // MARK: CurrentMonthStack
     private let currentMonthView = UIView()
     private let currentMonthViewStack = UIStackView()
-    let previousMonthButton = UIButton(type: .system)
-    let currentMonthButton = UIButton(type: .system)
-    let nextMonthButton = UIButton(type: .system)
+    let previousMonthButton = ConfigurableButton()
+    let currentMonthButton = ConfigurableButton()
+    let nextMonthButton = ConfigurableButton()
     
     // MARK: MiddleStackView
     private let middleStack = UIStackView()
@@ -49,7 +49,7 @@ final class TransactionsView: UIView {
         
         // -------- REMOVE --------
         walletButton.setTitle("Wallet", for: .normal)
-        walletButton.setImage(UIImage(named: Icons.Wallet.cardsWallet.rawValue), for: .normal)
+        walletButton.setImage(UIImage(named: Icons.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)), for: .normal)
         balanceLabel.text = "BALANCE"
         balanceAmountLabel.text = "3.500 PLN"
         currentMonthButton.setTitle("September 2023", for: .normal)
@@ -73,14 +73,18 @@ final class TransactionsView: UIView {
     private func setUpTopButtons() {
         // WalletButton
         topView.addSubview(walletButton)
-        walletButton.imageView?.layer.transform = CATransform3DMakeScale(1.15, 1.15, 1.15)
-
-//        walletButton.layer.borderWidth = 1
+        walletButton.addConfiguration(baseForegroundColor: .white,
+                                      titleFont: UIFont(name: Fonts.Inter.semiBold.rawValue, size: 15),
+                                      leftImagePadding: 6,
+                                      rightImage: UIImage(named: Icons.Linear.angleRight.rawValue),
+                                      rightImagePadding: 4,
+                                      contentEdgesInset: 4)
         
         // SearchButton
         topView.addSubview(searchButton)
-        searchButton.setImage(UIImage(named: Icons.Linear.magnifyingGlass.rawValue), for: .normal)
-        searchButton.tintColor = .white
+        searchButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.magnifyingGlass.rawValue),
+                                      leftImageTintColor: .white,
+                                      contentEdgesInset: 8)
     }
     
     private func setUpTopViewStack() {
@@ -129,20 +133,24 @@ final class TransactionsView: UIView {
         
         // PreviousMonthButton
         currentMonthViewStack.addArrangedSubview(previousMonthButton)
-        previousMonthButton.setImage(UIImage(named: Icons.Linear.angleLeft.rawValue), for: .normal)
-        previousMonthButton.tintColor = .charcoal
+        previousMonthButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.angleLeft.rawValue),
+                                             leftImageTintColor: .charcoal,
+                                             contentEdgesInset: 2)
         
         // CurrentMonthButton
         currentMonthViewStack.addArrangedSubview(currentMonthButton)
-        currentMonthButton.setImage(UIImage(named: Icons.Linear.calendar.rawValue), for: .normal)
-        currentMonthButton.tintColor = .goldenrod
-        currentMonthButton.titleLabel?.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
-        currentMonthButton.setTitleColor(.charcoal, for: .normal)
+        currentMonthButton.addConfiguration(baseForegroundColor: .charcoal,
+                                            titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
+                                            leftImage: UIImage(named: Icons.Linear.calendar.rawValue),
+                                            leftImageTintColor: .goldenrod,
+                                            leftImagePadding: 8,
+                                            contentEdgesInset: 8)
         
         // NextMonthButton
         currentMonthViewStack.addArrangedSubview(nextMonthButton)
-        nextMonthButton.setImage(UIImage(named: Icons.Linear.angleRight.rawValue), for: .normal)
-        nextMonthButton.tintColor = .charcoal
+        nextMonthButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.angleRight.rawValue),
+                                         leftImageTintColor: .charcoal,
+                                         contentEdgesInset: 2)
     }
     
     private func setUpMiddleStackView() {
@@ -162,8 +170,8 @@ final class TransactionsView: UIView {
         }
         
         searchButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(16)
-            make.trailing.equalToSuperview().inset(24)
+            make.top.equalTo(safeAreaLayoutGuide).offset(14)
+            make.trailing.equalToSuperview().inset(12)
         }
         
         topViewStack.snp.makeConstraints { make in
