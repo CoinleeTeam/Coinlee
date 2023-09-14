@@ -10,10 +10,12 @@ import UIKit
 class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
-    private func setUpRightImageView(imagePadding: CGFloat) {
+    private func setUpRightImageView(image: UIImage?, tintColor: UIColor?, imagePadding: CGFloat) {
+        rightImageView = UIImageView(image: image)
         guard let rightImageView = rightImageView,
               let titleLabel = titleLabel
         else { return }
+        rightImageView.tintColor = tintColor
             titleLabel.addSubview(rightImageView)
         if rightImageView.constraints.isEmpty {
             rightImageView.snp.makeConstraints { make in
@@ -67,16 +69,16 @@ class ConfigurableButton: UIButton {
         }
         
         var defaultConfiguration = UIButton.Configuration.plain()
-        var contentTrailingInset = contentEdgesInset
+        var contentTrailingInset = contentEdgesInset + rightImagePadding
         
         // rightImageView settings
         if rightImage == nil {
             rightImageView = nil
         } else {
-            rightImageView = UIImageView(image: rightImage)
-            rightImageView?.tintColor = baseForegroundColor
-            setUpRightImageView(imagePadding: rightImagePadding)
-            contentTrailingInset += rightImagePadding + rightImageView!.frame.width
+            setUpRightImageView(image: rightImage, tintColor: baseForegroundColor, imagePadding: rightImagePadding)
+            if let rightImageView = rightImageView {
+                contentTrailingInset += rightImageView.frame.width
+            }
         }
         
         // content settings
@@ -95,6 +97,8 @@ class ConfigurableButton: UIButton {
         
         // leftImageView settings
         setImage(leftImage, for: .normal)
+        imageView?.clipsToBounds = true
+        imageView?.contentMode = .scaleAspectFit
         defaultConfiguration.imagePadding = leftImagePadding
         defaultConfiguration.imageColorTransformer = UIConfigurationColorTransformer { incomingColor in
             return leftImageTintColor ?? incomingColor

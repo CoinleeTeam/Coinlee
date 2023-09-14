@@ -49,7 +49,8 @@ final class TransactionsView: UIView {
         
         // -------- REMOVE --------
         walletButton.setTitle("Wallet", for: .normal)
-        walletButton.setImage(UIImage(named: Icons.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)), for: .normal)
+        walletButton.setImage(UIImage(named: Icons.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
+                              for: .normal)
         balanceLabel.text = "BALANCE"
         balanceAmountLabel.text = "3.500 PLN"
         currentMonthButton.setTitle("September 2023", for: .normal)
@@ -170,7 +171,7 @@ final class TransactionsView: UIView {
         }
         
         searchButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(14)
+            make.centerY.equalTo(walletButton.snp.centerY)
             make.trailing.equalToSuperview().inset(12)
         }
         
