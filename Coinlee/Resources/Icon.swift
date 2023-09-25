@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Icons {
+enum Icon {
     enum Category: String, CaseIterable {
         case accomodation
         case billsUtilities

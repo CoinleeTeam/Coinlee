@@ -11,7 +11,6 @@ import SnapKit
 final class TransactionsView: UIView {
     // MARK: TopView
     private let topView = BottomCornerRoundedView()
-    
     let walletButton = ConfigurableButton()
     let searchButton = ConfigurableButton()
     // MARK: TopViewStack
@@ -27,16 +26,10 @@ final class TransactionsView: UIView {
     let currentMonthButton = ConfigurableButton()
     let nextMonthButton = ConfigurableButton()
     
-    // MARK: MiddleStackView
-    private let middleStack = UIStackView()
-    let incomeLabel = UILabel()
-    let expenseLabel = UILabel()
-    let incomeSublabel = UILabel()
-    let expenseSublabel = UILabel()
-    
     // MARK: TransactionsCollectionView
     let transactionsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpTopView()
@@ -44,15 +37,15 @@ final class TransactionsView: UIView {
         setUpTopViewStack()
         setUpBalanceStack()
         setUpCurrentMonthView()
-        setUpMiddleStackView()
+        setUpTransactionsCollectionView()
         addConstraints()
         
         // -------- REMOVE --------
         walletButton.setTitle("Wallet", for: .normal)
-        walletButton.setImage(UIImage(named: Icons.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
+        walletButton.setImage(UIImage(named: Icon.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                               for: .normal)
         balanceLabel.text = "BALANCE"
-        balanceAmountLabel.text = "3.500 PLN"
+        balanceAmountLabel.text = "3.500,25 PLN"
         currentMonthButton.setTitle("September 2023", for: .normal)
     }
     
@@ -60,12 +53,13 @@ final class TransactionsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: CollectionView DataSource & Delegate
     func assignTransactionsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
         transactionsCollectionView.dataSource = delegate
         transactionsCollectionView.delegate = delegate
     }
     
-    // MARK: Subviews' setup
+    // MARK: - Subviews' setup
     private func setUpTopView() {
         backgroundColor = .paleFrost
         addSubview(topView)
@@ -77,13 +71,13 @@ final class TransactionsView: UIView {
         walletButton.addConfiguration(baseForegroundColor: .white,
                                       titleFont: UIFont(name: Fonts.Inter.semiBold.rawValue, size: 15),
                                       leftImagePadding: 6,
-                                      rightImage: UIImage(named: Icons.Linear.angleRight.rawValue),
+                                      rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
                                       rightImagePadding: 4,
                                       contentEdgesInset: 4)
         
         // SearchButton
         topView.addSubview(searchButton)
-        searchButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.magnifyingGlass.rawValue),
+        searchButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.magnifyingGlass.rawValue),
                                       leftImageTintColor: .white,
                                       contentEdgesInset: 8)
     }
@@ -134,7 +128,7 @@ final class TransactionsView: UIView {
         
         // PreviousMonthButton
         currentMonthViewStack.addArrangedSubview(previousMonthButton)
-        previousMonthButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.angleLeft.rawValue),
+        previousMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleLeft.rawValue),
                                              leftImageTintColor: .charcoal,
                                              contentEdgesInset: 2)
         
@@ -142,20 +136,28 @@ final class TransactionsView: UIView {
         currentMonthViewStack.addArrangedSubview(currentMonthButton)
         currentMonthButton.addConfiguration(baseForegroundColor: .charcoal,
                                             titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                            leftImage: UIImage(named: Icons.Linear.calendar.rawValue),
+                                            leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
                                             leftImageTintColor: .goldenrod,
                                             leftImagePadding: 8,
                                             contentEdgesInset: 8)
         
         // NextMonthButton
         currentMonthViewStack.addArrangedSubview(nextMonthButton)
-        nextMonthButton.addConfiguration(leftImage: UIImage(named: Icons.Linear.angleRight.rawValue),
+        nextMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleRight.rawValue),
                                          leftImageTintColor: .charcoal,
                                          contentEdgesInset: 2)
     }
     
-    private func setUpMiddleStackView() {
-        addSubview(middleStack)
+    private func setUpTransactionsCollectionView() {
+        addSubview(transactionsCollectionView)
+        transactionsCollectionView.backgroundColor = .paleFrost
+        transactionsCollectionView.setCollectionViewLayout(transactionsCollectionViewLayout(), animated: false)
+        transactionsCollectionView.showsVerticalScrollIndicator = false
+        transactionsCollectionView.alwaysBounceVertical = true
+        transactionsCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(UICollectionReusableView.self)")
+        transactionsCollectionView.register(TransactionCellHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier)
+        transactionsCollectionView.register(IncomeExpenseStaticCell.self, forCellWithReuseIdentifier: IncomeExpenseStaticCell.reuseIdentifier)
+        transactionsCollectionView.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.reuseIdentifier)
     }
     
     // MARK: Subviews' constraints
@@ -191,16 +193,16 @@ final class TransactionsView: UIView {
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().inset(12)
         }
+        
+        transactionsCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(topView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
     }
     
     // MARK: TransactionsCollectionViewLayout
     private func transactionsCollectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            layout.estimatedItemSize = CGSize(width: windowScene.screen.bounds.width - 32, height: 60)
-            layout.headerReferenceSize = CGSize(width: windowScene.screen.bounds.width, height: 44)
-        }
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 14
         return layout

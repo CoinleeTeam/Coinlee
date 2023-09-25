@@ -42,8 +42,7 @@ final class WalletCellHeaderView: UICollectionReusableView {
     private func addConstraints() {
         walletTypeLabel.snp.makeConstraints { make in
             make.bottom.top.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-20)
-            make.leading.equalToSuperview().offset(20)
+            make.trailing.leading.equalToSuperview().inset(16)
         }
     }
 }

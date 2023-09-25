@@ -8,21 +8,14 @@
 import Foundation
 
 final class WalletCellViewModel: WalletCellViewModelType {
-    let title: String
-    let iconImageName: String
     let wallet: Wallet
+    
+    // MARK: Computed properties
+    var balanceText: String {
+        wallet.balance.currencyFormatted() + CharacterConstants.whitespace + wallet.currency
+    }
     
     init(wallet: Wallet) {
         self.wallet = wallet
-        self.title = wallet.name
-        self.iconImageName = wallet.icon.rawValue
-    }
-    
-    func formattedBalance() -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.currencyCode = wallet.currency
-        numberFormatter.roundingMode = .down
-        return numberFormatter.string(from: NSNumber(value: wallet.balance)) ?? "Unknown balance"
     }
 }

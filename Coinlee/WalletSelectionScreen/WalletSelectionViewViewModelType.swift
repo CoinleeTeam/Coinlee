@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol WalletSelectionViewViewModelType {
+protocol WalletSelectionViewViewModelType: AnyObject {
     func numberOfSections() -> Int
     func numberOfWallets(inSection section: Int) -> Int
     func walletCellViewModel(at indexPath: IndexPath) -> WalletCellViewModelType?

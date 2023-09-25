@@ -14,14 +14,6 @@ class CornerRoundedCell: UICollectionViewCell {
     let iconImageView = UIImageView()
     let titleLabel = UILabel()
     
-    var viewModel: CornerRoundedCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            iconImageView.image = UIImage(named: viewModel.iconImageName)
-            titleLabel.text = viewModel.title
-        }
-    }
-    
     override var isSelected: Bool {
         didSet {
             contentView.layer.backgroundColor = isSelected ? UIColor.silverChalice.cgColor : UIColor.white.cgColor
@@ -66,7 +58,7 @@ class CornerRoundedCell: UICollectionViewCell {
         // vStack
         vStack.addArrangedSubview(titleLabel)
         vStack.axis = .vertical
-        vStack.spacing = 0
+        vStack.spacing = 1
         vStack.alignment = .leading
         vStack.distribution = .equalSpacing
         
