@@ -33,6 +33,7 @@
 		F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */; };
 		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
 		F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor.swift */; };
+		F5CB84F82ADC1BD40078BAA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */; };
 		F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */; };
 		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
 		F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */; };
@@ -55,7 +56,6 @@
 /* Begin PBXFileReference section */
 		AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
-		F50364702AB9D0B300B62670 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinlee.app; path = "/Users/vlad/Desktop/Coinlee/build/Debug-iphoneos/Coinlee.app"; sourceTree = "<absolute>"; };
 		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
@@ -87,6 +87,12 @@
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F5A40AF12A87C5E500E91AF5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F5CB84F52ADC19390078BAA0 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CB84F92ADC1BD40078BAA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5CB84FB2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F5CB84FC2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5CB84FD2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F5CB84FE2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				20BDB4AA13453CB1D781EC71 /* Pods */,
+				F5CB84F52ADC19390078BAA0 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +224,7 @@
 				F5A40AE82A87C3E100E91AF5 /* Fonts */,
 				F51E88062A88F6A600FF20CE /* Icon.swift */,
 				F564108A2A87852D00182050 /* Assets.xcassets */,
+				F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -304,7 +312,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F50364702AB9D0B300B62670 /* Coinlee.app */;
+			productReference = F5CB84F52ADC19390078BAA0 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -329,6 +337,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				pl,
 			);
 			mainGroup = F56410752A87852C00182050;
 			productRefGroup = F56410752A87852C00182050;
@@ -350,6 +360,7 @@
 				F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */,
 				F56410972A87894F00182050 /* .gitignore in Resources */,
 				F5EFA0E92A8BBAF700555859 /* Inter-Medium.ttf in Resources */,
+				F5CB84F82ADC1BD40078BAA0 /* Localizable.strings in Resources */,
 				F5EFA0E82A8BBAF700555859 /* Inter-Regular.ttf in Resources */,
 				F564108B2A87852D00182050 /* Assets.xcassets in Resources */,
 			);
@@ -450,8 +461,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				F564108D2A87852D00182050 /* Base */,
+				F5CB84FB2ADC1E5B0078BAA0 /* ru */,
+				F5CB84FD2ADC1E6F0078BAA0 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5CB84F92ADC1BD40078BAA0 /* en */,
+				F5CB84FC2ADC1E5B0078BAA0 /* ru */,
+				F5CB84FE2ADC1E6F0078BAA0 /* pl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,6 +485,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -524,6 +548,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

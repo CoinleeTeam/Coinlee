@@ -26,6 +26,7 @@ class CornerRoundedCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.layer.backgroundColor = UIColor.white.cgColor
@@ -40,7 +41,7 @@ class CornerRoundedCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Cell setup
+    // MARK: - Cell setup
     private func setUpCell() {
         backgroundColor = .paleFrost
     }

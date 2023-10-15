@@ -8,6 +8,7 @@
 import UIKit
 
 class BottomCornerRoundedView: UIView {
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
@@ -17,6 +18,7 @@ class BottomCornerRoundedView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Path drawing
     override func draw(_ rect: CGRect) {
         let bezierPath = UIBezierPath()
         let cornerRadius: CGFloat = 40.0

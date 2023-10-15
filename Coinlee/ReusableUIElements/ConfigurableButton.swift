@@ -10,6 +10,7 @@ import UIKit
 class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
+    // MARK: - Button setup
     private func setUpRightImageView(image: UIImage?, tintColor: UIColor?, imagePadding: CGFloat) {
         rightImageView = UIImageView(image: image)
         guard let rightImageView = rightImageView,

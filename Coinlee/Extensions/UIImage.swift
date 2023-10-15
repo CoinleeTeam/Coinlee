@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIImage {
+    /// Returns an image with a specified alpha (transparency) value.
     func withAlpha(_ alpha: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         defer { UIGraphicsEndImageContext() }

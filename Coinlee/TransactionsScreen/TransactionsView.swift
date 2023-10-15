@@ -44,7 +44,6 @@ final class TransactionsView: UIView {
         walletButton.setTitle("Wallet", for: .normal)
         walletButton.setImage(UIImage(named: Icon.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                               for: .normal)
-        balanceLabel.text = "BALANCE"
         balanceAmountLabel.text = "3.500,25 PLN"
         currentMonthButton.setTitle("September 2023", for: .normal)
     }
@@ -53,7 +52,7 @@ final class TransactionsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: CollectionView DataSource & Delegate
+    // MARK: - CollectionView DataSource & Delegate
     func assignTransactionsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
         transactionsCollectionView.dataSource = delegate
         transactionsCollectionView.delegate = delegate
@@ -104,6 +103,7 @@ final class TransactionsView: UIView {
         balanceLabel.textColor = .silver
         balanceLabel.textAlignment = .center
         balanceLabel.numberOfLines = 1
+        balanceLabel.text =  NSLocalizedString("top_view_balance_label", comment: String()).uppercased()
         
         // BalanceAmountLabel
         balanceStack.addArrangedSubview(balanceAmountLabel)
@@ -190,8 +190,7 @@ final class TransactionsView: UIView {
         
         currentMonthViewStack.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().inset(12)
+            make.leading.trailing.equalToSuperview().inset(12)
         }
         
         transactionsCollectionView.snp.makeConstraints { make in

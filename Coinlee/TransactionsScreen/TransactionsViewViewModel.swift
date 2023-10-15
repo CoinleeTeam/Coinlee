@@ -35,7 +35,7 @@ final class TransactionsViewViewModel: TransactionsViewViewModelType {
         self.expenseAmount = expenseAmount
     }
     
-    // MARK: UICollectionViewDataSource data
+    // MARK: - UICollectionViewDataSource data
     func numberOfSections() -> Int {
         return transactionsArray.count + 1
     }

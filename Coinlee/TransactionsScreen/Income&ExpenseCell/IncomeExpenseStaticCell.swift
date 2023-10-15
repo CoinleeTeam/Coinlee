@@ -64,9 +64,9 @@ final class IncomeExpenseStaticCell: UICollectionViewCell {
         }
         
         incomeLabel.textColor = .oliveGreen
-        incomeSublabel.text = "Income"
+        incomeSublabel.text = NSLocalizedString("income_label", comment: String())
         expenseLabel.textColor = .coralRed
-        expenseSublabel.text = "Expenses"
+        expenseSublabel.text = NSLocalizedString("expense_label", comment: String())
     }
     
     private func setUpStackViews() {

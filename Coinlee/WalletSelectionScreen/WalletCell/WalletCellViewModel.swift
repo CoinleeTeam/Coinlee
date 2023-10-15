@@ -15,6 +15,7 @@ final class WalletCellViewModel: WalletCellViewModelType {
         wallet.balance.currencyFormatted() + CharacterConstants.whitespace + wallet.currency
     }
     
+    // MARK: - Init
     init(wallet: Wallet) {
         self.wallet = wallet
     }

@@ -8,6 +8,7 @@
 import Foundation
 
 extension Double {
+    /// Returns a string representation of a double value in a currency format.
     func currencyFormatted() -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal

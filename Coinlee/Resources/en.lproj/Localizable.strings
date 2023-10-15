@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Coinlee
+
+  Created by Vladyslav Petrenko on 15/10/2023.
+  
+*/
+
+"top_view_balance_label" = "Balance";
+"income_label" = "Income";
+"expense_label" = "Expense";
+

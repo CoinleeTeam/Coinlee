@@ -11,6 +11,7 @@ import SnapKit
 final class WalletSelectionView: UIView {
     let walletsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .paleFrost
@@ -22,12 +23,13 @@ final class WalletSelectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - CollectionView DataSource & Delegate
     func assignWalletsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
         walletsCollectionView.dataSource = delegate
         walletsCollectionView.delegate = delegate
     }
     
-    // MARK: Subviews' setup
+    // MARK: - Subviews' setup
     private func setUpWalletsCollectionView() {
         addSubview(walletsCollectionView)
         walletsCollectionView.backgroundColor = .paleFrost

@@ -11,6 +11,8 @@ struct Transaction {
     let date: Date
     let sum: Double
     let description: String
+    
+    // MARK: TO BE CHANGED
     let category: Subcategory
     let currency : String
 }
