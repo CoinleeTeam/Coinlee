@@ -11,6 +11,7 @@ final class WalletSelectionViewController: UIViewController {
     let viewModel: WalletSelectionViewViewModelType
     let walletSelectionView = WalletSelectionView()
     
+    // MARK: - Init
     init(viewModel: WalletSelectionViewViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -20,6 +21,7 @@ final class WalletSelectionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - ViewController Lifecycle
     override func loadView() {
         super.loadView()
         view = walletSelectionView
@@ -31,7 +33,7 @@ final class WalletSelectionViewController: UIViewController {
     }
 }
 
-// MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension WalletSelectionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections()

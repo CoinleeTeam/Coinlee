@@ -24,7 +24,7 @@ final class WalletSelectionViewViewModel: WalletSelectionViewViewModelType {
         ]
     ]
     
-    // MARK: UICollectionViewDataSource data
+    // MARK: - UICollectionViewDataSource data
     func numberOfSections() -> Int {
         return array.count
     }

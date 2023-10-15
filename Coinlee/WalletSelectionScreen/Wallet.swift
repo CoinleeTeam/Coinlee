@@ -17,7 +17,7 @@ struct Wallet {
     var name: String
     var balance: Double
     var currency: String
-    var icon: Icons.Wallet
+    var icon: Icon.Wallet
     var type: WalletType
     var isActive: Bool
 }

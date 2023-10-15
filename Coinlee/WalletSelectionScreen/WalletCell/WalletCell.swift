@@ -13,14 +13,17 @@ final class WalletCell: CornerRoundedCell {
     let selectionMarkImageView = UIImageView()
     let balanceLabel = UILabel()
     
-    override var viewModel: CornerRoundedCellViewModelType? {
+    var viewModel: WalletCellViewModelType? {
         willSet(viewModel) {
-            guard let viewModel = viewModel as? WalletCellViewModelType else { return }
-            balanceLabel.text = viewModel.formattedBalance()
+            guard let viewModel = viewModel else { return }
+            titleLabel.text = viewModel.wallet.name
+            balanceLabel.text = viewModel.balanceText
+            iconImageView.image = UIImage(named: viewModel.wallet.icon.rawValue)
             selectionMarkImageView.isHidden = !viewModel.wallet.isActive
         }
     }
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpSelectionMarkImageView()
@@ -31,10 +34,10 @@ final class WalletCell: CornerRoundedCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Subviews' setup
+    // MARK: - Subviews' setup
     private func setUpSelectionMarkImageView() {
         hStack.addArrangedSubview(selectionMarkImageView)
-        selectionMarkImageView.image = UIImage(named: Icons.Linear.checkMark.rawValue)
+        selectionMarkImageView.image = UIImage(named: Icon.Linear.checkMark.rawValue)
         selectionMarkImageView.contentMode = .scaleAspectFit
         selectionMarkImageView.tintColor = .goldenrod
     }

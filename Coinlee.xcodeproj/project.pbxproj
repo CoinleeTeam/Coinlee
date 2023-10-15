@@ -7,20 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */; };
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
-		F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */; };
-		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
+		F51E88072A88F6A600FF20CE /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icon.swift */; };
+		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
+		F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E52AB329720056336D /* IncomeExpenseStaticCell.swift */; };
+		F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E72AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift */; };
+		F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E92AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift */; };
+		F55802ED2AB33DB90056336D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802EC2AB33DB90056336D /* Constants.swift */; };
+		F55802F12AB347EE0056336D /* TransactionCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802F02AB347EE0056336D /* TransactionCellHeaderView.swift */; };
+		F55802F32AB347F70056336D /* TransactionCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802F22AB347F70056336D /* TransactionCellHeaderViewViewModel.swift */; };
+		F55802F52AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802F42AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift */; };
+		F55802F72AB348080056336D /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802F62AB348080056336D /* TransactionCell.swift */; };
+		F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802F82AB3480F0056336D /* TransactionCellViewModel.swift */; };
+		F55802FB2AB348140056336D /* TransactionCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802FA2AB348140056336D /* TransactionCellViewModelType.swift */; };
 		F56410822A87852C00182050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410812A87852C00182050 /* AppDelegate.swift */; };
 		F56410842A87852C00182050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56410832A87852C00182050 /* SceneDelegate.swift */; };
 		F564108B2A87852D00182050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F564108A2A87852D00182050 /* Assets.xcassets */; };
 		F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F564108C2A87852D00182050 /* LaunchScreen.storyboard */; };
 		F56410972A87894F00182050 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F56410962A87894F00182050 /* .gitignore */; };
+		F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C12A99F0070075A44D /* TransactionsViewController.swift */; };
+		F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C32A99F0290075A44D /* TransactionsView.swift */; };
+		F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C52A99F04B0075A44D /* TransactionsViewViewModel.swift */; };
+		F57935C82A99F0680075A44D /* TransactionsViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C72A99F0680075A44D /* TransactionsViewViewModelType.swift */; };
+		F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */; };
 		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
-		F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */; };
+		F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor.swift */; };
+		F5CB84F82ADC1BD40078BAA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */; };
 		F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */; };
 		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
 		F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */; };
 		F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241292A8D383600C7FAC5 /* Wallet.swift */; };
+		F5E3B7282AB8788600E2A352 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3B7272AB8788600E2A352 /* Double.swift */; };
+		F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3B7292AB87A3700E2A352 /* Transaction.swift */; };
 		F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */; };
 		F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D72A8B914500555859 /* WalletSelectionView.swift */; };
 		F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D92A8B919500555859 /* WalletSelectionViewViewModel.swift */; };
@@ -35,28 +54,51 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
-		D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
+		C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
-		F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCellViewModelType.swift; sourceTree = "<group>"; };
-		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		F51E88062A88F6A600FF20CE /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		F55802E52AB329720056336D /* IncomeExpenseStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCell.swift; sourceTree = "<group>"; };
+		F55802E72AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCellViewModel.swift; sourceTree = "<group>"; };
+		F55802E92AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCellViewModelType.swift; sourceTree = "<group>"; };
+		F55802EC2AB33DB90056336D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F55802F02AB347EE0056336D /* TransactionCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellHeaderView.swift; sourceTree = "<group>"; };
+		F55802F22AB347F70056336D /* TransactionCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
+		F55802F42AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
+		F55802F62AB348080056336D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		F55802F82AB3480F0056336D /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
+		F55802FA2AB348140056336D /* TransactionCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModelType.swift; sourceTree = "<group>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F564108A2A87852D00182050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F564108D2A87852D00182050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F564108F2A87852D00182050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56410962A87894F00182050 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F57935C12A99F0070075A44D /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		F57935C32A99F0290075A44D /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		F57935C52A99F04B0075A44D /* TransactionsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewViewModel.swift; sourceTree = "<group>"; };
+		F57935C72A99F0680075A44D /* TransactionsViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewViewModelType.swift; sourceTree = "<group>"; };
+		F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCornerRoundedView.swift; sourceTree = "<group>"; };
 		F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colors.swift"; sourceTree = "<group>"; };
+		F5A40AF12A87C5E500E91AF5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F5CB84F52ADC19390078BAA0 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5CB84F92ADC1BD40078BAA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5CB84FB2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F5CB84FC2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5CB84FD2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F5CB84FE2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
 		F5E241292A8D383600C7FAC5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		F5EFA0D12A8B8BFA00555859 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E3B7272AB8788600E2A352 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F5E3B7292AB87A3700E2A352 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewController.swift; sourceTree = "<group>"; };
 		F5EFA0D72A8B914500555859 /* WalletSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionView.swift; sourceTree = "<group>"; };
 		F5EFA0D92A8B919500555859 /* WalletSelectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewViewModel.swift; sourceTree = "<group>"; };
@@ -80,8 +122,8 @@
 		20BDB4AA13453CB1D781EC71 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */,
-				D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */,
+				AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */,
+				C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -89,18 +131,41 @@
 		F51D1D392A90F407002B3FE7 /* ReusableUIElements */ = {
 			isa = PBXGroup;
 			children = (
-				F51D1D3A2A90F424002B3FE7 /* RoundedCell */,
+				F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */,
+				F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */,
+				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
 			);
 			path = ReusableUIElements;
 			sourceTree = "<group>";
 		};
-		F51D1D3A2A90F424002B3FE7 /* RoundedCell */ = {
+		F55802E42AB328A40056336D /* Income&ExpenseCell */ = {
 			isa = PBXGroup;
 			children = (
-				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
-				F51D1D372A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift */,
+				F55802E52AB329720056336D /* IncomeExpenseStaticCell.swift */,
+				F55802E72AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift */,
+				F55802E92AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift */,
 			);
-			path = RoundedCell;
+			path = "Income&ExpenseCell";
+			sourceTree = "<group>";
+		};
+		F55802EE2AB347860056336D /* TransactionCell */ = {
+			isa = PBXGroup;
+			children = (
+				F55802F62AB348080056336D /* TransactionCell.swift */,
+				F55802F82AB3480F0056336D /* TransactionCellViewModel.swift */,
+				F55802FA2AB348140056336D /* TransactionCellViewModelType.swift */,
+			);
+			path = TransactionCell;
+			sourceTree = "<group>";
+		};
+		F55802EF2AB347AB0056336D /* TransactionCellHeader */ = {
+			isa = PBXGroup;
+			children = (
+				F55802F02AB347EE0056336D /* TransactionCellHeaderView.swift */,
+				F55802F22AB347F70056336D /* TransactionCellHeaderViewViewModel.swift */,
+				F55802F42AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift */,
+			);
+			path = TransactionCellHeader;
 			sourceTree = "<group>";
 		};
 		F56410752A87852C00182050 = {
@@ -109,7 +174,7 @@
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				20BDB4AA13453CB1D781EC71 /* Pods */,
-				F5EFA0D12A8B8BFA00555859 /* Coinlee.app */,
+				F5CB84F52ADC19390078BAA0 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +183,7 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
+				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
 				F51D1D392A90F407002B3FE7 /* ReusableUIElements */,
 				F5A40AF02A87C5C000E91AF5 /* Extensions */,
@@ -127,9 +193,25 @@
 			path = Coinlee;
 			sourceTree = "<group>";
 		};
+		F57935C02A99EFD30075A44D /* TransactionsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3B7292AB87A3700E2A352 /* Transaction.swift */,
+				F57935C32A99F0290075A44D /* TransactionsView.swift */,
+				F57935C12A99F0070075A44D /* TransactionsViewController.swift */,
+				F57935C52A99F04B0075A44D /* TransactionsViewViewModel.swift */,
+				F57935C72A99F0680075A44D /* TransactionsViewViewModelType.swift */,
+				F55802E42AB328A40056336D /* Income&ExpenseCell */,
+				F55802EF2AB347AB0056336D /* TransactionCellHeader */,
+				F55802EE2AB347860056336D /* TransactionCell */,
+			);
+			path = TransactionsScreen;
+			sourceTree = "<group>";
+		};
 		F5A40AE62A87C36200E91AF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F55802EC2AB33DB90056336D /* Constants.swift */,
 				F564108C2A87852D00182050 /* LaunchScreen.storyboard */,
 				F564108F2A87852D00182050 /* Info.plist */,
 			);
@@ -140,8 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				F5A40AE82A87C3E100E91AF5 /* Fonts */,
-				F51E88062A88F6A600FF20CE /* Icons.swift */,
+				F51E88062A88F6A600FF20CE /* Icon.swift */,
 				F564108A2A87852D00182050 /* Assets.xcassets */,
+				F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,7 +252,9 @@
 		F5A40AF02A87C5C000E91AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */,
+				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
+				F53160072AA2509E00E5672F /* UIImage.swift */,
+				F5E3B7272AB8788600E2A352 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,11 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56410922A87852D00182050 /* Build configuration list for PBXNativeTarget "Coinlee" */;
 			buildPhases = (
-				F6306276C853469976A6D4B5 /* [CP] Check Pods Manifest.lock */,
+				9B5B15F82E7E2EDCD1E9634E /* [CP] Check Pods Manifest.lock */,
 				F564107A2A87852C00182050 /* Sources */,
 				F564107B2A87852C00182050 /* Frameworks */,
 				F564107C2A87852C00182050 /* Resources */,
-				C95D50400FD8DC95C4FACF83 /* [CP] Embed Pods Frameworks */,
+				8702B7BC517BDE54294CB93E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,7 +312,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F5EFA0D12A8B8BFA00555859 /* Coinlee.app */;
+			productReference = F5CB84F52ADC19390078BAA0 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +323,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F564107D2A87852C00182050 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -252,6 +337,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				pl,
 			);
 			mainGroup = F56410752A87852C00182050;
 			productRefGroup = F56410752A87852C00182050;
@@ -273,6 +360,7 @@
 				F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */,
 				F56410972A87894F00182050 /* .gitignore in Resources */,
 				F5EFA0E92A8BBAF700555859 /* Inter-Medium.ttf in Resources */,
+				F5CB84F82ADC1BD40078BAA0 /* Localizable.strings in Resources */,
 				F5EFA0E82A8BBAF700555859 /* Inter-Regular.ttf in Resources */,
 				F564108B2A87852D00182050 /* Assets.xcassets in Resources */,
 			);
@@ -281,7 +369,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C95D50400FD8DC95C4FACF83 /* [CP] Embed Pods Frameworks */ = {
+		8702B7BC517BDE54294CB93E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,7 +386,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6306276C853469976A6D4B5 /* [CP] Check Pods Manifest.lock */ = {
+		9B5B15F82E7E2EDCD1E9634E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,24 +415,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55802ED2AB33DB90056336D /* Constants.swift in Sources */,
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
+				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
+				F55802F32AB347F70056336D /* TransactionCellHeaderViewViewModel.swift in Sources */,
+				F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */,
+				F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */,
+				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
-				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
+				F55802FB2AB348140056336D /* TransactionCellViewModelType.swift in Sources */,
+				F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */,
+				F51E88072A88F6A600FF20CE /* Icon.swift in Sources */,
+				F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */,
+				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
+				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
+				F53160082AA2509E00E5672F /* UIImage.swift in Sources */,
+				F57935C82A99F0680075A44D /* TransactionsViewViewModelType.swift in Sources */,
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
-				F51D1D382A90EEF0002B3FE7 /* CornerRoundedCellViewModelType.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
+				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
+				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
-				F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */,
+				F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */,
+				F55802F12AB347EE0056336D /* TransactionCellHeaderView.swift in Sources */,
 				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
+				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,
+				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,
+				F55802F52AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +461,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				F564108D2A87852D00182050 /* Base */,
+				F5CB84FB2ADC1E5B0078BAA0 /* ru */,
+				F5CB84FD2ADC1E6F0078BAA0 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5CB84F92ADC1BD40078BAA0 /* en */,
+				F5CB84FC2ADC1E5B0078BAA0 /* ru */,
+				F5CB84FE2ADC1E6F0078BAA0 /* pl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,6 +484,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -398,6 +518,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -412,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -426,6 +547,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -458,6 +581,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -466,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -478,7 +602,7 @@
 		};
 		F56410932A87852D00182050 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF8282FA880DF0497CF93B80 /* Pods-Coinlee.debug.xcconfig */;
+			baseConfigurationReference = AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,7 +636,7 @@
 		};
 		F56410942A87852D00182050 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D43AAB5C0DE1DFDDCF8CCB0D /* Pods-Coinlee.release.xcconfig */;
+			baseConfigurationReference = C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

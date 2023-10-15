@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol WalletCellViewModelType: CornerRoundedCellViewModelType {
+protocol WalletCellViewModelType: AnyObject {
     var wallet: Wallet { get }
     
-    func formattedBalance() -> String
+    // MARK: Computed properties
+    var balanceText: String { get }
 }

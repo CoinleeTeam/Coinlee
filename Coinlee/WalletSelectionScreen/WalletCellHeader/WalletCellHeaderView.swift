@@ -19,6 +19,7 @@ final class WalletCellHeaderView: UICollectionReusableView {
         }
     }
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
             setUpWalletTypeLabel()
@@ -29,7 +30,7 @@ final class WalletCellHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Subviews' setup
+    // MARK: - Subviews' setup
     private func setUpWalletTypeLabel() {
         addSubview(walletTypeLabel)
         walletTypeLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
@@ -42,8 +43,7 @@ final class WalletCellHeaderView: UICollectionReusableView {
     private func addConstraints() {
         walletTypeLabel.snp.makeConstraints { make in
             make.bottom.top.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-20)
-            make.leading.equalToSuperview().offset(20)
+            make.trailing.leading.equalToSuperview().inset(16)
         }
     }
 }

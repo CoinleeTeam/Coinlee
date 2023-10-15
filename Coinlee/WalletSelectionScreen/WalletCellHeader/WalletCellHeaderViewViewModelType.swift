@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WalletCellHeaderViewViewModelType {
+protocol WalletCellHeaderViewViewModelType: AnyObject {
     var walletType: WalletType { get }
 }
