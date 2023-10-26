@@ -7,9 +7,10 @@
 
 import UIKit
 
-class CurrencyTableViewCell: UITableViewCell {
+final class CurrencyTableViewCell: UITableViewCell {
     static let reuseIdentifier = "CurrencyTableViewCell"
     
+    private let vStack = UIStackView()
     let flagImageView = UIImageView()
     let currencyNameLabel = UILabel()
     let currencyCodeLabel = UILabel()
@@ -26,20 +27,31 @@ class CurrencyTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .paleFrost
-        addConstraints()
-        setUpCurrencyNameLabel()
-        setUpcurrencyCodeLabel()
+        setUp()
+        setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func addConstraints() {
-        let vStack = UIStackView(arrangedSubviews: [currencyNameLabel, currencyCodeLabel])
+    private func setUp() {
+        // vStack
+        vStack.addArrangedSubview(currencyNameLabel)
+        vStack.addArrangedSubview(currencyCodeLabel)
         vStack.axis = .vertical
         vStack.spacing = -6
         
+        // currencyNameLabel
+        currencyNameLabel.textColor = .charcoal
+        currencyNameLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 17)
+        
+        // currencyCodeLabel
+        currencyCodeLabel.textColor = .battleshipGrey
+        currencyCodeLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 17)
+    }
+    
+    private func setUpConstraints() {
         contentView.addSubview(flagImageView)
         contentView.addSubview(vStack)
         
@@ -55,15 +67,5 @@ class CurrencyTableViewCell: UITableViewCell {
             make.leading.equalTo(flagImageView.snp.trailing).offset(16)
             make.height.equalTo(50)
         }
-    }
-    
-    private func setUpCurrencyNameLabel() {
-        currencyNameLabel.textColor = .charcoal
-        currencyNameLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 17)
-    }
-    
-    private func setUpcurrencyCodeLabel() {
-        currencyCodeLabel.textColor = .battleshipGrey
-        currencyCodeLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 17)
     }
 }

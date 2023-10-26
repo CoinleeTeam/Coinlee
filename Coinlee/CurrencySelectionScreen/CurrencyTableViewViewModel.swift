@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CurrencyTableViewViewModel: CurrencyTableViewViewModelType {
+final class CurrencyTableViewViewModel: CurrencyTableViewViewModelType {
     let currencies = Currency.availableCurrencies()
     var filteredCurrencies = [Currency]()
     
@@ -16,10 +16,10 @@ class CurrencyTableViewViewModel: CurrencyTableViewViewModelType {
     }
 
     func updateFilteredCurrenciesWithSearchText(_ searchText: String) {
-        filteredCurrencies = currencies.filter({ currency in
+        filteredCurrencies = currencies.filter { currency in
             let searchTextLowercased = searchText.lowercased()
             return currency.name.lowercased().contains(searchTextLowercased) || currency.code.rawValue.lowercased().contains(searchTextLowercased)
-        })
+        }
     }
     
     func numberOfRows(forSection section: Int) -> Int {

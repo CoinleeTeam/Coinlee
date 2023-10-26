@@ -100,5 +100,7 @@ enum Icons {
         case list
         case plus
         case report
+        case magnifier
+        case clear
     }
 }

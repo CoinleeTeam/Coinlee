@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E4234C82AE5830400739729 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4234C72AE5830400739729 /* ClearTextFieldDelegate.swift */; };
+		8E4234C92AE5890D00739729 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEC2A87C42300E91AF5 /* Inter-Bold.ttf */; };
+		8E4234CA2AE5890F00739729 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEB2A87C42300E91AF5 /* Inter-Medium.ttf */; };
+		8E4234CB2AE5891200739729 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AEA2A87C42300E91AF5 /* Inter-Regular.ttf */; };
+		8E4234CC2AE5891400739729 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */; };
+		8E4234CE2AE6A20B00739729 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4234CD2AE6A20B00739729 /* String.swift */; };
+		8E52F1452ADA890500AFC30F /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52F1442ADA890500AFC30F /* NoResultsView.swift */; };
+		8E52F1472ADA8BAB00AFC30F /* BasicContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52F1462ADA8BAB00AFC30F /* BasicContainerView.swift */; };
+		8E52F1492ADAC7EF00AFC30F /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52F1482ADAC7EF00AFC30F /* CustomUITextField.swift */; };
 		8EFDC05C2A9536250015DD24 /* CurrencySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDC05B2A9536250015DD24 /* CurrencySelectionViewController.swift */; };
 		8EFDC05F2A9536960015DD24 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDC05E2A9536960015DD24 /* CurrencyModel.swift */; };
 		8EFDC0612A9536D50015DD24 /* CurrencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDC0602A9536D50015DD24 /* CurrencySelectionView.swift */; };
@@ -27,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E4234C72AE5830400739729 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
+		8E4234CD2AE6A20B00739729 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8E52F1442ADA890500AFC30F /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		8E52F1462ADA8BAB00AFC30F /* BasicContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContainerView.swift; sourceTree = "<group>"; };
+		8E52F1482ADAC7EF00AFC30F /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		8EFDC05B2A9536250015DD24 /* CurrencySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewController.swift; sourceTree = "<group>"; };
 		8EFDC05E2A9536960015DD24 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		8EFDC0602A9536D50015DD24 /* CurrencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionView.swift; sourceTree = "<group>"; };
@@ -74,6 +88,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E4234C62AE582E700739729 /* CustomUITextField */ = {
+			isa = PBXGroup;
+			children = (
+				8E52F1482ADAC7EF00AFC30F /* CustomUITextField.swift */,
+				8E4234C72AE5830400739729 /* ClearTextFieldDelegate.swift */,
+			);
+			path = CustomUITextField;
+			sourceTree = "<group>";
+		};
+		8E52F14A2AE533E400AFC30F /* ReusableUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				8E52F1442ADA890500AFC30F /* NoResultsView.swift */,
+				8E52F1462ADA8BAB00AFC30F /* BasicContainerView.swift */,
+				8E4234C62AE582E700739729 /* CustomUITextField */,
+			);
+			path = ReusableUIElements;
+			sourceTree = "<group>";
+		};
 		8EFDC05D2A9536820015DD24 /* CurrencySelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +146,7 @@
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
 				8EFDC05D2A9536820015DD24 /* CurrencySelectionScreen */,
+				8E52F14A2AE533E400AFC30F /* ReusableUIElements */,
 				F5A40AF02A87C5C000E91AF5 /* Extensions */,
 				F5A40AE62A87C36200E91AF5 /* Supporting Files */,
 				F5A40AE72A87C3CE00E91AF5 /* Resources */,
@@ -164,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A40AF12A87C5E500E91AF5 /* UIColor+colors.swift */,
+				8E4234CD2AE6A20B00739729 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,9 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */,
+				8E4234C92AE5890D00739729 /* Inter-Bold.ttf in Resources */,
+				8E4234CA2AE5890F00739729 /* Inter-Medium.ttf in Resources */,
 				8EFDC06F2A9A314C0015DD24 /* Localizable.strings in Resources */,
+				8E4234CC2AE5891400739729 /* Inter-SemiBold.ttf in Resources */,
 				F56410972A87894F00182050 /* .gitignore in Resources */,
 				F564108B2A87852D00182050 /* Assets.xcassets in Resources */,
+				8E4234CB2AE5891200739729 /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,16 +323,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E52F1472ADA8BAB00AFC30F /* BasicContainerView.swift in Sources */,
 				8EFDC05F2A9536960015DD24 /* CurrencyModel.swift in Sources */,
 				8EFDC0652A95386B0015DD24 /* CurrencyTableViewCellViewModel.swift in Sources */,
 				8EFDC06A2A9A12C80015DD24 /* CurrencyTableViewViewModel.swift in Sources */,
+				8E52F1492ADAC7EF00AFC30F /* CustomUITextField.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				8EFDC0612A9536D50015DD24 /* CurrencySelectionView.swift in Sources */,
 				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
+				8E52F1452ADA890500AFC30F /* NoResultsView.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
 				8EFDC0672A9538770015DD24 /* CurrencyTableViewCellViewModelType.swift in Sources */,
 				8EFDC06C2A9A12D50015DD24 /* CurrencyTableViewViewModelType.swift in Sources */,
+				8E4234CE2AE6A20B00739729 /* String.swift in Sources */,
 				F5A40AF22A87C5E500E91AF5 /* UIColor+colors.swift in Sources */,
+				8E4234C82AE5830400739729 /* ClearTextFieldDelegate.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
 				8EFDC0632A9538520015DD24 /* CurrencyTableViewCell.swift in Sources */,
 				8EFDC05C2A9536250015DD24 /* CurrencySelectionViewController.swift in Sources */,

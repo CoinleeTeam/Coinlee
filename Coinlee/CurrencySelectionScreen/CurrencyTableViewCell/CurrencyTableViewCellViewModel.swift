@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CurrencyTableViewCellViewModel: CurrencyTableViewCellViewModelType {
+final class CurrencyTableViewCellViewModel: CurrencyTableViewCellViewModelType {
     private var currency: Currency
     
     var currencyName: String {
@@ -21,6 +21,4 @@ class CurrencyTableViewCellViewModel: CurrencyTableViewCellViewModelType {
     init(currency: Currency) {
         self.currency = currency
     }
-
-
 }

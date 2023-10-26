@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CurrencyTableViewViewModelType {
+protocol CurrencyTableViewViewModelType: AnyObject {
     var currencies: [Currency] { get }
     var filteredCurrencies: [Currency] { get set }
     

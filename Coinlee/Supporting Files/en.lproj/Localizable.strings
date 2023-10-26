@@ -31,4 +31,6 @@
 "USD" = "United States Dollar";
 "ZAR" = "South African Rand";
 
-"Search" = "Search";
+"search_placeholder" = "Search";
+"no_result_label" = "No results for";
+"try_a_new_search_label" = "Try a new search";
