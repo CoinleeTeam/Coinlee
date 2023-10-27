@@ -11,6 +11,19 @@
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
 		F51E88072A88F6A600FF20CE /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icon.swift */; };
 		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
+		F546A4862AEC07B100459DF5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4852AEC07B100459DF5 /* String.swift */; };
+		F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4872AEC07D200459DF5 /* NoResultsView.swift */; };
+		F546A48D2AEC07D300459DF5 /* BasicContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4882AEC07D200459DF5 /* BasicContainerView.swift */; };
+		F546A48E2AEC07D300459DF5 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48A2AEC07D200459DF5 /* CustomUITextField.swift */; };
+		F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */; };
+		F546A49A2AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4912AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift */; };
+		F546A49B2AEC07DE00459DF5 /* CurrencyTableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4922AEC07DE00459DF5 /* CurrencyTableViewViewModelType.swift */; };
+		F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */; };
+		F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */; };
+		F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4962AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift */; };
+		F546A49F2AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4972AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift */; };
+		F546A4A02AEC07DE00459DF5 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4982AEC07DE00459DF5 /* CurrencyTableViewCell.swift */; };
+		F546A4A12AEC07DE00459DF5 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4992AEC07DE00459DF5 /* CurrencyModel.swift */; };
 		F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E52AB329720056336D /* IncomeExpenseStaticCell.swift */; };
 		F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E72AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift */; };
 		F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55802E92AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift */; };
@@ -60,6 +73,19 @@
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
 		F51E88062A88F6A600FF20CE /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		F546A4852AEC07B100459DF5 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F546A4872AEC07D200459DF5 /* NoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		F546A4882AEC07D200459DF5 /* BasicContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicContainerView.swift; sourceTree = "<group>"; };
+		F546A48A2AEC07D200459DF5 /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
+		F546A4912AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewViewModel.swift; sourceTree = "<group>"; };
+		F546A4922AEC07DE00459DF5 /* CurrencyTableViewViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewViewModelType.swift; sourceTree = "<group>"; };
+		F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewController.swift; sourceTree = "<group>"; };
+		F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionView.swift; sourceTree = "<group>"; };
+		F546A4962AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		F546A4972AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		F546A4982AEC07DE00459DF5 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		F546A4992AEC07DE00459DF5 /* CurrencyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		F55802E52AB329720056336D /* IncomeExpenseStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCell.swift; sourceTree = "<group>"; };
 		F55802E72AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCellViewModel.swift; sourceTree = "<group>"; };
 		F55802E92AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseStaticCellViewModelType.swift; sourceTree = "<group>"; };
@@ -134,8 +160,43 @@
 				F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */,
 				F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */,
 				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
+				F546A4882AEC07D200459DF5 /* BasicContainerView.swift */,
+				F546A4872AEC07D200459DF5 /* NoResultsView.swift */,
+				F546A4892AEC07D200459DF5 /* CustomUITextField */,
 			);
 			path = ReusableUIElements;
+			sourceTree = "<group>";
+		};
+		F546A4892AEC07D200459DF5 /* CustomUITextField */ = {
+			isa = PBXGroup;
+			children = (
+				F546A48A2AEC07D200459DF5 /* CustomUITextField.swift */,
+				F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */,
+			);
+			path = CustomUITextField;
+			sourceTree = "<group>";
+		};
+		F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F546A4992AEC07DE00459DF5 /* CurrencyModel.swift */,
+				F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */,
+				F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */,
+				F546A4912AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift */,
+				F546A4922AEC07DE00459DF5 /* CurrencyTableViewViewModelType.swift */,
+				F546A4952AEC07DE00459DF5 /* CurrencyTableViewCell */,
+			);
+			path = CurrencySelectionScreen;
+			sourceTree = "<group>";
+		};
+		F546A4952AEC07DE00459DF5 /* CurrencyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F546A4982AEC07DE00459DF5 /* CurrencyTableViewCell.swift */,
+				F546A4972AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift */,
+				F546A4962AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift */,
+			);
+			path = CurrencyTableViewCell;
 			sourceTree = "<group>";
 		};
 		F55802E42AB328A40056336D /* Income&ExpenseCell */ = {
@@ -183,6 +244,7 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
+				F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */,
 				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
 				F51D1D392A90F407002B3FE7 /* ReusableUIElements */,
@@ -212,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				F55802EC2AB33DB90056336D /* Constants.swift */,
+				F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */,
 				F564108C2A87852D00182050 /* LaunchScreen.storyboard */,
 				F564108F2A87852D00182050 /* Info.plist */,
 			);
@@ -224,7 +287,6 @@
 				F5A40AE82A87C3E100E91AF5 /* Fonts */,
 				F51E88062A88F6A600FF20CE /* Icon.swift */,
 				F564108A2A87852D00182050 /* Assets.xcassets */,
-				F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -252,6 +314,7 @@
 		F5A40AF02A87C5C000E91AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F546A4852AEC07B100459DF5 /* String.swift */,
 				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
 				F53160072AA2509E00E5672F /* UIImage.swift */,
 				F5E3B7272AB8788600E2A352 /* Double.swift */,
@@ -419,9 +482,13 @@
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
 				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
+				F546A4A02AEC07DE00459DF5 /* CurrencyTableViewCell.swift in Sources */,
+				F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */,
+				F546A49F2AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
 				F55802F32AB347F70056336D /* TransactionCellHeaderViewViewModel.swift in Sources */,
+				F546A48D2AEC07D300459DF5 /* BasicContainerView.swift in Sources */,
 				F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */,
 				F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */,
 				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
@@ -431,7 +498,9 @@
 				F51E88072A88F6A600FF20CE /* Icon.swift in Sources */,
 				F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */,
 				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
+				F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
+				F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */,
 				F53160082AA2509E00E5672F /* UIImage.swift in Sources */,
 				F57935C82A99F0680075A44D /* TransactionsViewViewModelType.swift in Sources */,
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
@@ -441,12 +510,19 @@
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
+				F546A48E2AEC07D300459DF5 /* CustomUITextField.swift in Sources */,
+				F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */,
+				F546A49B2AEC07DE00459DF5 /* CurrencyTableViewViewModelType.swift in Sources */,
+				F546A4A12AEC07DE00459DF5 /* CurrencyModel.swift in Sources */,
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
+				F546A4862AEC07B100459DF5 /* String.swift in Sources */,
+				F546A49A2AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
 				F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */,
 				F55802F12AB347EE0056336D /* TransactionCellHeaderView.swift in Sources */,
 				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
+				F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */,
 				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,
 				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,

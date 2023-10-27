@@ -103,5 +103,6 @@ enum Icon {
         case magnifyingGlass
         case plus
         case report
+        case clear
     }
 }

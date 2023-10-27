@@ -26,8 +26,8 @@ extension UIColor {
     /// A color object with RGB values of 126/255, 126/255, and 127/255, and an alpha value of 1.0.
     static let battleshipGrey = UIColor(red: 126/255, green: 126/255, blue: 127/255, alpha: 1)
     
-    /// A color object with RGB values of 236/255, 192/255, and 96/255, and an alpha value of 1.0.
-    static let goldenrod = UIColor(red: 236/255, green: 192/255, blue: 96/255, alpha: 1)
+    /// A color object with RGB values of 246/255, 190/255, and 0/255, and an alpha value of 1.0.
+    static let goldenrod = UIColor(red: 246/255, green: 190/255, blue: 0/255, alpha: 1)
     
     /// A color object with RGB values of 181/255, 209/255, and 146/255, and an alpha value of 1.0.
     static let paleLimeGreen = UIColor(red: 181/255, green: 209/255, blue: 146/255, alpha: 1)
@@ -40,4 +40,7 @@ extension UIColor {
     
     /// A color object with RGB values of 209/255, 209/255, and 214/255, and an alpha value of 1.0.
     static let silverChalice = UIColor(red: 209/255, green: 209/255, blue: 214/255, alpha: 1)
+    
+    /// A color object with RGB values of 247/255, 247/255, and 247/255, and an alpha value of 1.0.
+    static let snowWhite = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
 }
