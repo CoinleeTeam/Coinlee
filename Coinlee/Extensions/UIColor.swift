@@ -40,4 +40,7 @@ extension UIColor {
     
     /// A color object with RGB values of 209/255, 209/255, and 214/255, and an alpha value of 1.0.
     static let silverChalice = UIColor(red: 209/255, green: 209/255, blue: 214/255, alpha: 1)
+    
+    /// A color object with RGB values of 247/255, 247/255, and 247/255, and an alpha value of 1.0.
+    static let snowWhite = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
 }
