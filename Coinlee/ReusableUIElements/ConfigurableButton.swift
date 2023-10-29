@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfigurableButton: UIButton {
+final class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
     // MARK: - Button setup

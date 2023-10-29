@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BottomCornerRoundedView: UIView {
+final class BottomCornerRoundedView: UIView {
     // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
