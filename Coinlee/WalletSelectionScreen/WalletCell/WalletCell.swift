@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WalletCell: CornerRoundedCell {
+final class WalletCell: IconTitleCell {
     static let reuseIdentifier = "WalletCell"
     
     let selectionMarkImageView = UIImageView()
