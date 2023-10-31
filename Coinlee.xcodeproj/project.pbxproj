@@ -56,6 +56,14 @@
 		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
 		F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */; };
 		F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241292A8D383600C7FAC5 /* Wallet.swift */; };
+		F5E251862AF1288E00987511 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E251852AF1288E00987511 /* IconSelectionView.swift */; };
+		F5E251882AF1289600987511 /* IconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E251872AF1289600987511 /* IconSelectionViewController.swift */; };
+		F5E2518A2AF1289C00987511 /* IconSelectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E251892AF1289C00987511 /* IconSelectionViewViewModel.swift */; };
+		F5E2518C2AF128A600987511 /* IconSelectionViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2518B2AF128A600987511 /* IconSelectionViewViewModelType.swift */; };
+		F5E2518E2AF130F200987511 /* IconTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2518D2AF130F200987511 /* IconTitleCell.swift */; };
+		F5E251902AF1367100987511 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2518F2AF1367100987511 /* IconCell.swift */; };
+		F5E251922AF1367A00987511 /* IconCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E251912AF1367A00987511 /* IconCellViewModel.swift */; };
+		F5E251942AF1368000987511 /* IconCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E251932AF1368000987511 /* IconCellViewModelType.swift */; };
 		F5E3B7282AB8788600E2A352 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3B7272AB8788600E2A352 /* Double.swift */; };
 		F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3B7292AB87A3700E2A352 /* Transaction.swift */; };
 		F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */; };
@@ -134,6 +142,14 @@
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
 		F5E241292A8D383600C7FAC5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		F5E251852AF1288E00987511 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
+		F5E251872AF1289600987511 /* IconSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewController.swift; sourceTree = "<group>"; };
+		F5E251892AF1289C00987511 /* IconSelectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewViewModel.swift; sourceTree = "<group>"; };
+		F5E2518B2AF128A600987511 /* IconSelectionViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewViewModelType.swift; sourceTree = "<group>"; };
+		F5E2518D2AF130F200987511 /* IconTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleCell.swift; sourceTree = "<group>"; };
+		F5E2518F2AF1367100987511 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		F5E251912AF1367A00987511 /* IconCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCellViewModel.swift; sourceTree = "<group>"; };
+		F5E251932AF1368000987511 /* IconCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCellViewModelType.swift; sourceTree = "<group>"; };
 		F5E3B7272AB8788600E2A352 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F5E3B7292AB87A3700E2A352 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F5EFA0D52A8B90E100555859 /* WalletSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSelectionViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +202,7 @@
 				F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */,
 				F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */,
 				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
+				F5E2518D2AF130F200987511 /* IconTitleCell.swift */,
 				F546A4882AEC07D200459DF5 /* BasicContainerView.swift */,
 				F546A4872AEC07D200459DF5 /* NoResultsView.swift */,
 				F546A4892AEC07D200459DF5 /* CustomUITextField */,
@@ -271,6 +288,7 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
+				F5E251842AF1285A00987511 /* IconSelectionScreen */,
 				F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */,
 				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
@@ -358,6 +376,28 @@
 				F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */,
 			);
 			path = WalletCellHeader;
+			sourceTree = "<group>";
+		};
+		F5E251842AF1285A00987511 /* IconSelectionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F5E251852AF1288E00987511 /* IconSelectionView.swift */,
+				F5E251872AF1289600987511 /* IconSelectionViewController.swift */,
+				F5E251892AF1289C00987511 /* IconSelectionViewViewModel.swift */,
+				F5E2518B2AF128A600987511 /* IconSelectionViewViewModelType.swift */,
+				F5E251952AF1368300987511 /* IconCell */,
+			);
+			path = IconSelectionScreen;
+			sourceTree = "<group>";
+		};
+		F5E251952AF1368300987511 /* IconCell */ = {
+			isa = PBXGroup;
+			children = (
+				F5E2518F2AF1367100987511 /* IconCell.swift */,
+				F5E251912AF1367A00987511 /* IconCellViewModel.swift */,
+				F5E251932AF1368000987511 /* IconCellViewModelType.swift */,
+			);
+			path = IconCell;
 			sourceTree = "<group>";
 		};
 		F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */ = {
@@ -517,11 +557,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55802ED2AB33DB90056336D /* Constants.swift in Sources */,
+				F5E2518E2AF130F200987511 /* IconTitleCell.swift in Sources */,
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
 				F5107EC12AE5712600B3BC34 /* WalletTypesViewController.swift in Sources */,
 				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
 				F5107EC52AE572B800B3BC34 /* WalletTypesViewViewModel.swift in Sources */,
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
+				F5E251922AF1367A00987511 /* IconCellViewModel.swift in Sources */,
 				F546A4A02AEC07DE00459DF5 /* CurrencyTableViewCell.swift in Sources */,
 				F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */,
 				F546A49F2AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift in Sources */,
@@ -537,11 +579,14 @@
 				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				F55802FB2AB348140056336D /* TransactionCellViewModelType.swift in Sources */,
+				F5E2518C2AF128A600987511 /* IconSelectionViewViewModelType.swift in Sources */,
 				F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */,
 				F5107EC72AE572E900B3BC34 /* WalletTypesViewViewModelType.swift in Sources */,
 				F51E88072A88F6A600FF20CE /* Icon.swift in Sources */,
 				F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */,
 				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
+				F5E251882AF1289600987511 /* IconSelectionViewController.swift in Sources */,
+				F5E251902AF1367100987511 /* IconCell.swift in Sources */,
 				F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
 				F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */,
@@ -553,6 +598,7 @@
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
+				F5E2518A2AF1289C00987511 /* IconSelectionViewViewModel.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
@@ -563,11 +609,13 @@
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift in Sources */,
 				F546A4862AEC07B100459DF5 /* String.swift in Sources */,
 				F546A49A2AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift in Sources */,
+				F5E251942AF1368000987511 /* IconCellViewModelType.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewViewModelType.swift in Sources */,
 				F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */,
 				F55802F12AB347EE0056336D /* TransactionCellHeaderView.swift in Sources */,
 				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
+				F5E251862AF1288E00987511 /* IconSelectionView.swift in Sources */,
 				F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */,
 				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,

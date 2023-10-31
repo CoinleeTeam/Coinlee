@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class TransactionCell: CornerRoundedCell {
+final class TransactionCell: IconTitleCell {
     static let reuseIdentifier = "TransactionCell"
     
     let desctiptionLabel = UILabel()
