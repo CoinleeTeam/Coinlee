@@ -11,21 +11,6 @@ final class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
     // MARK: - Button setup
-    private func setUpRightImageView(image: UIImage?, tintColor: UIColor?, imagePadding: CGFloat) {
-        rightImageView = UIImageView(image: image)
-        guard let rightImageView = rightImageView,
-              let titleLabel = titleLabel
-        else { return }
-        rightImageView.tintColor = tintColor
-            titleLabel.addSubview(rightImageView)
-        if rightImageView.constraints.isEmpty {
-            rightImageView.snp.makeConstraints { make in
-                make.centerY.equalToSuperview()
-                make.leading.equalTo(titleLabel.snp.trailing).offset(imagePadding)
-            }
-        }
-    }
-    
     /// Configures button with provided arguments
     func addConfiguration(baseForegroundColor: UIColor? = nil,
                           titleFont: UIFont? = nil,
@@ -33,6 +18,7 @@ final class ConfigurableButton: UIButton {
                           leftImageTintColor: UIColor? = nil,
                           leftImagePadding: CGFloat = 0,
                           rightImage: UIImage? = nil,
+                          isFixedRightImagePosition: Bool = false,
                           rightImagePadding: CGFloat = 0,
                           contentEdgesInset: CGFloat = 0) {
         
@@ -76,13 +62,26 @@ final class ConfigurableButton: UIButton {
         if rightImage == nil {
             rightImageView = nil
         } else {
-            setUpRightImageView(image: rightImage, tintColor: baseForegroundColor, imagePadding: rightImagePadding)
-            if let rightImageView = rightImageView {
-                contentTrailingInset += rightImageView.frame.width
+            rightImageView = UIImageView(image: rightImage)
+            guard let rightImageView = rightImageView, let titleLabel = titleLabel else { return }
+            let rightImageSuperview = isFixedRightImagePosition ? self : titleLabel
+            rightImageView.tintColor = baseForegroundColor
+            rightImageSuperview.addSubview(rightImageView)
+            
+            rightImageView.snp.makeConstraints { make in
+                make.centerY.equalToSuperview()
+                if isFixedRightImagePosition {
+                    make.trailing.equalToSuperview().inset(rightImagePadding)
+                } else {
+                    make.leading.equalTo(titleLabel.snp.trailing).offset(rightImagePadding)
+                }
             }
+            
+            contentTrailingInset += rightImageView.frame.width
         }
         
         // content settings
+        contentHorizontalAlignment = isFixedRightImagePosition ? .leading : .center
         defaultConfiguration.contentInsets = NSDirectionalEdgeInsets(top: contentEdgesInset,
                                                                      leading: contentEdgesInset,
                                                                      bottom: contentEdgesInset,
@@ -95,6 +94,7 @@ final class ConfigurableButton: UIButton {
             outgoingContainer.font = titleFont
             return outgoingContainer
         }
+        defaultConfiguration.titleLineBreakMode = .byTruncatingTail
         
         // leftImageView settings
         setImage(leftImage, for: .normal)
