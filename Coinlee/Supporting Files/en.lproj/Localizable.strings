@@ -11,6 +11,22 @@
 "income_label" = "Income";
 "expense_label" = "Expense";
 
+// New Transaction View
+"income_transaction_type" = "Income";
+"expense_transaction_type" = "Expense";
+
+// Amount Text Field
+"amount_placeholder" = "Amount";
+
+// Select Category Button
+"select_category_button" = "Select category";
+
+// Save Transaction Button
+"save_transaction_button" = "Save transaction";
+
+// Note Text View Placeholder
+"note_text_view_placeholder" = "Note...";
+
 // No Result View
 "search_placeholder" = "Search";
 "no_result_label" = "No results for";

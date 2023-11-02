@@ -8,7 +8,7 @@
 import UIKit
 
 final class CustomUITextField: UITextField {
-    private var viewPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    private let viewPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     private var textPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     var clearDelegate: ClearTextFieldDelegate?
     var maximumNumberOfSymbols = 0
@@ -51,28 +51,23 @@ final class CustomUITextField: UITextField {
         borderStyle = .none
         layer.cornerRadius = 15
         backgroundColor = .snowWhite
-        font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
+        font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
         textColor = .charcoal
         attributedPlaceholder = customizedPlaceholder()
     }
     
     private func customizedPlaceholder() -> NSMutableAttributedString {
         var attributedPlaceholder = NSMutableAttributedString()
-        attributedPlaceholder = NSMutableAttributedString(
-            string: "Placeholder",
-            attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.battleshipGrey,
-                NSAttributedString.Key.font: UIFont(name: Fonts.Inter.medium.rawValue, size: 16) as Any
-            ]
-        )
-        
+        attributedPlaceholder = NSMutableAttributedString(string: "Placeholder",
+                                                          attributes: [NSAttributedString.Key.foregroundColor: UIColor.battleshipGrey,
+                                                                       NSAttributedString.Key.font: UIFont(name: Fonts.Inter.medium.rawValue, size: 16) as Any])
         return attributedPlaceholder
     }
     
-    func addLeftIcon(leftIcon: UIImage) {
+    func addLeftIcon(icon: UIImage) {
         textPadding.left = 48
         
-        let leftIcon = UIImageView(image: leftIcon)
+        let leftIcon = UIImageView(image: icon)
         leftIcon.tintColor = .goldenrod
         leftViewMode = .always
         leftView = leftIcon
@@ -89,6 +84,18 @@ final class CustomUITextField: UITextField {
         rightView?.isHidden = true
         addTapGestureRecognizer(to: rightIcon)
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    func addCurrencyLabel(currencyCode: String) {
+        textPadding.right = 48
+        
+        let currencyLabel = UILabel()
+        currencyLabel.text = "| \(currencyCode)"
+        currencyLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
+        currencyLabel.textColor = .battleshipGrey
+        
+        rightViewMode = .always
+        rightView = currencyLabel
     }
     
     // MARK: - Textfield's clear button UI and logic

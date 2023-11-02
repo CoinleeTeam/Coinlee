@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E66E0632AECF9A20029B807 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */; };
+		8E66E0662AECFBE80029B807 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0652AECFBE80029B807 /* NewTransactionView.swift */; };
+		8E66E0682AECFBF70029B807 /* NewTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0672AECFBF70029B807 /* NewTransactionModel.swift */; };
+		8E66E06A2AECFC060029B807 /* NewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0692AECFC060029B807 /* NewTransactionViewModel.swift */; };
+		8E66E06C2AECFC1C0029B807 /* NewTransactionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E06B2AECFC1C0029B807 /* NewTransactionViewModelType.swift */; };
+		8E66E0C52AEE58850029B807 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0C42AEE58850029B807 /* UIView.swift */; };
 		F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */; };
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
 		F51E88072A88F6A600FF20CE /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icon.swift */; };
@@ -67,6 +73,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
+		8E66E0652AECFBE80029B807 /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		8E66E0672AECFBF70029B807 /* NewTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionModel.swift; sourceTree = "<group>"; };
+		8E66E0692AECFC060029B807 /* NewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewModel.swift; sourceTree = "<group>"; };
+		8E66E06B2AECFC1C0029B807 /* NewTransactionViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewModelType.swift; sourceTree = "<group>"; };
+		8E66E0C42AEE58850029B807 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
 		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
@@ -152,6 +164,18 @@
 				C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E66E0642AECF9A70029B807 /* NewTransactionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8E66E0672AECFBF70029B807 /* NewTransactionModel.swift */,
+				8E66E0652AECFBE80029B807 /* NewTransactionView.swift */,
+				8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */,
+				8E66E0692AECFC060029B807 /* NewTransactionViewModel.swift */,
+				8E66E06B2AECFC1C0029B807 /* NewTransactionViewModelType.swift */,
+			);
+			path = NewTransactionScreen;
 			sourceTree = "<group>";
 		};
 		F51D1D392A90F407002B3FE7 /* ReusableUIElements */ = {
@@ -244,6 +268,7 @@
 			children = (
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
+				8E66E0642AECF9A70029B807 /* NewTransactionScreen */,
 				F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */,
 				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
@@ -318,6 +343,7 @@
 				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
 				F53160072AA2509E00E5672F /* UIImage.swift */,
 				F5E3B7272AB8788600E2A352 /* Double.swift */,
+				8E66E0C42AEE58850029B807 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,7 +514,9 @@
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
 				F55802F32AB347F70056336D /* TransactionCellHeaderViewViewModel.swift in Sources */,
+				8E66E06A2AECFC060029B807 /* NewTransactionViewModel.swift in Sources */,
 				F546A48D2AEC07D300459DF5 /* BasicContainerView.swift in Sources */,
+				8E66E0632AECF9A20029B807 /* NewTransactionViewController.swift in Sources */,
 				F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */,
 				F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */,
 				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
@@ -506,9 +534,12 @@
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
+				8E66E06C2AECFC1C0029B807 /* NewTransactionViewModelType.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
+				8E66E0662AECFBE80029B807 /* NewTransactionView.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
+				8E66E0C52AEE58850029B807 /* UIView.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
 				F546A48E2AEC07D300459DF5 /* CustomUITextField.swift in Sources */,
 				F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */,
@@ -525,6 +556,7 @@
 				F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */,
 				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,
+				8E66E0682AECFBF70029B807 /* NewTransactionModel.swift in Sources */,
 				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,
 				F55802F52AB347FC0056336D /* TransactionCellHeaderViewViewModelType.swift in Sources */,
 			);

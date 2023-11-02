@@ -104,5 +104,6 @@ enum Icon {
         case plus
         case report
         case clear
+        case walletTemplate
     }
 }

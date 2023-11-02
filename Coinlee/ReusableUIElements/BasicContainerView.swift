@@ -27,7 +27,7 @@ final class BasicContainerView: UIView {
     }
     
     private func addLayer() {
-        backgroundColor = .white
+        backgroundColor = .snowWhite
         layer.cornerRadius = 15
         
         switch shadowType {

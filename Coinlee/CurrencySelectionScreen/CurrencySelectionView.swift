@@ -9,10 +9,14 @@ import UIKit
 import SnapKit
 
 final class CurrencySelectionView: UIView {
-    let containerView = BasicContainerView()
     let searchTextField = CustomUITextField()
     let currenciesTableView = UITableView(frame: CGRect(), style: .insetGrouped)
     let noResultsView = NoResultsView()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        searchTextField.createBasicContainerWithRoundShadow(viewBackgroundColor: .snowWhite)
+    }
     
     // MARK: - Inits
     override init(frame: CGRect) {
@@ -48,39 +52,31 @@ final class CurrencySelectionView: UIView {
     }
     
     private func setUpSearchTextField() {
-        containerView.shadowType = .rounded
-        containerView.backgroundColor = .snowWhite
-        
         searchTextField.layer.borderColor = UIColor.paleFrost.cgColor
         searchTextField.layer.borderWidth = 1
         searchTextField.placeholder = NSLocalizedString("search_placeholder", comment: "")
         searchTextField.clearButtonMode = .whileEditing
         searchTextField.maximumNumberOfSymbols = 10
         
-        searchTextField.addLeftIcon(leftIcon: UIImage(named: Icon.Linear.magnifyingGlass.rawValue) ?? UIImage())
+        searchTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.magnifyingGlass.rawValue) ?? UIImage())
         searchTextField.addClearIcon()
     }
     
     // MARK: - Constraints
     private func addConstraints() {
-        containerView.addSubview(searchTextField)
         addSubview(currenciesTableView)
         addSubview(noResultsView)
-        addSubview(containerView)
+        addSubview(searchTextField)
         
-        containerView.snp.makeConstraints { make in
+        searchTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(safeAreaLayoutGuide).offset(8)
             make.height.equalTo(46)
         }
         
-        searchTextField.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalToSuperview()
-        }
-        
         currenciesTableView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(containerView.snp.bottom).offset(-32)
+            make.top.equalTo(searchTextField.snp.bottom).offset(-32)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(8)
         }
