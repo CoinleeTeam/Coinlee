@@ -10,6 +10,16 @@ import UIKit
 final class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
+    override var bounds: CGRect {
+        didSet {
+            if shadowType == .bottom {
+                createBasicContainerWithBottomShadow()
+            } else if shadowType == .rounded {
+                createBasicContainerWithRoundShadow()
+            }
+        }
+    }
+    
     // MARK: - Button setup
     /// Configures button with provided arguments
     func addConfiguration(baseForegroundColor: UIColor? = nil,
@@ -20,6 +30,7 @@ final class ConfigurableButton: UIButton {
                           rightImage: UIImage? = nil,
                           isFixedRightImagePosition: Bool = false,
                           rightImagePadding: CGFloat = 0,
+                          contentLeadingInset: CGFloat = 0,
                           contentEdgesInset: CGFloat = 0) {
         
         // Update Handler: called each time when configuration is about to be updated
@@ -41,7 +52,6 @@ final class ConfigurableButton: UIButton {
                 
                 // apply changes
                 self.rightImageView?.alpha = highlitedElementsAlphaValue
-                self.layer.backgroundColor = self.layer.backgroundColor?.copy(alpha: 0.8)
                 self.configuration = newConfiguration
                 
             } else if state == .normal {
@@ -49,7 +59,6 @@ final class ConfigurableButton: UIButton {
                                   duration: 0.25,
                                   options: .transitionCrossDissolve) {
                     self.configuration = newConfiguration
-                    self.layer.backgroundColor = self.layer.backgroundColor?.copy(alpha: 1)
                     self.rightImageView?.alpha = 1
                 }
             }
@@ -83,7 +92,7 @@ final class ConfigurableButton: UIButton {
         // content settings
         contentHorizontalAlignment = isFixedRightImagePosition ? .leading : .center
         defaultConfiguration.contentInsets = NSDirectionalEdgeInsets(top: contentEdgesInset,
-                                                                     leading: contentEdgesInset,
+                                                                     leading: contentLeadingInset,
                                                                      bottom: contentEdgesInset,
                                                                      trailing: contentTrailingInset)
         defaultConfiguration.baseForegroundColor = baseForegroundColor

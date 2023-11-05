@@ -175,6 +175,7 @@ final class TransactionsView: UIView {
         searchButton.snp.makeConstraints { make in
             make.centerY.equalTo(walletButton.snp.centerY)
             make.trailing.equalToSuperview().inset(12)
+            make.leading.greaterThanOrEqualTo(walletButton.snp.trailing).offset(12)
         }
         
         topViewStack.snp.makeConstraints { make in

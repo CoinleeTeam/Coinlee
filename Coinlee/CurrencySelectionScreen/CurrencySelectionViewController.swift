@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CurrencySelectionScreenViewController: UIViewController {
+final class CurrencySelectionViewController: UIViewController {
     let viewModel: CurrencyTableViewViewModelType
     let currencySelectionView = CurrencySelectionView()
     
@@ -58,7 +58,7 @@ final class CurrencySelectionScreenViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension CurrencySelectionScreenViewController: UITableViewDataSource {
+extension CurrencySelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         toggleNoResultsView()
         return viewModel.numberOfRows(forSection: section)
@@ -75,14 +75,14 @@ extension CurrencySelectionScreenViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension CurrencySelectionScreenViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+extension CurrencySelectionViewController: UITableViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         currencySelectionView.searchTextField.resignFirstResponder()
     }
 }
 
 // MARK: - UITableViewDelegate: UITextFieldDelegate
-extension CurrencySelectionScreenViewController: UITextFieldDelegate {
+extension CurrencySelectionViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let searchedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? String()
         
@@ -114,7 +114,7 @@ extension CurrencySelectionScreenViewController: UITextFieldDelegate {
 }
 
 // MARK: - ClearTextFieldDelegate
-extension CurrencySelectionScreenViewController: ClearTextFieldDelegate {
+extension CurrencySelectionViewController: ClearTextFieldDelegate {
     func clearTextField(_ textField: UITextField) {
         updateCurrenciesList(withText: textField.text ?? String())
     }

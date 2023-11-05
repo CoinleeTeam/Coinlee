@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E66E0632AECF9A20029B807 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */; };
+		8E66E0662AECFBE80029B807 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0652AECFBE80029B807 /* NewTransactionView.swift */; };
+		8E66E06A2AECFC060029B807 /* NewTransactionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0692AECFC060029B807 /* NewTransactionViewViewModel.swift */; };
+		8E66E06C2AECFC1C0029B807 /* NewTransactionViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E06B2AECFC1C0029B807 /* NewTransactionViewViewModelType.swift */; };
+		8E66E0C52AEE58850029B807 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0C42AEE58850029B807 /* UIView.swift */; };
 		F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */; };
 		F5107EC12AE5712600B3BC34 /* WalletTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5107EC02AE5712600B3BC34 /* WalletTypesViewController.swift */; };
 		F5107EC32AE5727B00B3BC34 /* WalletTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5107EC22AE5727B00B3BC34 /* WalletTypesView.swift */; };
@@ -18,7 +23,7 @@
 		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
 		F546A4862AEC07B100459DF5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4852AEC07B100459DF5 /* String.swift */; };
 		F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4872AEC07D200459DF5 /* NoResultsView.swift */; };
-		F546A48D2AEC07D300459DF5 /* BasicContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4882AEC07D200459DF5 /* BasicContainerView.swift */; };
+		F546A48D2AEC07D300459DF5 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4882AEC07D200459DF5 /* ContainerView.swift */; };
 		F546A48E2AEC07D300459DF5 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48A2AEC07D200459DF5 /* CustomUITextField.swift */; };
 		F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */; };
 		F546A49A2AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4912AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift */; };
@@ -44,6 +49,7 @@
 		F564108B2A87852D00182050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F564108A2A87852D00182050 /* Assets.xcassets */; };
 		F564108E2A87852D00182050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F564108C2A87852D00182050 /* LaunchScreen.storyboard */; };
 		F56410972A87894F00182050 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F56410962A87894F00182050 /* .gitignore */; };
+		F56ACEEA2AF6945600F3110B /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56ACEE92AF6945600F3110B /* ScrollView.swift */; };
 		F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C12A99F0070075A44D /* TransactionsViewController.swift */; };
 		F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C32A99F0290075A44D /* TransactionsView.swift */; };
 		F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935C52A99F04B0075A44D /* TransactionsViewViewModel.swift */; };
@@ -51,6 +57,8 @@
 		F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57935CB2A9A028A0075A44D /* BottomCornerRoundedView.swift */; };
 		F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AEE2A87C43200E91AF5 /* Fonts.swift */; };
 		F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A40AF12A87C5E500E91AF5 /* UIColor.swift */; };
+		F5C96EC72AF6D83D00F07C87 /* NoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C96EC62AF6D83D00F07C87 /* NoteTextView.swift */; };
+		F5C96EC92AF6DD9400F07C87 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C96EC82AF6DD9400F07C87 /* ScrollableView.swift */; };
 		F5CB84F82ADC1BD40078BAA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5CB84FA2ADC1BD40078BAA0 /* Localizable.strings */; };
 		F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */; };
 		F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */; };
@@ -83,8 +91,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
-		C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		7CF879FA65C79F9E77BD771D /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
+		8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
+		8E66E0652AECFBE80029B807 /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		8E66E0692AECFC060029B807 /* NewTransactionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewViewModel.swift; sourceTree = "<group>"; };
+		8E66E06B2AECFC1C0029B807 /* NewTransactionViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewViewModelType.swift; sourceTree = "<group>"; };
+		8E66E0C42AEE58850029B807 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E05E155C9FB417E4AD642BD2 /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
 		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
 		F5107EC02AE5712600B3BC34 /* WalletTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTypesViewController.swift; sourceTree = "<group>"; };
 		F5107EC22AE5727B00B3BC34 /* WalletTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTypesView.swift; sourceTree = "<group>"; };
@@ -96,7 +109,7 @@
 		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F546A4852AEC07B100459DF5 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F546A4872AEC07D200459DF5 /* NoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
-		F546A4882AEC07D200459DF5 /* BasicContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicContainerView.swift; sourceTree = "<group>"; };
+		F546A4882AEC07D200459DF5 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		F546A48A2AEC07D200459DF5 /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
 		F546A4912AEC07DE00459DF5 /* CurrencyTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewViewModel.swift; sourceTree = "<group>"; };
@@ -123,8 +136,7 @@
 		F564108D2A87852D00182050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F564108F2A87852D00182050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56410962A87894F00182050 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F566818E2AEED530003D2629 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F566818F2AEED567003D2629 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F56ACEE92AF6945600F3110B /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		F57935C12A99F0070075A44D /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		F57935C32A99F0290075A44D /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		F57935C52A99F04B0075A44D /* TransactionsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewViewModel.swift; sourceTree = "<group>"; };
@@ -136,7 +148,10 @@
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F5A40AF12A87C5E500E91AF5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		F5CB84F52ADC19390078BAA0 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5AE18542AF7DD2A00A11550 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5AE18552AF7DD3100A11550 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5C96EC62AF6D83D00F07C87 /* NoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
+		F5C96EC82AF6DD9400F07C87 /* ScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
 		F5CB84F92ADC1BD40078BAA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +177,7 @@
 		F5F0429F2AEE97FF00AD6142 /* WalletType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletType.swift; sourceTree = "<group>"; };
 		F5F042A22AEEA8B000AD6142 /* BorderFreeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderFreeCellViewModel.swift; sourceTree = "<group>"; };
 		F5F042A42AEEA8B900AD6142 /* BorderFreeCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderFreeCellViewModelType.swift; sourceTree = "<group>"; };
+		F5FCB0802AF7E95600F239AB /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinlee.app; path = "/Users/vlad/Downloads/Coinlee copy 4/build/Debug-iphoneos/Coinlee.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,11 +191,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20BDB4AA13453CB1D781EC71 /* Pods */ = {
+		8E66E0642AECF9A70029B807 /* NewTransactionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */,
-				C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */,
+				8E66E0652AECFBE80029B807 /* NewTransactionView.swift */,
+				8E66E0622AECF9A20029B807 /* NewTransactionViewController.swift */,
+				8E66E0692AECFC060029B807 /* NewTransactionViewViewModel.swift */,
+				8E66E06B2AECFC1C0029B807 /* NewTransactionViewViewModelType.swift */,
+			);
+			path = NewTransactionScreen;
+			sourceTree = "<group>";
+		};
+		98A3953C7E0EB41870795967 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CF879FA65C79F9E77BD771D /* Pods-Coinlee.debug.xcconfig */,
+				E05E155C9FB417E4AD642BD2 /* Pods-Coinlee.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -203,8 +230,11 @@
 				F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */,
 				F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */,
 				F5E2518D2AF130F200987511 /* IconTitleCell.swift */,
-				F546A4882AEC07D200459DF5 /* BasicContainerView.swift */,
+				F546A4882AEC07D200459DF5 /* ContainerView.swift */,
 				F546A4872AEC07D200459DF5 /* NoResultsView.swift */,
+				F56ACEE92AF6945600F3110B /* ScrollView.swift */,
+				F5C96EC62AF6D83D00F07C87 /* NoteTextView.swift */,
+				F5C96EC82AF6DD9400F07C87 /* ScrollableView.swift */,
 				F546A4892AEC07D200459DF5 /* CustomUITextField */,
 				F5F042A12AEEA86200AD6142 /* BorderFreeCell */,
 			);
@@ -278,8 +308,7 @@
 			children = (
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
-				20BDB4AA13453CB1D781EC71 /* Pods */,
-				F5CB84F52ADC19390078BAA0 /* Coinlee.app */,
+				98A3953C7E0EB41870795967 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,6 +318,7 @@
 				F56410812A87852C00182050 /* AppDelegate.swift */,
 				F56410832A87852C00182050 /* SceneDelegate.swift */,
 				F5E251842AF1285A00987511 /* IconSelectionScreen */,
+				8E66E0642AECF9A70029B807 /* NewTransactionScreen */,
 				F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */,
 				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
@@ -364,6 +394,7 @@
 				F5A40AF12A87C5E500E91AF5 /* UIColor.swift */,
 				F53160072AA2509E00E5672F /* UIImage.swift */,
 				F5E3B7272AB8788600E2A352 /* Double.swift */,
+				8E66E0C42AEE58850029B807 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,11 +472,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56410922A87852D00182050 /* Build configuration list for PBXNativeTarget "Coinlee" */;
 			buildPhases = (
-				9B5B15F82E7E2EDCD1E9634E /* [CP] Check Pods Manifest.lock */,
+				2B89B99E24E223D602D4DB47 /* [CP] Check Pods Manifest.lock */,
 				F564107A2A87852C00182050 /* Sources */,
 				F564107B2A87852C00182050 /* Frameworks */,
 				F564107C2A87852C00182050 /* Resources */,
-				8702B7BC517BDE54294CB93E /* [CP] Embed Pods Frameworks */,
+				D85072DF528248293B393475 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,7 +484,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F5CB84F52ADC19390078BAA0 /* Coinlee.app */;
+			productReference = F5FCB0802AF7E95600F239AB /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -510,24 +541,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8702B7BC517BDE54294CB93E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B5B15F82E7E2EDCD1E9634E /* [CP] Check Pods Manifest.lock */ = {
+		2B89B99E24E223D602D4DB47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -549,6 +563,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D85072DF528248293B393475 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -566,6 +597,7 @@
 				F5E251922AF1367A00987511 /* IconCellViewModel.swift in Sources */,
 				F546A4A02AEC07DE00459DF5 /* CurrencyTableViewCell.swift in Sources */,
 				F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */,
+				F5C96EC72AF6D83D00F07C87 /* NoteTextView.swift in Sources */,
 				F546A49F2AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift in Sources */,
 				F5F042A52AEEA8B900AD6142 /* BorderFreeCellViewModelType.swift in Sources */,
 				F5107EC92AE5804500B3BC34 /* BorderFreeCell.swift in Sources */,
@@ -573,10 +605,13 @@
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift in Sources */,
 				F55802F32AB347F70056336D /* TransactionCellHeaderViewViewModel.swift in Sources */,
-				F546A48D2AEC07D300459DF5 /* BasicContainerView.swift in Sources */,
+				8E66E06A2AECFC060029B807 /* NewTransactionViewViewModel.swift in Sources */,
+				F546A48D2AEC07D300459DF5 /* ContainerView.swift in Sources */,
+				8E66E0632AECF9A20029B807 /* NewTransactionViewController.swift in Sources */,
 				F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */,
 				F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */,
 				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
+				F5C96EC92AF6DD9400F07C87 /* ScrollableView.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				F55802FB2AB348140056336D /* TransactionCellViewModelType.swift in Sources */,
 				F5E2518C2AF128A600987511 /* IconSelectionViewViewModelType.swift in Sources */,
@@ -597,10 +632,13 @@
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
+				8E66E06C2AECFC1C0029B807 /* NewTransactionViewViewModelType.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
 				F5E2518A2AF1289C00987511 /* IconSelectionViewViewModel.swift in Sources */,
+				8E66E0662AECFBE80029B807 /* NewTransactionView.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
+				8E66E0C52AEE58850029B807 /* UIView.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewViewModel.swift in Sources */,
 				F546A48E2AEC07D300459DF5 /* CustomUITextField.swift in Sources */,
 				F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */,
@@ -617,6 +655,7 @@
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
 				F5E251862AF1288E00987511 /* IconSelectionView.swift in Sources */,
 				F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */,
+				F56ACEEA2AF6945600F3110B /* ScrollView.swift in Sources */,
 				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewViewModel.swift in Sources */,
 				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,
@@ -639,8 +678,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F5CB84F92ADC1BD40078BAA0 /* en */,
-				F566818E2AEED530003D2629 /* pl */,
-				F566818F2AEED567003D2629 /* ru */,
+				F5AE18542AF7DD2A00A11550 /* ru */,
+				F5AE18552AF7DD3100A11550 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -770,7 +809,7 @@
 		};
 		F56410932A87852D00182050 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA76C1DF7B45F91C5A26472D /* Pods-Coinlee.debug.xcconfig */;
+			baseConfigurationReference = 7CF879FA65C79F9E77BD771D /* Pods-Coinlee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -804,7 +843,7 @@
 		};
 		F56410942A87852D00182050 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C94FCF443B96047E6EBC65DD /* Pods-Coinlee.release.xcconfig */;
+			baseConfigurationReference = E05E155C9FB417E4AD642BD2 /* Pods-Coinlee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

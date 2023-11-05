@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Coinlee
 
@@ -11,7 +11,29 @@
 "income_label" = "Income";
 "expense_label" = "Expense";
 
+<<<<<<< HEAD
 // MARK: No Result View
+=======
+// New Transaction View
+"income_transaction_type" = "Income";
+"expense_transaction_type" = "Expense";
+"amount_placeholder" = "Amount";
+"select_category_button" = "Select category";
+"save_transaction_button" = "Save transaction";
+"note_text_view_placeholder" = "Note...";
+
+// New Wallet View
+"name_label" = "Name";
+"icon_label" = "Icon";
+"balance_label" = "Balance";
+"currency_label" = "Currency";
+"type_label" = "Type";
+"wallet_name_text_field_placeholder" = "Wallet name";
+"select_type_button" = "Select type";
+"add_new_wallet_button" = "Add wallet";
+
+// No Result View
+>>>>>>> newTransactionScreen
 "search_placeholder" = "Search";
 "no_result_label" = "No results for";
 "try_a_new_search_label" = "Try a new search";
