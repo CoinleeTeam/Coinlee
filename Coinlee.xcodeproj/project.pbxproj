@@ -129,13 +129,11 @@
 		F5A40AED2A87C42300E91AF5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		F5A40AEE2A87C43200E91AF5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F5A40AF12A87C5E500E91AF5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F5AE18542AF7DD2A00A11550 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5AE18552AF7DD3100A11550 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5C96EC62AF6D83D00F07C87 /* NoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
 		F5C96EC82AF6DD9400F07C87 /* ScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
 		F5CB84F92ADC1BD40078BAA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F5CB84FB2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F5CB84FC2ADC1E5B0078BAA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F5CB84FD2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F5CB84FE2ADC1E6F0078BAA0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5E241232A8D296E00C7FAC5 /* WalletCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderView.swift; sourceTree = "<group>"; };
 		F5E241252A8D297400C7FAC5 /* WalletCellHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		F5E241272A8D297E00C7FAC5 /* WalletCellHeaderViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellHeaderViewViewModelType.swift; sourceTree = "<group>"; };
@@ -589,8 +587,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F564108D2A87852D00182050 /* Base */,
-				F5CB84FB2ADC1E5B0078BAA0 /* ru */,
-				F5CB84FD2ADC1E6F0078BAA0 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -599,8 +595,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F5CB84F92ADC1BD40078BAA0 /* en */,
-				F5CB84FC2ADC1E5B0078BAA0 /* ru */,
-				F5CB84FE2ADC1E6F0078BAA0 /* pl */,
+				F5AE18542AF7DD2A00A11550 /* ru */,
+				F5AE18552AF7DD3100A11550 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
