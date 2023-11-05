@@ -14,18 +14,20 @@
 // New Transaction View
 "income_transaction_type" = "Income";
 "expense_transaction_type" = "Expense";
-
-// Amount Text Field
 "amount_placeholder" = "Amount";
-
-// Select Category Button
 "select_category_button" = "Select category";
-
-// Save Transaction Button
 "save_transaction_button" = "Save transaction";
-
-// Note Text View Placeholder
 "note_text_view_placeholder" = "Note...";
+
+// New Wallet View
+"name_label" = "Name";
+"icon_label" = "Icon";
+"balance_label" = "Balance";
+"currency_label" = "Currency";
+"type_label" = "Type";
+"wallet_name_text_field_placeholder" = "Wallet name";
+"select_type_button" = "Select type";
+"add_new_wallet_button" = "Add wallet"; 
 
 // No Result View
 "search_placeholder" = "Search";

@@ -13,6 +13,16 @@ final class CustomUITextField: UITextField {
     var clearDelegate: ClearTextFieldDelegate?
     var maximumNumberOfSymbols = 0
     
+    override var bounds: CGRect {
+        didSet {
+            if shadowType == .bottom {
+                createBasicContainerWithBottomShadow()
+            } else if shadowType == .rounded {
+                createBasicContainerWithRoundShadow()
+            }
+        }
+    }
+    
     // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -103,6 +113,45 @@ final class CustomUITextField: UITextField {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clearButtonTapped))
         view.addGestureRecognizer(tapGestureRecognizer)
         view.isUserInteractionEnabled = true
+    }
+    
+    func applyAccountingNumberFormat(_ textField: UITextField, range: NSRange, string: String) -> Bool {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSeparator = CharacterConstants.dot
+        formatter.decimalSeparator = CharacterConstants.comma
+        
+        if let text = textField.text, !text.isEmpty && (string == CharacterConstants.dot || string == formatter.decimalSeparator) {
+            let newText = (text as NSString).replacingCharacters(in: range, with: CharacterConstants.comma)
+            if newText.components(separatedBy: formatter.decimalSeparator).count <= 2 {
+                textField.text = newText
+            }
+            return false
+        }
+        
+        if let textWithoutGroupingSeparator = textField.text?.replacingOccurrences(of: formatter.groupingSeparator, with: "") {
+            var totalTextWithoutGroupingSeparators = textWithoutGroupingSeparator + string
+            
+            if string.isEmpty {
+                totalTextWithoutGroupingSeparators.removeLast()
+                
+                if totalTextWithoutGroupingSeparators.count == 0 {
+                    textField.text = String()
+                }
+            }
+            
+            if let numberWithoutGroupingSeparator = formatter.number(from: totalTextWithoutGroupingSeparators),
+               let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
+            
+                if totalTextWithoutGroupingSeparators.hasSuffix("\(CharacterConstants.comma)\(String(0))") {
+                    textField.text = formattedText + CharacterConstants.comma + String(0)
+                } else {
+                    textField.text = formattedText
+                }
+            }
+        }
+        return false
     }
     
     @objc private func clearButtonTapped() {

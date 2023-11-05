@@ -7,56 +7,43 @@
 
 import UIKit
 
-final class NewTransactionView: UIView {
+final class NewTransactionView: ScrollableView {
     // MARK: TransactionTypeButtonsStack
     let incomeTransactionTypeButton = UIButton()
     let expenseTransactionTypeButton = UIButton()
     private let transactionTypeButtonsStack = UIStackView()
-    private let transactionTypeButtonsContainerView = UIView()
+    let transactionTypeButtonsContainerView = ContainerView()
+    private let containerBackgroundLayer = CALayer()
     
     // MARK: MiddleStack
+    let middleStack = UIStackView()
     let amountTextField = CustomUITextField()
-    private let keyboardBar = UIToolbar()
     let categorySelectionButton = ConfigurableButton()
     let dateSelectionButton = ConfigurableButton()
     let walletSelectionButton = ConfigurableButton()
     // MARK: DateAndWalletSelectionButtonsStack
     private let dateAndWalletSelectionButtonsStack = UIStackView()
-    private let noteTextViewPlaceholder = UILabel()
-    let noteTextView = UITextView()
-    private let middleStack = UIStackView()
+    let noteTextView = NoteTextView()
     
     // MARK: SaveTransactionButton
     let saveTransactionButton = ConfigurableButton()
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        transactionTypeButtonsContainerView.createBasicContainerWithBottomShadow()
-        amountTextField.createBasicContainerWithBottomShadow()
-        categorySelectionButton.createBasicContainerWithBottomShadow()
-        dateSelectionButton.createBasicContainerWithBottomShadow()
-        walletSelectionButton.createBasicContainerWithBottomShadow()
-        noteTextView.createBasicContainerWithBottomShadow()
-        saveTransactionButton.createBasicContainerWithBottomShadow(viewBackgroundColor: .goldenrod)
-    }
     
     // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .paleFrost
-        
         setUpTransactionTypeButtons()
         configureTransactionTypeButtonsStack()
         setUpAmountTextField()
-        setUpSelectCategoryButton()
-        setUpDateSelectionButton()
-        setUpWalletSelectionButton()
-        configureDateAndWalletSelectionButtonsStack()
-        setUpNoteTextView()
+        setUpButtons()
         configureMiddleStack()
-        setUpSaveTransactionButton()
         addConstraints()
-        setSubviewFramesSizes()
+        
+        // ---------REMOVE---------
+        amountTextField.addCurrencyLabel(currencyCode: CurrencyCode.pln.rawValue)
+        categorySelectionButton.setTitle(NSLocalizedString("select_category_button", comment: "Select category"), for: .normal)
+        dateSelectionButton.setTitle("29 Maj 23", for: .normal)
+        walletSelectionButton.setTitle("Wallet binance usdt", for: .normal)
     }
     
     required init?(coder: NSCoder) {
@@ -64,11 +51,8 @@ final class NewTransactionView: UIView {
     }
     
     // MARK: - Delegates
-    func assignAmountTextFieldDelegates<T>(to delegate: T) where T: UITextFieldDelegate {
+    func assignSubviewsDelegates<T>(to delegate: T) where T: UITextFieldDelegate & UITextViewDelegate {
         amountTextField.delegate = delegate
-    }
-    
-    func assignNoteTextViewDelegates<T>(to delegate: T) where T: UITextViewDelegate {
         noteTextView.delegate = delegate
     }
     
@@ -87,78 +71,71 @@ final class NewTransactionView: UIView {
         expenseTransactionTypeButton.titleLabel?.font = incomeTransactionTypeButton.titleLabel?.font
         expenseTransactionTypeButton.layer.cornerRadius = incomeTransactionTypeButton.layer.cornerRadius
         expenseTransactionTypeButton.addTarget(self, action: #selector(transactionTypeButtonTapped(_:)), for: .touchUpInside)
+        
+        // transactionTypeButtonsContainerView
+        transactionTypeButtonsContainerView.layer.addSublayer(containerBackgroundLayer)
+        transactionTypeButtonsContainerView.shadowType = .bottom
+        transactionTypeButtonsContainerView.backgroundColor = .white
+        
+        // containerBackgroundLayer
+        containerBackgroundLayer.backgroundColor = UIColor.salmonPink.cgColor
+        containerBackgroundLayer.cornerRadius = 10
+        containerBackgroundLayer.frame = CGRect(x: 96.5, y: 6, width: 90.5, height: 38)
     }
     
     private func setUpAmountTextField() {
         amountTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.dollar.rawValue) ?? UIImage())
         amountTextField.placeholder = NSLocalizedString("amount_placeholder", comment: "Amount placeholder")
         amountTextField.keyboardType = .decimalPad
-        
-        // REMOVE
-        amountTextField.addCurrencyLabel(currencyCode: CurrencyCode.pln.rawValue)
-        // REMOVE
+        amountTextField.shadowType = .bottom
+        amountTextField.backgroundColor = .white
     }
     
-    private func setUpSelectCategoryButton() {
-        // REMOVE
-        categorySelectionButton.setTitle(NSLocalizedString("select_category_button", comment: "Select category"), for: .normal)
-        // REMOVE
-        
+    private func setUpButtons() {
+        // categorySelectionButton
         categorySelectionButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                                  titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
+                                                 leftImagePadding: 16,
                                                  rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
-                                                 rightImagePadding: 160)
-    }
-    
-    private func setUpDateSelectionButton() {
-        // REMOVE
-        dateSelectionButton.setTitle("29 Maj 23", for: .normal)
-        // REMOVE
-        
+                                                 isFixedRightImagePosition: true,
+                                                 rightImagePadding: 8,
+                                                 contentLeadingInset: 14)
+        categorySelectionButton.shadowType = .bottom
+        categorySelectionButton.backgroundColor = .white
+
+        // dateSelectionButton
         dateSelectionButton.setTitleColor(.charcoal, for: .normal)
         dateSelectionButton.titleLabel?.font = incomeTransactionTypeButton.titleLabel?.font
-        dateSelectionButton.layer.backgroundColor = UIColor.white.cgColor
+        dateSelectionButton.backgroundColor = .white
         
         dateSelectionButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                              leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
                                              leftImageTintColor: .goldenrod,
                                              leftImagePadding: 8)
-    }
-    
-    private func setUpWalletSelectionButton() {
-        // REMOVE
-        walletSelectionButton.setTitle("Wallet", for: .normal)
-        // REMOVE
-        
+        dateSelectionButton.shadowType = .bottom
+        dateSelectionButton.backgroundColor = .white
+ 
+        // walletSelectionButton
         walletSelectionButton.titleLabel?.font = incomeTransactionTypeButton.titleLabel?.font
-        
         walletSelectionButton.addConfiguration(baseForegroundColor: .charcoal,
                                                titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                                leftImage: UIImage(named: Icon.Linear.walletTemplate.rawValue),
                                                leftImageTintColor: .goldenrod,
-                                               rightImage: UIImage(named: Icon.Linear.angleRight.rawValue))
-    }
-    
-    private func setUpSaveTransactionButton() {
+                                               leftImagePadding: 8,
+                                               rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                               isFixedRightImagePosition: true,
+                                               rightImagePadding: 8,
+                                               contentLeadingInset: 14)
+        walletSelectionButton.shadowType = .bottom
+        walletSelectionButton.backgroundColor = .white
+
+        // saveTransactionButton
         saveTransactionButton.setTitle(NSLocalizedString("save_transaction_button", comment: "Save transaction"), for: .normal)
-        saveTransactionButton.setTitleColor(.charcoal, for: .normal)
-        saveTransactionButton.titleLabel?.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
-        saveTransactionButton.addConfiguration()
-    }
-    
-    private func setUpNoteTextView() {
-        noteTextViewPlaceholder.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
-        noteTextViewPlaceholder.textColor = .battleshipGrey
-        noteTextViewPlaceholder.text = NSLocalizedString("note_text_view_placeholder", comment: "Note Text View Placeholder")
-        
-        noteTextView.layer.cornerRadius = 15
-        noteTextView.textColor = .charcoal
-        noteTextView.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
-        noteTextView.textContainerInset = UIEdgeInsets(top: 12, left: 10, bottom: 0, right: 10)
-        noteTextView.showsVerticalScrollIndicator = false
-        noteTextView.layer.masksToBounds = false
-        noteTextView.textContainer.maximumNumberOfLines = 6
+        saveTransactionButton.addConfiguration(baseForegroundColor: .charcoal,
+                                               titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16))
+        saveTransactionButton.shadowType = .bottom
+        saveTransactionButton.backgroundColor = .goldenrod
     }
     
     private func configureTransactionTypeButtonsStack() {
@@ -170,16 +147,16 @@ final class NewTransactionView: UIView {
         transactionTypeButtonsStack.spacing = 0
     }
     
-    private func configureDateAndWalletSelectionButtonsStack() {
+    private func configureMiddleStack() {
+        // dateAndWalletSelectionButtonsStack
         dateAndWalletSelectionButtonsStack.addArrangedSubview(dateSelectionButton)
         dateAndWalletSelectionButtonsStack.addArrangedSubview(walletSelectionButton)
         
         dateAndWalletSelectionButtonsStack.axis = .horizontal
         dateAndWalletSelectionButtonsStack.alignment = .fill
         dateAndWalletSelectionButtonsStack.spacing = 8
-    }
-    
-    private func configureMiddleStack() {
+        
+        // middleStack
         middleStack.addArrangedSubview(amountTextField)
         middleStack.addArrangedSubview(categorySelectionButton)
         middleStack.addArrangedSubview(dateAndWalletSelectionButtonsStack)
@@ -189,69 +166,21 @@ final class NewTransactionView: UIView {
         middleStack.spacing = 12
     }
     
-    func addKeyboardToolBar(viewController: UIViewController, action: Selector) {
-        let doneButton = UIBarButtonItem()
-        doneButton.title = "Done"
-        doneButton.style = .plain
-        doneButton.target = viewController
-        doneButton.action = action
-        
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        keyboardBar.items = [space, doneButton]
-        keyboardBar.sizeToFit()
-        amountTextField.inputAccessoryView = keyboardBar
-        noteTextView.inputAccessoryView = keyboardBar
-    }
-    
-    private func setSubviewFramesSizes() {
-        guard let screenWidth = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.screen.bounds.width else { return }
-        
-        transactionTypeButtonsContainerView.frame = CGRect(x: 0, y: 0, width: screenWidth - 200, height: 45)
-        amountTextField.frame = CGRect(x: 0, y: 0, width: screenWidth - 48, height: 45)
-        categorySelectionButton.frame = CGRect(x: 0, y: 0, width: screenWidth - 48, height: 45)
-        dateSelectionButton.frame = CGRect(x: 0, y: 0, width: 140, height: 45)
-        
-        walletSelectionButton.frame = CGRect(x: 0, y: 0,
-                                             width: (screenWidth - dateAndWalletSelectionButtonsStack.spacing - dateSelectionButton.frame.width - 48),
-                                             height: 45)
-        
-        noteTextView.frame = CGRect(x: 0, y: 0, width: screenWidth - 48, height: 135)
-        saveTransactionButton.frame = CGRect(x: 0, y: 0, width: screenWidth - 200, height: 50)
-    }
-    
-    func togglePlaceholderVisibility(isTextPresent: Bool) {
-        if isTextPresent {
-            noteTextViewPlaceholder.isHidden = !noteTextViewPlaceholder.isHidden
-        }
-    }
-    
-    @objc func transactionTypeButtonTapped(_ sender: UIButton) {
-        if sender == incomeTransactionTypeButton {
-            incomeTransactionTypeButton.backgroundColor = .paleLimeGreen
-            expenseTransactionTypeButton.backgroundColor = .white
-        } else if sender == expenseTransactionTypeButton {
-            expenseTransactionTypeButton.backgroundColor = .salmonPink
-            incomeTransactionTypeButton.backgroundColor = .white
-        }
-    }
-    
     // MARK: - Constraints
     private func addConstraints() {
-        addSubview(transactionTypeButtonsContainerView)
-        addSubview(middleStack)
-        addSubview(saveTransactionButton)
-        
+        scrollView.addSubview(transactionTypeButtonsContainerView)
+        scrollView.addSubview(middleStack)
+        scrollView.addSubview(saveTransactionButton)
         transactionTypeButtonsContainerView.addSubview(transactionTypeButtonsStack)
-        noteTextView.addSubview(noteTextViewPlaceholder)
         
         transactionTypeButtonsStack.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalToSuperview().inset(6)
+            make.edges.equalToSuperview().inset(6)
         }
         
         transactionTypeButtonsContainerView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(8)
-            make.leading.trailing.equalToSuperview().inset(100)
+            make.top.equalToSuperview().inset(4)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(193)
             make.height.equalTo(50)
         }
         
@@ -271,12 +200,8 @@ final class NewTransactionView: UIView {
             make.height.equalTo(45)
         }
         
-        noteTextViewPlaceholder.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().inset(12)
-        }
-        
         noteTextView.snp.makeConstraints { make in
-            make.height.equalTo(135)
+            make.height.equalTo(133)
         }
         
         middleStack.snp.makeConstraints { make in
@@ -286,8 +211,25 @@ final class NewTransactionView: UIView {
         
         saveTransactionButton.snp.makeConstraints { make in
             make.height.equalTo(50)
-            make.leading.trailing.equalToSuperview().inset(100)
-            make.top.equalTo(middleStack.snp.bottom).offset(20)
+            make.width.equalTo(193)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(middleStack.snp.bottom).offset(30)
+        }
+    }
+    
+    // MARK: - Animations
+    private func animateLayerMotion(x: CGFloat, color: CGColor) {
+        UIView.animate(withDuration: 0.5) {
+            self.containerBackgroundLayer.frame = CGRect(x: x, y: 6, width: 90.5, height: 38)
+            self.containerBackgroundLayer.backgroundColor = color
+        }
+    }
+    
+    @objc func transactionTypeButtonTapped(_ sender: UIButton) {
+        if sender == incomeTransactionTypeButton {
+            animateLayerMotion(x: 6, color: UIColor.paleLimeGreen.cgColor)
+        } else if sender == expenseTransactionTypeButton {
+            animateLayerMotion(x: 96.5, color: UIColor.salmonPink.cgColor)
         }
     }
 }

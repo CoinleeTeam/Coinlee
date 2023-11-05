@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol NewTransactionViewModelType: AnyObject {
+protocol NewTransactionViewViewModelType: AnyObject {
     
 }

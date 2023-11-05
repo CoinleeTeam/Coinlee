@@ -13,11 +13,6 @@ final class CurrencySelectionView: UIView {
     let currenciesTableView = UITableView(frame: CGRect(), style: .insetGrouped)
     let noResultsView = NoResultsView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        searchTextField.createBasicContainerWithRoundShadow(viewBackgroundColor: .snowWhite)
-    }
-    
     // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,9 +49,12 @@ final class CurrencySelectionView: UIView {
     private func setUpSearchTextField() {
         searchTextField.layer.borderColor = UIColor.paleFrost.cgColor
         searchTextField.layer.borderWidth = 1
+        searchTextField.shadowType = .rounded
+        searchTextField.backgroundColor = .snowWhite
         searchTextField.placeholder = NSLocalizedString("search_placeholder", comment: "")
         searchTextField.clearButtonMode = .whileEditing
         searchTextField.maximumNumberOfSymbols = 10
+        searchTextField.autocorrectionType = .no
         
         searchTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.magnifyingGlass.rawValue) ?? UIImage())
         searchTextField.addClearIcon()

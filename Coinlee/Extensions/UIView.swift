@@ -8,9 +8,33 @@
 import UIKit
 
 extension UIView {
+    enum ShadowType {
+        case bottom, rounded
+        case none
+    }
+    
+    var shadowType: ShadowType {
+        get {
+            switch layer.shadowRadius {
+            case 5: return .bottom
+            case 10: return .rounded
+            default: return .none
+            }
+        }
+        set(shadowType) {
+            switch shadowType {
+            case .bottom: layer.shadowRadius = 5
+            case .rounded: layer.shadowRadius = 10
+            case .none:
+                layer.shadowOpacity = 0
+                layer.shadowRadius = 0
+                layer.shadowPath = nil
+            }
+        }
+    }
+    
     /// Wraps a view inside a white rounded container with a bottom shadow.
-    func createBasicContainerWithBottomShadow(viewBackgroundColor: UIColor = .white) {
-        backgroundColor = viewBackgroundColor
+    func createBasicContainerWithBottomShadow() {
         layer.cornerRadius = 15
         
         layer.shadowRadius = 5
@@ -19,8 +43,7 @@ extension UIView {
     }
     
     /// Wraps a view inside a white rounded container with a round shadow.
-    func createBasicContainerWithRoundShadow(viewBackgroundColor: UIColor = .white) {
-        backgroundColor = viewBackgroundColor
+    func createBasicContainerWithRoundShadow() {
         layer.cornerRadius = 15
         
         layer.shadowRadius = 10

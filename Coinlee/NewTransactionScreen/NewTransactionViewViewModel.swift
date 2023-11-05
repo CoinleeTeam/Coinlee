@@ -7,6 +7,6 @@
 
 import UIKit
 
-final class NewTransactionViewModel: NewTransactionViewModelType {
+final class NewTransactionViewViewModel: NewTransactionViewViewModelType {
     
 }

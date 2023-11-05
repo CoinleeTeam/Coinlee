@@ -10,22 +10,17 @@ import UIKit
 class ConfigurableButton: UIButton {
     var rightImageView: UIImageView?
     
-    // MARK: - Button setup
-    private func setUpRightImageView(image: UIImage?, tintColor: UIColor?, imagePadding: CGFloat) {
-        rightImageView = UIImageView(image: image)
-        guard let rightImageView = rightImageView,
-              let titleLabel = titleLabel
-        else { return }
-        rightImageView.tintColor = tintColor
-            titleLabel.addSubview(rightImageView)
-        if rightImageView.constraints.isEmpty {
-            rightImageView.snp.makeConstraints { make in
-                make.centerY.equalToSuperview()
-                make.leading.equalTo(titleLabel.snp.trailing).offset(imagePadding)
+    override var bounds: CGRect {
+        didSet {
+            if shadowType == .bottom {
+                createBasicContainerWithBottomShadow()
+            } else if shadowType == .rounded {
+                createBasicContainerWithRoundShadow()
             }
         }
     }
     
+    // MARK: - Button setup
     /// Configures button with provided arguments
     func addConfiguration(baseForegroundColor: UIColor? = nil,
                           titleFont: UIFont? = nil,
@@ -33,7 +28,9 @@ class ConfigurableButton: UIButton {
                           leftImageTintColor: UIColor? = nil,
                           leftImagePadding: CGFloat = 0,
                           rightImage: UIImage? = nil,
+                          isFixedRightImagePosition: Bool = false,
                           rightImagePadding: CGFloat = 0,
+                          contentLeadingInset: CGFloat = 0,
                           contentEdgesInset: CGFloat = 0) {
         
         // Update Handler: called each time when configuration is about to be updated
@@ -55,7 +52,6 @@ class ConfigurableButton: UIButton {
                 
                 // apply changes
                 self.rightImageView?.alpha = highlitedElementsAlphaValue
-                self.layer.backgroundColor = self.layer.backgroundColor?.copy(alpha: 0.8)
                 self.configuration = newConfiguration
                 
             } else if state == .normal {
@@ -63,7 +59,6 @@ class ConfigurableButton: UIButton {
                                   duration: 0.25,
                                   options: .transitionCrossDissolve) {
                     self.configuration = newConfiguration
-                    self.layer.backgroundColor = self.layer.backgroundColor?.copy(alpha: 1)
                     self.rightImageView?.alpha = 1
                 }
             }
@@ -76,15 +71,28 @@ class ConfigurableButton: UIButton {
         if rightImage == nil {
             rightImageView = nil
         } else {
-            setUpRightImageView(image: rightImage, tintColor: baseForegroundColor, imagePadding: rightImagePadding)
-            if let rightImageView = rightImageView {
-                contentTrailingInset += rightImageView.frame.width
+            rightImageView = UIImageView(image: rightImage)
+            guard let rightImageView = rightImageView, let titleLabel = titleLabel else { return }
+            let rightImageSuperview = isFixedRightImagePosition ? self : titleLabel
+            rightImageView.tintColor = baseForegroundColor
+            rightImageSuperview.addSubview(rightImageView)
+            
+            rightImageView.snp.makeConstraints { make in
+                make.centerY.equalToSuperview()
+                if isFixedRightImagePosition {
+                    make.trailing.equalToSuperview().inset(rightImagePadding)
+                } else {
+                    make.leading.equalTo(titleLabel.snp.trailing).offset(rightImagePadding)
+                }
             }
+            
+            contentTrailingInset += rightImageView.frame.width
         }
         
         // content settings
+        contentHorizontalAlignment = isFixedRightImagePosition ? .leading : .center
         defaultConfiguration.contentInsets = NSDirectionalEdgeInsets(top: contentEdgesInset,
-                                                                     leading: contentEdgesInset,
+                                                                     leading: contentLeadingInset,
                                                                      bottom: contentEdgesInset,
                                                                      trailing: contentTrailingInset)
         defaultConfiguration.baseForegroundColor = baseForegroundColor
@@ -95,6 +103,7 @@ class ConfigurableButton: UIButton {
             outgoingContainer.font = titleFont
             return outgoingContainer
         }
+        defaultConfiguration.titleLineBreakMode = .byTruncatingTail
         
         // leftImageView settings
         setImage(leftImage, for: .normal)
