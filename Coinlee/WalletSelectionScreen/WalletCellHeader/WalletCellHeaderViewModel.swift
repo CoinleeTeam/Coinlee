@@ -1,5 +1,5 @@
 //
-//  WalletCellHeaderViewViewModel.swift
+//  WalletCellHeaderViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 16/08/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WalletCellHeaderViewViewModel: WalletCellHeaderViewViewModelType {
+final class WalletCellHeaderViewModel: WalletCellHeaderViewModelType {
     let walletType: WalletType
     
     init(walletType: WalletType) {

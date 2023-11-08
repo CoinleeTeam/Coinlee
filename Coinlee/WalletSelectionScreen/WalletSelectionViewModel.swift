@@ -1,5 +1,5 @@
 //
-//  WalletSelectionViewViewModel.swift
+//  WalletSelectionViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 15/08/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WalletSelectionViewViewModel: WalletSelectionViewViewModelType {
+final class WalletSelectionViewModel: WalletSelectionViewModelType {
     let array = [
         [
             Wallet(name: "Main Card", balance: 150.32999, currency: "PLN", icon: .cardsWallet, type: .debitCard, isActive: true),
@@ -38,8 +38,8 @@ final class WalletSelectionViewViewModel: WalletSelectionViewViewModelType {
         return WalletCellViewModel(wallet: array[indexPath.section][indexPath.row])
     }
     
-    func walletCellHeaderViewViewModel(forSection section: Int) -> WalletCellHeaderViewViewModelType? {
+    func walletCellHeaderViewViewModel(forSection section: Int) -> WalletCellHeaderViewModelType? {
         guard let walletType = array[section].first?.type else { return nil }
-        return WalletCellHeaderViewViewModel(walletType: walletType)
+        return WalletCellHeaderViewModel(walletType: walletType)
     }
 }

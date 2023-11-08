@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomUITextField: UITextField {
+final class TextField: UITextField {
     private let viewPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     private var textPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     var clearDelegate: ClearTextFieldDelegate?
@@ -33,13 +33,15 @@ final class CustomUITextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Overwritten methods
-        override func textRect(forBounds bounds: CGRect) -> CGRect {
-            bounds.inset(by: textPadding)
-        }
+    // MARK: - Overridden methods
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.inset(by: textPadding)
+    }
+    
     override func placeholderRect (forBounds bounds: CGRect) -> CGRect {
         bounds.inset(by: textPadding)
     }
+    
     override func editingRect (forBounds bounds: CGRect) -> CGRect {
         bounds.inset(by: textPadding)
     }
@@ -74,7 +76,8 @@ final class CustomUITextField: UITextField {
         return attributedPlaceholder
     }
     
-    func addLeftIcon(icon: UIImage) {
+    func addLeftIcon(icon: UIImage?) {
+        guard let icon = icon else { return }
         textPadding.left = 48
         
         let leftIcon = UIImageView(image: icon)
@@ -96,11 +99,11 @@ final class CustomUITextField: UITextField {
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
-    func addCurrencyLabel(currencyCode: String) {
+    func addCurrencyLabel(currency: Currency) {
         textPadding.right = 48
         
         let currencyLabel = UILabel()
-        currencyLabel.text = "| \(currencyCode)"
+        currencyLabel.text = "| \(currency.code.rawValue)"
         currencyLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
         currencyLabel.textColor = .battleshipGrey
         
@@ -116,42 +119,33 @@ final class CustomUITextField: UITextField {
     }
     
     func applyAccountingNumberFormat(_ textField: UITextField, range: NSRange, string: String) -> Bool {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
-        formatter.groupingSeparator = CharacterConstants.dot
-        formatter.decimalSeparator = CharacterConstants.comma
-        
-        if let text = textField.text, !text.isEmpty && (string == CharacterConstants.dot || string == formatter.decimalSeparator) {
-            let newText = (text as NSString).replacingCharacters(in: range, with: CharacterConstants.comma)
-            if newText.components(separatedBy: formatter.decimalSeparator).count <= 2 {
-                textField.text = newText
-            }
-            return false
+        guard let textFieldText = textField.text else { return false }
+        let formatter = AccountingNumberFormatter()
+        let newText = (textFieldText as NSString).replacingCharacters(in: range, with: string)
+        let newTextWithoutGroupingSeparators = newText.replacingOccurrences(of: formatter.groupingSeparator, with: String())
+    
+        if !textFieldText.isEmpty &&
+            string == formatter.decimalSeparator &&
+            newText.components(separatedBy: formatter.decimalSeparator).count < 3 {
+            return true
         }
-        
-        if let textWithoutGroupingSeparator = textField.text?.replacingOccurrences(of: formatter.groupingSeparator, with: "") {
-            var totalTextWithoutGroupingSeparators = textWithoutGroupingSeparator + string
-            
-            if string.isEmpty {
-                totalTextWithoutGroupingSeparators.removeLast()
-                
-                if totalTextWithoutGroupingSeparators.count == 0 {
-                    textField.text = String()
-                }
-            }
-            
-            if let numberWithoutGroupingSeparator = formatter.number(from: totalTextWithoutGroupingSeparators),
-               let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
-            
-                if totalTextWithoutGroupingSeparators.hasSuffix("\(CharacterConstants.comma)\(String(0))") {
-                    textField.text = formattedText + CharacterConstants.comma + String(0)
-                } else {
-                    textField.text = formattedText
-                }
+    
+        if let numberWithoutGroupingSeparator = formatter.number(from: newTextWithoutGroupingSeparators),
+           let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
+            if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.exactZero(separator: formatter.decimalSeparator)) {
+                textField.text = formattedText + formatter.decimalSeparator + String(0)
+    
+            } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.twoOrThreeZeros(separator: formatter.decimalSeparator)) {
+                textField.text = formattedText + formatter.decimalSeparator + String(0) + String(0)
+    
+            } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.zeroAtEnd(separator: formatter.decimalSeparator)) {
+                textField.text = formattedText + String(0)
+    
+            } else  {
+                textField.text = formattedText
             }
         }
-        return false
+        return newText.isEmpty ? true : false
     }
     
     @objc private func clearButtonTapped() {

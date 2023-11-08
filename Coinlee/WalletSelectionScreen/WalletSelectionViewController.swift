@@ -8,11 +8,11 @@
 import UIKit
 
 final class WalletSelectionViewController: UIViewController {
-    let viewModel: WalletSelectionViewViewModelType
+    let viewModel: WalletSelectionViewModelType
     let walletSelectionView = WalletSelectionView()
     
     // MARK: - Init
-    init(viewModel: WalletSelectionViewViewModelType) {
+    init(viewModel: WalletSelectionViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

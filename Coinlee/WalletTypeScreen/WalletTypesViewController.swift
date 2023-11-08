@@ -9,10 +9,10 @@ import UIKit
 
 final class WalletTypesViewController: UIViewController {
     let walletTypesView = WalletTypesView()
-    let viewModel: WalletTypesViewViewModelType
+    let viewModel: WalletTypesViewModelType
     
     // MARK: - Init
-    init(viewModel: WalletTypesViewViewModelType) {
+    init(viewModel: WalletTypesViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

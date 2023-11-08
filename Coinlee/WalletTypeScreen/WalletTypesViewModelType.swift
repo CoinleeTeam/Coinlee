@@ -1,5 +1,5 @@
 //
-//  WalletTypesViewViewModelType.swift
+//  WalletTypesViewModelType.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 22/10/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol WalletTypesViewViewModelType: AnyObject {
+protocol WalletTypesViewModelType: AnyObject {
     var walletTypes: [WalletType] { get }
     
     func numberOfSections() -> Int

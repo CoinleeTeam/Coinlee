@@ -1,5 +1,5 @@
 //
-//  IconSelectionViewViewModel.swift
+//  IconSelectionViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 31/10/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class IconSelectionViewViewModel: IconSelectionViewViewModelType {
+final class IconSelectionViewModel: IconSelectionViewModelType {
     let icons = Icon.Wallet.allCases
     
     // MARK: - UICollectionViewDataSource data

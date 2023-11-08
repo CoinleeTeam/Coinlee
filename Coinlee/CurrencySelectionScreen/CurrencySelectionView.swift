@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class CurrencySelectionView: UIView {
-    let searchTextField = CustomUITextField()
+    let searchTextField = TextField()
     let currenciesTableView = UITableView(frame: CGRect(), style: .insetGrouped)
     let noResultsView = NoResultsView()
     

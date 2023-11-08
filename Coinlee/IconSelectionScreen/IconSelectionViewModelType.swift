@@ -1,5 +1,5 @@
 //
-//  IconSelectionViewViewModelType.swift
+//  IconSelectionViewModelType.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 31/10/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol IconSelectionViewViewModelType: AnyObject {
+protocol IconSelectionViewModelType: AnyObject {
     var icons: [Icon.Wallet] { get }
     
     func numberOfSections() -> Int

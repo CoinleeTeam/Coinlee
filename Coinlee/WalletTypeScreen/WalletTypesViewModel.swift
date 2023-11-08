@@ -1,5 +1,5 @@
 //
-//  WalletTypesViewViewModel.swift
+//  WalletTypesViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 22/10/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WalletTypesViewViewModel: WalletTypesViewViewModelType {
+final class WalletTypesViewModel: WalletTypesViewModelType {
     let walletTypes = WalletType.allCases
     var selectedType: WalletType?
     

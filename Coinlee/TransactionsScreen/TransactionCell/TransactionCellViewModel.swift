@@ -12,7 +12,7 @@ final class TransactionCellViewModel: TransactionCellViewModelType {
     
     // MARK: Computed properties
     var balanceText: String {
-        transaction.sum.currencyFormatted() + CharacterConstants.whitespace + transaction.currency
+        transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency
     }
     
     // MARK: - Init

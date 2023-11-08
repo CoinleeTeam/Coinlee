@@ -72,13 +72,13 @@ final class TransactionsView: UIView {
                                       leftImagePadding: 6,
                                       rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
                                       rightImagePadding: 4,
-                                      contentEdgesInset: 4)
+                                      contentEdgesInsets: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
         
         // SearchButton
         topView.addSubview(searchButton)
         searchButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.magnifyingGlass.rawValue),
                                       leftImageTintColor: .white,
-                                      contentEdgesInset: 8)
+                                      contentEdgesInsets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
     
     private func setUpTopViewStack() {
@@ -130,7 +130,7 @@ final class TransactionsView: UIView {
         currentMonthViewStack.addArrangedSubview(previousMonthButton)
         previousMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleLeft.rawValue),
                                              leftImageTintColor: .charcoal,
-                                             contentEdgesInset: 2)
+                                             contentEdgesInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
         
         // CurrentMonthButton
         currentMonthViewStack.addArrangedSubview(currentMonthButton)
@@ -139,13 +139,13 @@ final class TransactionsView: UIView {
                                             leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
                                             leftImageTintColor: .goldenrod,
                                             leftImagePadding: 8,
-                                            contentEdgesInset: 8)
+                                            contentEdgesInsets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         
         // NextMonthButton
         currentMonthViewStack.addArrangedSubview(nextMonthButton)
         nextMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleRight.rawValue),
                                          leftImageTintColor: .charcoal,
-                                         contentEdgesInset: 2)
+                                         contentEdgesInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
     }
     
     private func setUpTransactionsCollectionView() {

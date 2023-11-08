@@ -12,7 +12,7 @@ final class WalletCellHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "WalletCellHeaderView"
     
     let walletTypeLabel = UILabel()
-    var viewModel: WalletCellHeaderViewViewModelType? {
+    var viewModel: WalletCellHeaderViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             walletTypeLabel.text = NSLocalizedString(viewModel.walletType.rawValue, comment: "wallet type")

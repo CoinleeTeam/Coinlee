@@ -23,8 +23,8 @@ final class IncomeExpenseStaticCell: UICollectionViewCell {
     var viewModel: IncomeExpenseStaticCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            incomeLabel.text = viewModel.incomeAmount.currencyFormatted()
-            expenseLabel.text = CharacterConstants.minusSign + viewModel.expenseAmount.currencyFormatted()
+            incomeLabel.text = viewModel.incomeAmount.accountingFormatted()
+            expenseLabel.text = CharacterConstants.minusSign + viewModel.expenseAmount.accountingFormatted()
         }
     }
     

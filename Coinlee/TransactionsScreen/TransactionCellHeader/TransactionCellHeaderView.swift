@@ -19,13 +19,13 @@ final class TransactionCellHeaderView: UICollectionReusableView {
     let monthAndYearLabel = UILabel()
     let balanceLabel = UILabel()
     
-    var viewModel: TransactionCellHeaderViewViewModelType? {
+    var viewModel: TransactionCellHeaderViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             monthDayLabel.text = viewModel.monthDay
             weekDayLabel.text = viewModel.weekDay
             monthAndYearLabel.text = viewModel.monthAndYear
-            balanceLabel.text = viewModel.balance.currencyFormatted() + CharacterConstants.whitespace + viewModel.currency
+            balanceLabel.text = viewModel.balance.accountingFormatted() + CharacterConstants.whitespace + viewModel.currency
         }
     }
     
