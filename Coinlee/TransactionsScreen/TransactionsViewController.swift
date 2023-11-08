@@ -8,7 +8,7 @@
 import UIKit
 
 final class TransactionsViewController: UIViewController {
-    let viewModel: TransactionsViewViewModelType
+    let viewModel: TransactionsViewModelType
     let transactionsView = TransactionsView()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -16,7 +16,7 @@ final class TransactionsViewController: UIViewController {
     }
     
     // MARK: - Init
-    init(viewModel: TransactionsViewViewModelType) {
+    init(viewModel: TransactionsViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

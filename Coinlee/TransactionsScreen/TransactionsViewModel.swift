@@ -1,5 +1,5 @@
 //
-//  TransactionsViewViewModel.swift
+//  TransactionsViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 26/08/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TransactionsViewViewModel: TransactionsViewViewModelType {
+final class TransactionsViewModel: TransactionsViewModelType {
     var balanceAmount: Double
     var incomeAmount: Double
     var expenseAmount: Double
@@ -53,12 +53,12 @@ final class TransactionsViewViewModel: TransactionsViewViewModelType {
         return TransactionCellViewModel(transaction: transactionsArray[indexPath.section - 1][indexPath.row])
     }
     
-    func transactionCellHeaderViewViewModel(forSection section: Int) -> TransactionCellHeaderViewViewModelType? {
+    func transactionCellHeaderViewViewModel(forSection section: Int) -> TransactionCellHeaderViewModelType? {
         guard let firstCell = transactionsArray[section - 1].first else { return nil }
         var balance = 0.0
         transactionsArray[section - 1].forEach { transaction in
             balance += transaction.sum
         }
-        return TransactionCellHeaderViewViewModel(date: firstCell.date, balance: balance, currency: firstCell.currency)
+        return TransactionCellHeaderViewModel(date: firstCell.date, balance: balance, currency: firstCell.currency)
     }
 }

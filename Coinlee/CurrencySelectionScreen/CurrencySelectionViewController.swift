@@ -8,11 +8,11 @@
 import UIKit
 
 final class CurrencySelectionViewController: UIViewController {
-    let viewModel: CurrencyTableViewViewModelType
+    let viewModel: CurrencyTableViewModelType
     let currencySelectionView = CurrencySelectionView()
     
     // MARK: - Inits
-    init(viewModel: CurrencyTableViewViewModelType) {
+    init(viewModel: CurrencyTableViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -91,7 +91,7 @@ extension CurrencySelectionViewController: UITextFieldDelegate {
             updateCurrenciesList(withText: searchedText)
         }
         
-        guard let searchTextField = textField as? CustomUITextField else { return true }
+        guard let searchTextField = textField as? TextField else { return true }
         let maxNumberOfSymbols = searchTextField.maximumNumberOfSymbols
         
         if maxNumberOfSymbols > 0 && searchedText.count > maxNumberOfSymbols {

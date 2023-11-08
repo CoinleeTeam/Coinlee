@@ -8,11 +8,11 @@
 import UIKit
 
 final class IconSelectionViewController: UIViewController {
-    let viewModel: IconSelectionViewViewModelType
+    let viewModel: IconSelectionViewModelType
     let iconSelectionView = IconSelectionView()
     
     // MARK: - Init
-    init(viewModel: IconSelectionViewViewModel) {
+    init(viewModel: IconSelectionViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -1,5 +1,5 @@
 //
-//  CurrencyTableViewViewModel.swift
+//  CurrencyTableViewModel.swift
 //  Coinlee
 //
 //  Created by Valentyn Ponomarenko on 26/08/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CurrencyTableViewViewModel: CurrencyTableViewViewModelType {
+final class CurrencyTableViewModel: CurrencyTableViewModelType {
     let currencies = Currency.availableCurrencies()
     var filteredCurrencies = [Currency]()
     

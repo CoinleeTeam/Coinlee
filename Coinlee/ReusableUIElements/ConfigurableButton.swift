@@ -8,6 +8,11 @@
 import UIKit
 
 final class ConfigurableButton: UIButton {
+    enum RightImagePosition {
+        case fixed
+        case dynamic
+    }
+    
     var rightImageView: UIImageView?
     
     override var bounds: CGRect {
@@ -28,10 +33,9 @@ final class ConfigurableButton: UIButton {
                           leftImageTintColor: UIColor? = nil,
                           leftImagePadding: CGFloat = 0,
                           rightImage: UIImage? = nil,
-                          isFixedRightImagePosition: Bool = false,
+                          rightImagePosition: RightImagePosition = .dynamic,
                           rightImagePadding: CGFloat = 0,
-                          contentLeadingInset: CGFloat = 0,
-                          contentEdgesInset: CGFloat = 0) {
+                          contentEdgesInsets: UIEdgeInsets = .zero) {
         
         // Update Handler: called each time when configuration is about to be updated
         configurationUpdateHandler = { [weak self] button in
@@ -65,7 +69,7 @@ final class ConfigurableButton: UIButton {
         }
         
         var defaultConfiguration = UIButton.Configuration.plain()
-        var contentTrailingInset = contentEdgesInset + rightImagePadding
+        var contentTrailingInset = contentEdgesInsets.right + rightImagePadding
         
         // rightImageView settings
         if rightImage == nil {
@@ -73,15 +77,15 @@ final class ConfigurableButton: UIButton {
         } else {
             rightImageView = UIImageView(image: rightImage)
             guard let rightImageView = rightImageView, let titleLabel = titleLabel else { return }
-            let rightImageSuperview = isFixedRightImagePosition ? self : titleLabel
+            let rightImageSuperview = rightImagePosition == .fixed ? self : titleLabel
             rightImageView.tintColor = baseForegroundColor
             rightImageSuperview.addSubview(rightImageView)
             
             rightImageView.snp.makeConstraints { make in
                 make.centerY.equalToSuperview()
-                if isFixedRightImagePosition {
+                if rightImagePosition == .fixed {
                     make.trailing.equalToSuperview().inset(rightImagePadding)
-                } else {
+                } else if rightImagePosition == .dynamic {
                     make.leading.equalTo(titleLabel.snp.trailing).offset(rightImagePadding)
                 }
             }
@@ -90,10 +94,10 @@ final class ConfigurableButton: UIButton {
         }
         
         // content settings
-        contentHorizontalAlignment = isFixedRightImagePosition ? .leading : .center
-        defaultConfiguration.contentInsets = NSDirectionalEdgeInsets(top: contentEdgesInset,
-                                                                     leading: contentLeadingInset,
-                                                                     bottom: contentEdgesInset,
+        contentHorizontalAlignment = rightImagePosition == .fixed ? .leading : .center
+        defaultConfiguration.contentInsets = NSDirectionalEdgeInsets(top: contentEdgesInsets.top,
+                                                                     leading: contentEdgesInsets.left,
+                                                                     bottom: contentEdgesInsets.bottom,
                                                                      trailing: contentTrailingInset)
         defaultConfiguration.baseForegroundColor = baseForegroundColor
         

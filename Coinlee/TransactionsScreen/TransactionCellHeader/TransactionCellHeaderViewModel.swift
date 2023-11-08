@@ -1,5 +1,5 @@
 //
-//  TransactionCellHeaderViewViewModel.swift
+//  TransactionCellHeaderViewModel.swift
 //  Coinlee
 //
 //  Created by Vladyslav Petrenko on 14/09/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TransactionCellHeaderViewViewModel: TransactionCellHeaderViewViewModelType {
+final class TransactionCellHeaderViewModel: TransactionCellHeaderViewModelType {
     let date: Date
     let balance: Double
     let currency: String
