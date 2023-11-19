@@ -11,7 +11,7 @@ protocol TransactionsViewModelType: AnyObject {
     var balanceAmount: Double { get }
     var incomeAmount: Double { get }
     var expenseAmount: Double { get }
-    var transactionsArray: [[Transaction]] { get }
+    var transactions: [[Transaction]] { get }
     
     // MARK: UICollectionViewDataSource data
     func numberOfSections() -> Int
