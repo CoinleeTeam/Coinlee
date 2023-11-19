@@ -8,7 +8,7 @@
 import Foundation
 
 enum Icon {
-    enum Category: String, CaseIterable {
+    enum TransactionCategory: String, CaseIterable {
         case accomodation
         case billsUtilities
         case birthday
@@ -20,29 +20,20 @@ enum Icon {
         case children
         case clothing
         case courses
-        case education
         case electronics
-        case entertainment
         case entertainmentSubscriptions
         case events
-        case family
         case flights
-        case foodDining
         case footwear
         case freelance
         case fuel
         case games
-        case giftsDonations
         case groceries
-        case healthFitness
         case healthInsurance
         case hobbies
         case homeGoods
-        case housing
-        case income
         case interestRate
         case investment
-        case investments
         case maintenance
         case medicalExpenses
         case movies
@@ -57,17 +48,29 @@ enum Icon {
         case restaurant
         case salary
         case sales
-        case shoppingPurchases
         case sightseeing
         case specialOccasions
         case sport
         case subscriptions
         case taxi
-        case transportation
-        case travel
         case travelInsurance
         case tuition
         case workshop
+    }
+    
+    enum TranasctionCategoryGroup: String {
+        case foodDining
+        case transportation
+        case housing
+        case entertainment
+        case shoppingPurchases
+        case healthFitness
+        case travel
+        case education
+        case family
+        case giftsDonations
+        case investments
+        case income
     }
     
     enum Wallet: String, CaseIterable {
