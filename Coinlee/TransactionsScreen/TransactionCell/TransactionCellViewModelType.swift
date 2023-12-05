@@ -6,10 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol TransactionCellViewModelType: AnyObject {
-    var transaction: Transaction { get }
-    
-    // MARK: Computed properties
-    var balanceText: String { get }
+    var transaction: BehaviorSubject<Transaction> { get }
 }

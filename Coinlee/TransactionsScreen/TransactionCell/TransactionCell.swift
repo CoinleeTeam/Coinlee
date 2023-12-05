@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class TransactionCell: IconTitleCell {
     static let reuseIdentifier = "TransactionCell"
@@ -14,13 +15,11 @@ final class TransactionCell: IconTitleCell {
     let desctiptionLabel = UILabel()
     let sumLabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: TransactionCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            titleLabel.text = viewModel.transaction.category.title
-            iconImageView.image = UIImage(named: viewModel.transaction.category.iconName)
-            desctiptionLabel.text = viewModel.transaction.description
-            sumLabel.text = viewModel.balanceText
+        didSet {
+            subscribeToTransaction()
         }
     }
     
@@ -35,7 +34,19 @@ final class TransactionCell: IconTitleCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToTransaction() {
+        viewModel?.transaction
+            .subscribe { transaction in
+                self.titleLabel.text = transaction.category.title
+                self.iconImageView.image = UIImage(named: transaction.category.iconName)
+                self.desctiptionLabel.text = transaction.description
+                self.sumLabel.text = transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUpLabels() {
         // desctiptionLabel
         desctiptionLabel.font = UIFont(name: Fonts.Inter.regular.rawValue, size: 12)

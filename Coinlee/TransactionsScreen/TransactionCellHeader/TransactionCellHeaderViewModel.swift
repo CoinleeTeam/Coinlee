@@ -6,33 +6,30 @@
 //
 
 import Foundation
+import RxRelay
 
 final class TransactionCellHeaderViewModel: TransactionCellHeaderViewModelType {
-    let date: Date
-    let balance: Double
+    let date: BehaviorRelay<Date>
+    let balance: BehaviorRelay<Double>
     let currency: String
     
     // MARK: Computed properties
     var monthDay: String {
-        date.formatted(.dateTime.day())
-    }
-    
-    var month: String {
-        date.formatted(.dateTime.month())
+        date.value.formatted(.dateTime.day())
     }
     
     var weekDay: String {
-        date.formatted(.dateTime.weekday(.wide))
+        date.value.formatted(.dateTime.weekday(.wide))
     }
     
     var monthAndYear: String {
-        date.formatted(.dateTime.month(.wide)) + CharacterConstants.whitespace + date.formatted(.dateTime.year())
+        date.value.formatted(.dateTime.month(.wide)) + CharacterConstants.whitespace + date.value.formatted(.dateTime.year())
     }
     
     // MARK: - Init
     init(date: Date, balance: Double, currency: String) {
-        self.date = date
-        self.balance = balance
+        self.date = .init(value: date)
+        self.balance = .init(value: balance)
         self.currency = currency
     }
 }

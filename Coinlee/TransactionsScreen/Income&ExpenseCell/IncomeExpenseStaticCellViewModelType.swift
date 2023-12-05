@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol IncomeExpenseStaticCellViewModelType: AnyObject {
-    var incomeAmount: Double { get }
-    var expenseAmount: Double { get }
+    var incomeText: BehaviorSubject<String> { get }
+    var expenseText: BehaviorSubject<String> { get }
 }

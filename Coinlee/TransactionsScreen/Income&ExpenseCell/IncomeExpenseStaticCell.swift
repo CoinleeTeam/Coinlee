@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class IncomeExpenseStaticCell: UICollectionViewCell {
     static let reuseIdentifier = "IncomeExpenseStaticCell"
@@ -20,11 +22,11 @@ final class IncomeExpenseStaticCell: UICollectionViewCell {
     let incomeSublabel = UILabel()
     let expenseSublabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: IncomeExpenseStaticCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            incomeLabel.text = viewModel.incomeAmount.accountingFormatted()
-            expenseLabel.text = CharacterConstants.minusSign + viewModel.expenseAmount.accountingFormatted()
+        didSet {
+            bindIncomeExpenseToLabels()
         }
     }
     
@@ -41,7 +43,18 @@ final class IncomeExpenseStaticCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - View setup
+    // MARK: - Subscriptions
+    private func bindIncomeExpenseToLabels() {
+        viewModel?.incomeText
+            .bind(to: incomeLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel?.expenseText
+            .bind(to: expenseLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: View setup
     private func drawCenterLine() {
         let centerLineLayer = CALayer()
         centerLineLayer.frame = CGRect(x: frame.width / 2, y: -2, width: 1, height: 57)

@@ -107,7 +107,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C6AAAE231F9DAB38A6F0D73 /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4C663D2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewViewModelType.swift; sourceTree = "<group>"; };
 		8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModel.swift; sourceTree = "<group>"; };
 		8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModelType.swift; sourceTree = "<group>"; };
@@ -124,7 +123,8 @@
 		8E66E0D32AF7F6020029B807 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
 		8E66E0D42AF7F6020029B807 /* WalletDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
 		8E66E0D52AF7F6020029B807 /* WalletDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailViewModel.swift; sourceTree = "<group>"; };
-		C1CA34DB85438703535F1B47 /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		BDE2400F8EC1FA03BCAAAA3D /* Pods-Coinlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.release.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.release.xcconfig"; sourceTree = "<group>"; };
+		CD5206A6E89AC7F3AC2F806E /* Pods-Coinlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coinlee.debug.xcconfig"; path = "Target Support Files/Pods-Coinlee/Pods-Coinlee.debug.xcconfig"; sourceTree = "<group>"; };
 		F50A34CA2A9BAC9E00AC3631 /* ConfigurableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableButton.swift; sourceTree = "<group>"; };
 		F5107EC02AE5712600B3BC34 /* WalletTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTypesViewController.swift; sourceTree = "<group>"; };
 		F5107EC22AE5727B00B3BC34 /* WalletTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTypesView.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		F55802F62AB348080056336D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		F55802F82AB3480F0056336D /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
 		F55802FA2AB348140056336D /* TransactionCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModelType.swift; sourceTree = "<group>"; };
-		F55DE9C02AFBB53F009E2819 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56108172B1DC0F200534D86 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinlee.app; path = "/Users/vlad/Desktop/Coinlee/build/Debug-iphoneos/Coinlee.app"; sourceTree = "<absolute>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F564108A2A87852D00182050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,8 +282,8 @@
 		98A3953C7E0EB41870795967 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2C6AAAE231F9DAB38A6F0D73 /* Pods-Coinlee.debug.xcconfig */,
-				C1CA34DB85438703535F1B47 /* Pods-Coinlee.release.xcconfig */,
+				CD5206A6E89AC7F3AC2F806E /* Pods-Coinlee.debug.xcconfig */,
+				BDE2400F8EC1FA03BCAAAA3D /* Pods-Coinlee.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -384,7 +384,6 @@
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				98A3953C7E0EB41870795967 /* Pods */,
-				F55DE9C02AFBB53F009E2819 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,11 +568,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56410922A87852D00182050 /* Build configuration list for PBXNativeTarget "Coinlee" */;
 			buildPhases = (
-				05B602B46786963CBA3DE804 /* [CP] Check Pods Manifest.lock */,
+				EE6253196EB01AB7171224F9 /* [CP] Check Pods Manifest.lock */,
 				F564107A2A87852C00182050 /* Sources */,
 				F564107B2A87852C00182050 /* Frameworks */,
 				F564107C2A87852C00182050 /* Resources */,
-				C6B9506AAACD451497DCC1DA /* [CP] Embed Pods Frameworks */,
+				84E5B05995CB4D351C795146 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,7 +580,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F55DE9C02AFBB53F009E2819 /* Coinlee.app */;
+			productReference = F56108172B1DC0F200534D86 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -638,7 +637,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05B602B46786963CBA3DE804 /* [CP] Check Pods Manifest.lock */ = {
+		84E5B05995CB4D351C795146 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6253196EB01AB7171224F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -658,23 +674,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6B9506AAACD451497DCC1DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coinlee/Pods-Coinlee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -922,7 +921,7 @@
 		};
 		F56410932A87852D00182050 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C6AAAE231F9DAB38A6F0D73 /* Pods-Coinlee.debug.xcconfig */;
+			baseConfigurationReference = CD5206A6E89AC7F3AC2F806E /* Pods-Coinlee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -956,7 +955,7 @@
 		};
 		F56410942A87852D00182050 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1CA34DB85438703535F1B47 /* Pods-Coinlee.release.xcconfig */;
+			baseConfigurationReference = BDE2400F8EC1FA03BCAAAA3D /* Pods-Coinlee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

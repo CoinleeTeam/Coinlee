@@ -44,18 +44,11 @@ final class TransactionsView: UIView {
         walletButton.setTitle("Wallet", for: .normal)
         walletButton.setImage(UIImage(named: Icon.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                               for: .normal)
-        balanceAmountLabel.text = "3.500,25 PLN"
         currentMonthButton.setTitle("September 2023", for: .normal)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - CollectionView DataSource & Delegate
-    func assignTransactionsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
-        transactionsCollectionView.dataSource = delegate
-        transactionsCollectionView.delegate = delegate
     }
     
     // MARK: - Subviews' setup

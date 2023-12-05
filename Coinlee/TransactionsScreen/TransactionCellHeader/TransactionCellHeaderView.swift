@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class TransactionCellHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "TransactionCellHeaderView"
@@ -19,13 +20,12 @@ final class TransactionCellHeaderView: UICollectionReusableView {
     let monthAndYearLabel = UILabel()
     let balanceLabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: TransactionCellHeaderViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            monthDayLabel.text = viewModel.monthDay
-            weekDayLabel.text = viewModel.weekDay
-            monthAndYearLabel.text = viewModel.monthAndYear
-            balanceLabel.text = viewModel.balance.accountingFormatted() + CharacterConstants.whitespace + viewModel.currency
+        didSet {
+            subscribeToDate()
+            subscribeToBalance()
         }
     }
     
@@ -41,7 +41,29 @@ final class TransactionCellHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToDate() {
+        guard let viewModel = viewModel else { return }
+        viewModel.date
+            .subscribe { _ in
+                self.monthDayLabel.text = viewModel.monthDay
+                self.weekDayLabel.text = viewModel.weekDay
+                self.monthAndYearLabel.text = viewModel.monthAndYear
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToBalance() {
+        guard let viewModel = viewModel else { return }
+        viewModel.balance
+            .subscribe { balance in
+                let currency = viewModel.currency
+                self.balanceLabel.text = balance.accountingFormatted() + CharacterConstants.whitespace + currency
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUpLabels() {
         [monthDayLabel, weekDayLabel, monthAndYearLabel, balanceLabel].forEach { label in
             label.textAlignment = .center

@@ -6,16 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol TransactionsViewModelType: AnyObject {
-    var balanceAmount: Double { get }
-    var incomeAmount: Double { get }
-    var expenseAmount: Double { get }
-    var transactions: [[Transaction]] { get }
-    
-    // MARK: UICollectionViewDataSource data
-    func numberOfSections() -> Int
-    func numberOfTransactions(inSection section: Int) -> Int
+    var balanceText: BehaviorSubject<String> { get }
+    var transactions: BehaviorSubject<[SectionOfTransactions]> { get }
     
     // MARK: ViewModels
     func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType?

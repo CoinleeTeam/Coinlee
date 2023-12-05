@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 final class TransactionsViewModel: TransactionsViewModelType {
-    var balanceAmount: Double
-    var incomeAmount: Double
-    var expenseAmount: Double
-    var transactions: [[Transaction]] = [
+    var balanceText = BehaviorSubject<String>(value: CharacterConstants.twoHyphens)
+    var transactions = BehaviorSubject<[SectionOfTransactions]>(value: [SectionOfTransactions()])
+    
+    private var incomeText: String = CharacterConstants.twoHyphens
+    private var expenseText: String = CharacterConstants.twoHyphens
+    
+    let fetchedTransactions: [[Transaction]]  = [
         [
             Transaction(date: .now, sum: 130.52, description: "Some income", category: Subcategory(iconName: Icon.TransactionCategory.workshop.rawValue, title: "Investment"), currency: "PLN"),
             Transaction(date: .now, sum: -20, description: "Pivo", category: Subcategory(iconName: Icon.TranasctionCategoryGroup.investments.rawValue, title: "Pivo category"), currency: "PLN")
@@ -29,34 +33,57 @@ final class TransactionsViewModel: TransactionsViewModelType {
     ]
     
     // MARK: - Init
-    init(balanceAmount: Double, incomeAmount: Double, expenseAmount: Double) {
-        self.balanceAmount = balanceAmount
-        self.incomeAmount = incomeAmount
-        self.expenseAmount = expenseAmount
+    init() {
+        // <<<<<<<<<<<<<<<<<<<<<<< TO BE DELETED ----------------------------------------
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            var transactions = [SectionOfTransactions()]
+            self.fetchedTransactions.forEach { groupedTransaction in
+                let transactionSection = SectionOfTransactions(items: groupedTransaction)
+                transactions.append(transactionSection)
+            }
+            
+            self.transactions.onNext(transactions)
+            self.incomeText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .income) ?? Double())) ?? CharacterConstants.twoHyphens
+            self.expenseText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .expense) ?? Double())) ?? CharacterConstants.twoHyphens
+            self.balanceText.onNext("2,425.35 PLN")
+        }
+        // ------------------------ TO BE DELETED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     }
     
-    // MARK: - UICollectionViewDataSource data
-    func numberOfSections() -> Int {
-        return transactions.count + 1
+    // MARK: - Calculations
+    private func sumUpTransactions(ofTransactionType transactionType: TransactionType) -> Double? {
+        guard let sectionsOfTranscations = try? transactions.value() else { return nil }
+        var flattenTransactions: [Transaction] = []
+        sectionsOfTranscations.forEach { sectionOfTransaction in
+            flattenTransactions.append(contentsOf: sectionOfTransaction.items)
+        }
+        
+        var result: Decimal = 0.0
+        flattenTransactions.forEach { transaction in
+            if transaction.sum > 0 && transactionType == .income {
+                result += Decimal(transaction.sum)
+            } else if transaction.sum < 0 && transactionType == .expense {
+                result += Decimal(transaction.sum)
+            }
+        }
+        
+        return NSDecimalNumber(decimal: result).doubleValue
     }
-    
-    func numberOfTransactions(inSection section: Int) -> Int {
-        return transactions[section - 1].count
-    }
-    
+        
     // MARK: ViewModels
     func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType? {
-        return IncomeExpenseStaticCellViewModel(incomeAmount: incomeAmount, expenseAmount: expenseAmount)
+        return IncomeExpenseStaticCellViewModel(incomeText: incomeText, expenseText: expenseText)
     }
     
     func transactionCellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
-        return TransactionCellViewModel(transaction: transactions[indexPath.section - 1][indexPath.row])
+        guard let transaction = try? transactions.value()[indexPath.section].items[indexPath.row] else { return nil }
+        return TransactionCellViewModel(transaction: transaction)
     }
     
     func transactionCellHeaderViewViewModel(forSection section: Int) -> TransactionCellHeaderViewModelType? {
-        guard let firstCell = transactions[section - 1].first else { return nil }
+        guard let firstCell = try? transactions.value()[section].items.first else { return nil }
         var balance = 0.0
-        transactions[section - 1].forEach { transaction in
+        try? transactions.value()[section].items.forEach { transaction in
             balance += transaction.sum
         }
         return TransactionCellHeaderViewModel(date: firstCell.date, balance: balance, currency: firstCell.currency)
