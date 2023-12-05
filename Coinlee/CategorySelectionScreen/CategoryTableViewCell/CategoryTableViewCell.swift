@@ -17,8 +17,8 @@ final class CategoryTableViewCell: UITableViewCell {
     weak var viewModel: CategoryTableViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            categoryNameLabel.text = NSLocalizedString(viewModel.categoryName, comment: "Category name")
-            categoryIconImageView.image = UIImage(named: viewModel.categoryName)
+            categoryNameLabel.text = viewModel.transactionCategory.localizedName
+            categoryIconImageView.image = UIImage(named: viewModel.transactionCategory.rawValue)
         }
     }
     

@@ -12,7 +12,7 @@ final class WalletCellViewModel: WalletCellViewModelType {
     
     // MARK: Computed properties
     var balanceText: String {
-        wallet.balance.accountingFormatted() + CharacterConstants.whitespace + wallet.currency
+        wallet.balance.accountingFormatted() + CharacterConstants.whitespace + wallet.currency.code
     }
     
     // MARK: - Init

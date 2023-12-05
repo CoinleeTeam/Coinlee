@@ -9,10 +9,10 @@ import Foundation
 import RxSwift
 
 final class TransactionCellViewModel: TransactionCellViewModelType {
-    let transaction: BehaviorSubject<Transaction>
+    let transaction: Observable<Transaction>
     
     // MARK: - Init
     init(transaction: Transaction) {
-        self.transaction = .Observer(value: transaction)
+        self.transaction = .just(transaction)
     }
 }

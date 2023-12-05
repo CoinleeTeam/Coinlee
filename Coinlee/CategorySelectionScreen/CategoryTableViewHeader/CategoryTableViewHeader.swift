@@ -24,8 +24,8 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
     weak var viewModel: CategoryTableViewHeaderViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            iconImageView.image = UIImage(named: viewModel.categoryName)
-            titleLabel.text = NSLocalizedString(viewModel.categoryName, comment: "Category group name")
+            iconImageView.image = UIImage(named: viewModel.categoryGroup.rawValue)
+            titleLabel.text = viewModel.categoryGroup.localizedName
         }
     }
     
@@ -46,7 +46,7 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
         backgroundView?.backgroundColor = .paleFrost
         titleLabel.textColor = .charcoal
         titleLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
-        expansionAngleBracket.image = UIImage(named: Icon.Linear.expandAngle.rawValue)
+        expansionAngleBracket.image = UIImage(named: LinearIcon.expandAngle.rawValue)
         expansionAngleBracket.tintColor = .goldenrod
         applyRotation(to: expansionAngleBracket, angle: -90)
     }

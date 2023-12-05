@@ -8,6 +8,5 @@
 import Foundation
 
 protocol CurrencyTableViewCellViewModelType: AnyObject {
-    var currencyName: String { get }
-    var currencyCode: String { get }
+    var currency: Currency { get }
 }

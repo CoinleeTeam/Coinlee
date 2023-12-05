@@ -8,9 +8,9 @@
 import Foundation
 
 final class CategoryTableViewCellViewModel: CategoryTableViewCellViewModelType {
-    let categoryName: String
-
-    init(subCategory: TransactionCategory) {
-        self.categoryName = subCategory.title
+    let transactionCategory: TransactionCategory
+    
+    init(transactionCategory: TransactionCategory) {
+        self.transactionCategory = transactionCategory
     }
 }

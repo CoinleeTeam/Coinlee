@@ -38,10 +38,10 @@ final class TransactionCell: IconTitleCell {
     private func subscribeToTransaction() {
         viewModel?.transaction
             .subscribe { transaction in
-                self.titleLabel.text = transaction.category.title
-                self.iconImageView.image = UIImage(named: transaction.category.iconName)
+                self.titleLabel.text = transaction.category.localizedName
+                self.iconImageView.image = UIImage(named: transaction.category.rawValue)
                 self.desctiptionLabel.text = transaction.description
-                self.sumLabel.text = transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency
+                self.sumLabel.text = transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency.code
             }
             .disposed(by: disposeBag)
     }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class CategoryTableViewViewModel: CategoryTableViewViewModelType {
-    let categories: [[TransactionCategory]]
+final class CategorySelectionViewModel: CategorySelectionViewModelType {
+    let categories: [SectionOfTransactionCategory]
     let categoriesTransactionType: TransactionType
     var collapsedSections: Set<Int>
     
@@ -34,7 +34,7 @@ final class CategoryTableViewViewModel: CategoryTableViewViewModelType {
     
     func indexPaths(atSection section: Int) -> [IndexPath] {
         var indexPaths = [IndexPath]()
-        (0..<categories[section].count).forEach { row in
+        (0..<categories[section].items.count).forEach { row in
             indexPaths.append(IndexPath(row: row, section: section))
         }
         
@@ -46,16 +46,16 @@ final class CategoryTableViewViewModel: CategoryTableViewViewModelType {
     }
     
     func numberOfRows(forSection section: Int) -> Int {
-        return categories[section].count
+        return categories[section].items.count
     }
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> CategoryTableViewCellViewModelType? {
-        let category = categories[indexPath.section][indexPath.row]
-        return CategoryTableViewCellViewModel(subCategory: category)
+        let transactionCategory = categories[indexPath.section].items[indexPath.row]
+        return CategoryTableViewCellViewModel(transactionCategory: transactionCategory)
     }
     
     func headerViewModel(forSection section: Int) -> CategoryTableViewHeaderViewModelType? {
-        guard let headCategory = categories[section].first?.categoryGroup else { return nil }
-        return CategoryTableViewHeaderViewModel(headCategory: headCategory)
+        guard let categoryGroup = categories[section].items.first?.categoryGroup else { return nil }
+        return CategoryTableViewHeaderViewModel(categoryGroup: categoryGroup)
     }
 }

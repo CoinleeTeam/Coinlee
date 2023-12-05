@@ -27,9 +27,9 @@ final class WalletTypesViewModel: WalletTypesViewModelType {
     
     // MARK: ViewModels
     func walletTypeCellViewModel(forIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType? {
-        let viewModel = BorderFreeCellViewModel(title: walletTypes[indexPath.row].rawValue)
+        let viewModel = BorderFreeCellViewModel(title: walletTypes[indexPath.row].localizedTitle)
         if let selectedType = selectedType {
-            viewModel.isSelected = viewModel.title == selectedType.rawValue
+            viewModel.isSelected = viewModel.title == selectedType.localizedTitle
         }
         return viewModel
     }

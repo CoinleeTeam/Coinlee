@@ -12,13 +12,10 @@ struct Transaction {
     let date: Date
     let sum: Double
     let description: String
+    let category: TransactionCategory
+    let currency : Currency
     
-    //------------ TO BE CHANGED
-    let category: Subcategory
-    let currency : String
-    // -------------- TOBECHANGED------------
-    
-    init(date: Date, sum: Double, description: String, category: Subcategory, currency: String) {
+    init(date: Date, sum: Double, description: String, category: TransactionCategory, currency: Currency) {
         self.date = date
         self.sum = sum
         self.description = description
@@ -27,7 +24,11 @@ struct Transaction {
     }
     
     init() {
-        self.init(date: Date(), sum: Double(), description: String(), category: Subcategory(iconName: String(), title: String()), currency: String())
+        self.init(date: Date(),
+                  sum: Double(),
+                  description: String(),
+                  category: .accomodation,
+                  currency: .usd)
     }
 }
 
@@ -46,10 +47,4 @@ extension SectionOfTransactions: SectionModelType {
     init() {
         self.items = [Transaction()]
     }
-}
-
-// MARK: - TO BE DELETED
-struct Subcategory: Equatable {
-    let iconName: String
-    let title : String
 }

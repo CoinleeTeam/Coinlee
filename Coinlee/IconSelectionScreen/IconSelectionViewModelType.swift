@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IconSelectionViewModelType: AnyObject {
-    var icons: [Icon.Wallet] { get }
+    var icons: [WalletIcon] { get }
     
     func numberOfSections() -> Int
     func numberOfItems() -> Int

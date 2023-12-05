@@ -11,7 +11,7 @@ import RxRelay
 final class TransactionCellHeaderViewModel: TransactionCellHeaderViewModelType {
     let date: BehaviorRelay<Date>
     let balance: BehaviorRelay<Double>
-    let currency: String
+    let currency: Currency
     
     // MARK: Computed properties
     var monthDay: String {
@@ -27,7 +27,7 @@ final class TransactionCellHeaderViewModel: TransactionCellHeaderViewModelType {
     }
     
     // MARK: - Init
-    init(date: Date, balance: Double, currency: String) {
+    init(date: Date, balance: Double, currency: Currency) {
         self.date = .init(value: date)
         self.balance = .init(value: balance)
         self.currency = currency

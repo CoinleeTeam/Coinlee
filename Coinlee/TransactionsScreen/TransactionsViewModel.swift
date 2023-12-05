@@ -9,26 +9,26 @@ import Foundation
 import RxSwift
 
 final class TransactionsViewModel: TransactionsViewModelType {
-    var balanceText = BehaviorSubject<String>(value: CharacterConstants.twoHyphens)
+    var balanceText = BehaviorSubject<String>(value: CharacterConstants.doubleHyphen)
     var transactions = BehaviorSubject<[SectionOfTransactions]>(value: [SectionOfTransactions()])
     
-    private var incomeText: String = CharacterConstants.twoHyphens
-    private var expenseText: String = CharacterConstants.twoHyphens
+    private var incomeText: String = CharacterConstants.doubleHyphen
+    private var expenseText: String = CharacterConstants.doubleHyphen
     
     let fetchedTransactions: [[Transaction]]  = [
         [
-            Transaction(date: .now, sum: 130.52, description: "Some income", category: Subcategory(iconName: Icon.TransactionCategory.workshop.rawValue, title: "Investment"), currency: "PLN"),
-            Transaction(date: .now, sum: -20, description: "Pivo", category: Subcategory(iconName: Icon.TranasctionCategoryGroup.investments.rawValue, title: "Pivo category"), currency: "PLN")
+            Transaction(date: .now, sum: 130.52, description: "Some income", category: .healthInsurance, currency: .pln),
+            Transaction(date: .now, sum: -20, description: "Pivo", category: .books, currency: .pln)
         ],
         [
-            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: -0.99, description: "Tualet", category: Subcategory(iconName: Icon.TransactionCategory.sport.rawValue, title: "Health"), currency: "PLN"),
-            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: 15000, description: "Zarplata iOS'era", category: Subcategory(iconName: Icon.TransactionCategory.hobbies.rawValue, title: "Salary"), currency: "PLN"),
-            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: 500, description: "investicii", category: Subcategory(iconName: Icon.TransactionCategory.investment.rawValue, title: "Investment"), currency: "PLN"),
+            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: -0.99, description: "Tualet", category: .sport, currency: .pln),
+            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: 15000, description: "Zarplata iOS'era", category: .hobbies, currency: .pln),
+            Transaction(date: Date(timeIntervalSinceNow: -86400), sum: 500, description: "investicii", category: .investment, currency: .pln),
         ],
         [
-            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: -0.99, description: "Tualet", category: Subcategory(iconName: Icon.TransactionCategory.sport.rawValue, title: "Health"), currency: "PLN"),
-            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: 15000, description: "Zarplata iOS'era", category: Subcategory(iconName: Icon.TransactionCategory.hobbies.rawValue, title: "Salary"), currency: "PLN"),
-            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: 500, description: "investicii", category: Subcategory(iconName: Icon.TransactionCategory.investment.rawValue, title: "Investment"), currency: "PLN"),
+            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: -0.99, description: "Tualet", category: .sport, currency: .pln),
+            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: 15000, description: "Zarplata iOS'era", category: .hobbies, currency: .pln),
+            Transaction(date: Date(timeIntervalSinceNow: -172800), sum: 500, description: "investicii", category: .cafe, currency: .pln),
         ]
     ]
     
@@ -43,8 +43,8 @@ final class TransactionsViewModel: TransactionsViewModelType {
             }
             
             self.transactions.onNext(transactions)
-            self.incomeText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .income) ?? Double())) ?? CharacterConstants.twoHyphens
-            self.expenseText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .expense) ?? Double())) ?? CharacterConstants.twoHyphens
+            self.incomeText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .income) ?? Double())) ?? CharacterConstants.doubleHyphen
+            self.expenseText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .expense) ?? Double())) ?? CharacterConstants.doubleHyphen
             self.balanceText.onNext("2,425.35 PLN")
         }
         // ------------------------ TO BE DELETED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

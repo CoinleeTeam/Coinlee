@@ -42,7 +42,7 @@ final class TransactionsView: UIView {
         
         // -------- REMOVE --------
         walletButton.setTitle("Wallet", for: .normal)
-        walletButton.setImage(UIImage(named: Icon.Wallet.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
+        walletButton.setImage(UIImage(named: WalletIcon.moneyBag.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                               for: .normal)
         currentMonthButton.setTitle("September 2023", for: .normal)
     }
@@ -63,13 +63,13 @@ final class TransactionsView: UIView {
         walletButton.addConfiguration(baseForegroundColor: .white,
                                       titleFont: UIFont(name: Fonts.Inter.semiBold.rawValue, size: 15),
                                       leftImagePadding: 6,
-                                      rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                      rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                       rightImagePadding: 4,
                                       contentEdgesInsets: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
         
         // SearchButton
         topView.addSubview(searchButton)
-        searchButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.magnifyingGlass.rawValue),
+        searchButton.addConfiguration(leftImage: UIImage(named: LinearIcon.magnifyingGlass.rawValue),
                                       leftImageTintColor: .white,
                                       contentEdgesInsets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
@@ -121,7 +121,7 @@ final class TransactionsView: UIView {
         
         // PreviousMonthButton
         currentMonthViewStack.addArrangedSubview(previousMonthButton)
-        previousMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleLeft.rawValue),
+        previousMonthButton.addConfiguration(leftImage: UIImage(named: LinearIcon.angleLeft.rawValue),
                                              leftImageTintColor: .charcoal,
                                              contentEdgesInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
         
@@ -129,14 +129,14 @@ final class TransactionsView: UIView {
         currentMonthViewStack.addArrangedSubview(currentMonthButton)
         currentMonthButton.addConfiguration(baseForegroundColor: .charcoal,
                                             titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                            leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
+                                            leftImage: UIImage(named: LinearIcon.calendar.rawValue),
                                             leftImageTintColor: .goldenrod,
                                             leftImagePadding: 8,
                                             contentEdgesInsets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         
         // NextMonthButton
         currentMonthViewStack.addArrangedSubview(nextMonthButton)
-        nextMonthButton.addConfiguration(leftImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+        nextMonthButton.addConfiguration(leftImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                          leftImageTintColor: .charcoal,
                                          contentEdgesInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
     }

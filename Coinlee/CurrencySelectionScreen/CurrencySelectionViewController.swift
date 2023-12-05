@@ -8,11 +8,11 @@
 import UIKit
 
 final class CurrencySelectionViewController: UIViewController {
-    let viewModel: CurrencyTableViewModelType
+    let viewModel: CurrencySelectionViewModelType
     let currencySelectionView = CurrencySelectionView()
     
     // MARK: - Inits
-    init(viewModel: CurrencyTableViewModelType) {
+    init(viewModel: CurrencySelectionViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

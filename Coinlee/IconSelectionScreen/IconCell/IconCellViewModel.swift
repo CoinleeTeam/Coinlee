@@ -8,10 +8,10 @@
 import Foundation
 
 final class IconCellViewModel: IconCellViewModelType {
-    let icon: Icon.Wallet
+    let icon: WalletIcon
     
     // MARK: - Init
-    init(icon: Icon.Wallet) {
+    init(icon: WalletIcon) {
         self.icon = icon
     }
 }

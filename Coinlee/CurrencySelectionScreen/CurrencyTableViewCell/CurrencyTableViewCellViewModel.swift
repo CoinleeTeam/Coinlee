@@ -8,15 +8,7 @@
 import Foundation
 
 final class CurrencyTableViewCellViewModel: CurrencyTableViewCellViewModelType {
-    private var currency: Currency
-    
-    var currencyName: String {
-        return currency.name
-    }
-    
-    var currencyCode: String {
-        return currency.code.rawValue
-    }
+    let currency: Currency
     
     init(currency: Currency) {
         self.currency = currency

@@ -57,7 +57,7 @@ final class TransactionCellHeaderView: UICollectionReusableView {
         guard let viewModel = viewModel else { return }
         viewModel.balance
             .subscribe { balance in
-                let currency = viewModel.currency
+                let currency = viewModel.currency.code
                 self.balanceLabel.text = balance.accountingFormatted() + CharacterConstants.whitespace + currency
             }
             .disposed(by: disposeBag)

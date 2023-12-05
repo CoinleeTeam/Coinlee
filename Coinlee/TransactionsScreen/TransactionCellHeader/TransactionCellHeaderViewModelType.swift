@@ -11,7 +11,7 @@ import RxRelay
 protocol TransactionCellHeaderViewModelType: AnyObject {
     var date: BehaviorRelay<Date> { get }
     var balance: BehaviorRelay<Double> { get }
-    var currency: String { get }
+    var currency: Currency { get }
     
     // MARK: Computed properties
     var monthDay: String { get }

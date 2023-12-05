@@ -10,8 +10,8 @@ import Foundation
 struct Wallet {
     var name: String
     var balance: Double
-    var currency: String
-    var icon: Icon.Wallet
+    var currency: Currency
+    var icon: WalletIcon
     var type: WalletType
     var isActive: Bool
 }

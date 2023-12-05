@@ -73,8 +73,8 @@ extension TransactionsViewController {
             }
         },
         configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier, for: indexPath) as? TransactionCellHeaderView else { return UICollectionReusableView() }
-            headerView.viewModel = self.viewModel.transactionCellHeaderViewViewModel(forSection: indexPath.section)
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier, for: indexPath)
+            (headerView as? TransactionCellHeaderView)?.viewModel = self.viewModel.transactionCellHeaderViewViewModel(forSection: indexPath.section)
             return headerView
         })
         return dataSource

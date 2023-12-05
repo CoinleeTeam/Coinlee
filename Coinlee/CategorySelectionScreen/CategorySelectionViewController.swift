@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 
 final class CategorySelectionViewController: UIViewController {
-    var viewModel: CategoryTableViewViewModelType
+    var viewModel: CategorySelectionViewModelType
     let categorySelectionView = CategorySelectionView()
     
     // MARK: - Inits
-    init(viewModel: CategoryTableViewViewModelType) {
+    init(viewModel: CategorySelectionViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

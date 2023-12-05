@@ -18,7 +18,7 @@ final class BorderFreeCell: UICollectionViewCell {
     var viewModel: BorderFreeCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            titleLabel.text = NSLocalizedString(viewModel.title, comment: String())
+            titleLabel.text = viewModel.title
             selectionMarkImageView.isHidden = !viewModel.isSelected
         }
     }
@@ -51,7 +51,7 @@ final class BorderFreeCell: UICollectionViewCell {
         
         // selectionMarkImageView
         addSubview(selectionMarkImageView)
-        selectionMarkImageView.image = UIImage(named: Icon.Linear.checkMark.rawValue)
+        selectionMarkImageView.image = UIImage(named: LinearIcon.checkMark.rawValue)
         selectionMarkImageView.contentMode = .scaleAspectFit
         selectionMarkImageView.tintColor = .goldenrod
         selectionMarkImageView.isHidden = true

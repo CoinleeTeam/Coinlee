@@ -18,9 +18,9 @@ final class CurrencyTableViewCell: UITableViewCell {
     weak var viewModel: CurrencyTableViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            currencyNameLabel.text = viewModel.currencyName
-            currencyCodeLabel.text = viewModel.currencyCode
-            flagImageView.image = UIImage(named: viewModel.currencyCode)
+            currencyNameLabel.text = viewModel.currency.localizedName
+            currencyCodeLabel.text = viewModel.currency.code
+            flagImageView.image = UIImage(named: viewModel.currency.rawValue)
         }
     }
     

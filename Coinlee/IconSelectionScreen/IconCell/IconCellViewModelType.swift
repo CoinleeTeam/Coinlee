@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IconCellViewModelType: AnyObject {
-    var icon: Icon.Wallet { get }
+    var icon: WalletIcon { get }
 }

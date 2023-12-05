@@ -89,7 +89,7 @@ final class TextField: UITextField {
     func addClearIcon() {
         textPadding.right = 48
         
-        let rightIcon = UIImageView(image: UIImage(named: Icon.Linear.clear.rawValue))
+        let rightIcon = UIImageView(image: UIImage(named: LinearIcon.clear.rawValue))
         rightIcon.tintColor = .goldenrod
         rightViewMode = .always
         rightView = rightIcon
@@ -103,7 +103,7 @@ final class TextField: UITextField {
         textPadding.right = 48
         
         let currencyLabel = UILabel()
-        currencyLabel.text = "| \(currency.code.rawValue)"
+        currencyLabel.text = "| \(currency.code)"
         currencyLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
         currencyLabel.textColor = .battleshipGrey
         

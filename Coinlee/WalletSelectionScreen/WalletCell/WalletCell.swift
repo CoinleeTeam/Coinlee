@@ -37,7 +37,7 @@ final class WalletCell: IconTitleCell {
     // MARK: - Subviews' setup
     private func setUpSelectionMarkImageView() {
         hStack.addArrangedSubview(selectionMarkImageView)
-        selectionMarkImageView.image = UIImage(named: Icon.Linear.checkMark.rawValue)
+        selectionMarkImageView.image = UIImage(named: LinearIcon.checkMark.rawValue)
         selectionMarkImageView.contentMode = .scaleAspectFit
         selectionMarkImageView.tintColor = .goldenrod
     }

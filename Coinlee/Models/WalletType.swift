@@ -18,4 +18,8 @@ enum WalletType: String, CaseIterable {
     case investmentAccount = "investment_account_type"
     case businessAccount = "business_account_type"
     case loanAccount = "loan_account_type"
+    
+    var localizedTitle: String {
+        NSLocalizedString(rawValue, comment: "Localized wallet type")
+    }
 }

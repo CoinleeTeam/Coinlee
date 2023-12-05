@@ -10,17 +10,17 @@ import Foundation
 final class WalletSelectionViewModel: WalletSelectionViewModelType {
     let array = [
         [
-            Wallet(name: "Main Card", balance: 150.32999, currency: "PLN", icon: .cardsWallet, type: .debitCard, isActive: true),
-            Wallet(name: "Nie Main Card", balance: 1053.0325, currency: "USD", icon: .cardPayment, type: .debitCard, isActive: false),
-            Wallet(name: "Voobshe Nie Main Card", balance: 150.32, currency: "EUR", icon: .coins, type: .debitCard, isActive: false)
+            Wallet(name: "Main Card", balance: 150.32999, currency: .pln, icon: .cardsWallet, type: .debitCard, isActive: true),
+            Wallet(name: "Nie Main Card", balance: 1053.0325, currency: .usd, icon: .cardPayment, type: .debitCard, isActive: false),
+            Wallet(name: "Voobshe Nie Main Card", balance: 150.32, currency: .eur, icon: .coins, type: .debitCard, isActive: false)
         ],
         [
-            Wallet(name: "Bank", balance: 15340.32, currency: "AUD", icon: .bankBuilding, type: .cash, isActive: false),
-            Wallet(name: "Bitoc", balance: 2350.35, currency: "RUB", icon: .bitcoinAccepted, type: .cash, isActive: false)
+            Wallet(name: "Bank", balance: 15340.32, currency: .aud, icon: .bankBuilding, type: .cash, isActive: false),
+            Wallet(name: "Bitoc", balance: 2350.35, currency: .rub, icon: .bitcoinAccepted, type: .cash, isActive: false)
         ],
         [
-            Wallet(name: "Mnogo Casha", balance: 3999.64, currency: "UAH", icon: .stackOfMoney, type: .savingsAccount, isActive: false),
-            Wallet(name: "Safe of Money", balance: 7045.87, currency: "GBP", icon: .safe, type: .savingsAccount, isActive: false)
+            Wallet(name: "Mnogo Casha", balance: 3999.64, currency: .uah, icon: .stackOfMoney, type: .savingsAccount, isActive: false),
+            Wallet(name: "Safe of Money", balance: 7045.87, currency: .gbp, icon: .safe, type: .savingsAccount, isActive: false)
         ]
     ]
     

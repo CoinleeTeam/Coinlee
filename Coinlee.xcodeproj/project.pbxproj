@@ -7,17 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E4C664A2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663D2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift */; };
-		8E4C664B2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */; };
-		8E4C664C2B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */; };
-		8E4C664D2B0633F20077F5C2 /* CategoryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */; };
-		8E4C664E2B0633F20077F5C2 /* CategoryTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66422B0633F20077F5C2 /* CategoryTableViewViewModel.swift */; };
 		8E4C664F2B0633F20077F5C2 /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66432B0633F20077F5C2 /* TransactionCategory.swift */; };
-		8E4C66502B0633F20077F5C2 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */; };
-		8E4C66512B0633F20077F5C2 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */; };
-		8E4C66522B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66472B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift */; };
-		8E4C66532B0633F20077F5C2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66482B0633F20077F5C2 /* CategoryTableViewCell.swift */; };
-		8E4C66542B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66492B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift */; };
 		8E66E0C52AEE58850029B807 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0C42AEE58850029B807 /* UIView.swift */; };
 		8E66E0D62AF7F6020029B807 /* WalletDetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0D22AF7F6020029B807 /* WalletDetailViewModelType.swift */; };
 		8E66E0D72AF7F6020029B807 /* WalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66E0D32AF7F6020029B807 /* WalletDetailViewController.swift */; };
@@ -30,15 +20,26 @@
 		F5107EC72AE572E900B3BC34 /* WalletTypesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5107EC62AE572E900B3BC34 /* WalletTypesViewModelType.swift */; };
 		F5107EC92AE5804500B3BC34 /* BorderFreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5107EC82AE5804500B3BC34 /* BorderFreeCell.swift */; };
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
-		F51E88072A88F6A600FF20CE /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icon.swift */; };
+		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
 		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
+		F53CA15B2B1F517E002BEED7 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66482B0633F20077F5C2 /* CategoryTableViewCell.swift */; };
+		F53CA15C2B1F517E002BEED7 /* CategoryTableViewHeaderViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */; };
+		F53CA15D2B1F517E002BEED7 /* CategoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66472B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift */; };
+		F53CA15E2B1F517E002BEED7 /* CategorySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66422B0633F20077F5C2 /* CategorySelectionViewModel.swift */; };
+		F53CA15F2B1F517E002BEED7 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */; };
+		F53CA1602B1F517E002BEED7 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */; };
+		F53CA1612B1F517E002BEED7 /* CategoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66492B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift */; };
+		F53CA1622B1F517E002BEED7 /* CategoryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */; };
+		F53CA1632B1F517E002BEED7 /* CategorySelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663D2B0633F20077F5C2 /* CategorySelectionViewModelType.swift */; };
+		F53CA1642B1F517E002BEED7 /* CategoryTableViewHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */; };
+		F53CA1672B1FA739002BEED7 /* TransactionCategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53CA1662B1FA739002BEED7 /* TransactionCategoryGroup.swift */; };
 		F546A4862AEC07B100459DF5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4852AEC07B100459DF5 /* String.swift */; };
 		F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4872AEC07D200459DF5 /* NoResultsView.swift */; };
 		F546A48D2AEC07D300459DF5 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4882AEC07D200459DF5 /* ContainerView.swift */; };
 		F546A48E2AEC07D300459DF5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48A2AEC07D200459DF5 /* TextField.swift */; };
 		F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */; };
-		F546A49A2AEC07DE00459DF5 /* CurrencyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4912AEC07DE00459DF5 /* CurrencyTableViewModel.swift */; };
-		F546A49B2AEC07DE00459DF5 /* CurrencyTableViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4922AEC07DE00459DF5 /* CurrencyTableViewModelType.swift */; };
+		F546A49A2AEC07DE00459DF5 /* CurrencySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4912AEC07DE00459DF5 /* CurrencySelectionViewModel.swift */; };
+		F546A49B2AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4922AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift */; };
 		F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */; };
 		F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */; };
 		F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4962AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift */; };
@@ -107,11 +108,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E4C663D2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewViewModelType.swift; sourceTree = "<group>"; };
+		8E4C663D2B0633F20077F5C2 /* CategorySelectionViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModelType.swift; sourceTree = "<group>"; };
 		8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModel.swift; sourceTree = "<group>"; };
 		8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModelType.swift; sourceTree = "<group>"; };
 		8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeader.swift; sourceTree = "<group>"; };
-		8E4C66422B0633F20077F5C2 /* CategoryTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewViewModel.swift; sourceTree = "<group>"; };
+		8E4C66422B0633F20077F5C2 /* CategorySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModel.swift; sourceTree = "<group>"; };
 		8E4C66432B0633F20077F5C2 /* TransactionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
 		8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
@@ -132,15 +133,17 @@
 		F5107EC62AE572E900B3BC34 /* WalletTypesViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTypesViewModelType.swift; sourceTree = "<group>"; };
 		F5107EC82AE5804500B3BC34 /* BorderFreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderFreeCell.swift; sourceTree = "<group>"; };
 		F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundedCell.swift; sourceTree = "<group>"; };
-		F51E88062A88F6A600FF20CE /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		F51E88062A88F6A600FF20CE /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		F53160072AA2509E00E5672F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		F53CA15A2B1F2608002BEED7 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinlee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53CA1662B1FA739002BEED7 /* TransactionCategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryGroup.swift; sourceTree = "<group>"; };
 		F546A4852AEC07B100459DF5 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F546A4872AEC07D200459DF5 /* NoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
 		F546A4882AEC07D200459DF5 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		F546A48A2AEC07D200459DF5 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
-		F546A4912AEC07DE00459DF5 /* CurrencyTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewModel.swift; sourceTree = "<group>"; };
-		F546A4922AEC07DE00459DF5 /* CurrencyTableViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewModelType.swift; sourceTree = "<group>"; };
+		F546A4912AEC07DE00459DF5 /* CurrencySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewModel.swift; sourceTree = "<group>"; };
+		F546A4922AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewModelType.swift; sourceTree = "<group>"; };
 		F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewController.swift; sourceTree = "<group>"; };
 		F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionView.swift; sourceTree = "<group>"; };
 		F546A4962AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCellViewModelType.swift; sourceTree = "<group>"; };
@@ -157,7 +160,6 @@
 		F55802F62AB348080056336D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		F55802F82AB3480F0056336D /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
 		F55802FA2AB348140056336D /* TransactionCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModelType.swift; sourceTree = "<group>"; };
-		F56108172B1DC0F200534D86 /* Coinlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinlee.app; path = "/Users/vlad/Desktop/Coinlee/build/Debug-iphoneos/Coinlee.app"; sourceTree = "<absolute>"; };
 		F56410812A87852C00182050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56410832A87852C00182050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F564108A2A87852D00182050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,8 +230,8 @@
 			children = (
 				8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */,
 				8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */,
-				8E4C66422B0633F20077F5C2 /* CategoryTableViewViewModel.swift */,
-				8E4C663D2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift */,
+				8E4C66422B0633F20077F5C2 /* CategorySelectionViewModel.swift */,
+				8E4C663D2B0633F20077F5C2 /* CategorySelectionViewModelType.swift */,
 				8E4C663E2B0633F20077F5C2 /* CategoryTableViewHeader */,
 				8E4C66462B0633F20077F5C2 /* CategoryTableViewCell */,
 			);
@@ -259,7 +261,7 @@
 		8E4C66552B0692010077F5C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E4C66432B0633F20077F5C2 /* TransactionCategory.swift */,
+				F53CA1652B1FA726002BEED7 /* TransactionCategory */,
 				F546A4992AEC07DE00459DF5 /* Currency.swift */,
 				F5E3B7292AB87A3700E2A352 /* Transaction.swift */,
 				F5E241292A8D383600C7FAC5 /* Wallet.swift */,
@@ -317,6 +319,15 @@
 			path = ReusableUIElements;
 			sourceTree = "<group>";
 		};
+		F53CA1652B1FA726002BEED7 /* TransactionCategory */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C66432B0633F20077F5C2 /* TransactionCategory.swift */,
+				F53CA1662B1FA739002BEED7 /* TransactionCategoryGroup.swift */,
+			);
+			path = TransactionCategory;
+			sourceTree = "<group>";
+		};
 		F546A4892AEC07D200459DF5 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,8 +342,8 @@
 			children = (
 				F546A4942AEC07DE00459DF5 /* CurrencySelectionView.swift */,
 				F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */,
-				F546A4912AEC07DE00459DF5 /* CurrencyTableViewModel.swift */,
-				F546A4922AEC07DE00459DF5 /* CurrencyTableViewModelType.swift */,
+				F546A4912AEC07DE00459DF5 /* CurrencySelectionViewModel.swift */,
+				F546A4922AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift */,
 				F546A4952AEC07DE00459DF5 /* CurrencyTableViewCell */,
 			);
 			path = CurrencySelectionScreen;
@@ -384,6 +395,7 @@
 				F56410962A87894F00182050 /* .gitignore */,
 				F56410802A87852C00182050 /* Coinlee */,
 				98A3953C7E0EB41870795967 /* Pods */,
+				F53CA15A2B1F2608002BEED7 /* Coinlee.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -439,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A40AE82A87C3E100E91AF5 /* Fonts */,
-				F51E88062A88F6A600FF20CE /* Icon.swift */,
+				F51E88062A88F6A600FF20CE /* Icons.swift */,
 				F564108A2A87852D00182050 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -580,7 +592,7 @@
 			);
 			name = Coinlee;
 			productName = Coinlee;
-			productReference = F56108172B1DC0F200534D86 /* Coinlee.app */;
+			productReference = F53CA15A2B1F2608002BEED7 /* Coinlee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -686,13 +698,14 @@
 				8E66E0D82AF7F6020029B807 /* WalletDetailView.swift in Sources */,
 				F55802ED2AB33DB90056336D /* Constants.swift in Sources */,
 				F5E2518E2AF130F200987511 /* IconTitleCell.swift in Sources */,
-				8E4C664A2B0633F20077F5C2 /* CategoryTableViewViewModelType.swift in Sources */,
 				F5E2412A2A8D383600C7FAC5 /* Wallet.swift in Sources */,
 				F5D5E5BB2AFA58B5008BB1F4 /* TransactionDetailViewController.swift in Sources */,
 				8E66E0D92AF7F6020029B807 /* WalletDetailViewModel.swift in Sources */,
-				8E4C66512B0633F20077F5C2 /* CategorySelectionView.swift in Sources */,
+				F53CA1632B1F517E002BEED7 /* CategorySelectionViewModelType.swift in Sources */,
 				F5107EC12AE5712600B3BC34 /* WalletTypesViewController.swift in Sources */,
 				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
+				F53CA1642B1F517E002BEED7 /* CategoryTableViewHeaderViewModel.swift in Sources */,
+				F53CA1602B1F517E002BEED7 /* CategorySelectionView.swift in Sources */,
 				F5107EC52AE572B800B3BC34 /* WalletTypesViewModel.swift in Sources */,
 				F5BCCD3E2AFA956300887109 /* AccountingNumberFormatter.swift in Sources */,
 				F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */,
@@ -704,74 +717,74 @@
 				F546A49F2AEC07DE00459DF5 /* CurrencyTableViewCellViewModel.swift in Sources */,
 				F5F042A52AEEA8B900AD6142 /* BorderFreeCellViewModelType.swift in Sources */,
 				F5107EC92AE5804500B3BC34 /* BorderFreeCell.swift in Sources */,
+				F53CA15F2B1F517E002BEED7 /* CategorySelectionViewController.swift in Sources */,
 				F5107EC32AE5727B00B3BC34 /* WalletTypesView.swift in Sources */,
 				F5EFA0E32A8B9F3800555859 /* WalletCellViewModel.swift in Sources */,
 				F5E241262A8D297400C7FAC5 /* WalletCellHeaderViewModel.swift in Sources */,
-				8E4C664B2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift in Sources */,
 				F546A48D2AEC07D300459DF5 /* ContainerView.swift in Sources */,
 				8E4C664F2B0633F20077F5C2 /* TransactionCategory.swift in Sources */,
 				F5E3B72A2AB87A3700E2A352 /* Transaction.swift in Sources */,
 				F55802E62AB329720056336D /* IncomeExpenseStaticCell.swift in Sources */,
 				F55802E82AB329D40056336D /* IncomeExpenseStaticCellViewModel.swift in Sources */,
 				F5C96EC92AF6DD9400F07C87 /* ScrollableView.swift in Sources */,
+				F53CA1672B1FA739002BEED7 /* TransactionCategoryGroup.swift in Sources */,
 				F5A40AEF2A87C43200E91AF5 /* Fonts.swift in Sources */,
 				8E66E0D72AF7F6020029B807 /* WalletDetailViewController.swift in Sources */,
 				F55802FB2AB348140056336D /* TransactionCellViewModelType.swift in Sources */,
 				F5E2518C2AF128A600987511 /* IconSelectionViewModelType.swift in Sources */,
 				F57935C42A99F0290075A44D /* TransactionsView.swift in Sources */,
 				F5107EC72AE572E900B3BC34 /* WalletTypesViewModelType.swift in Sources */,
-				F51E88072A88F6A600FF20CE /* Icon.swift in Sources */,
+				F51E88072A88F6A600FF20CE /* Icons.swift in Sources */,
 				F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */,
-				8E4C66532B0633F20077F5C2 /* CategoryTableViewCell.swift in Sources */,
 				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
 				F5E251882AF1289600987511 /* IconSelectionViewController.swift in Sources */,
+				F53CA15D2B1F517E002BEED7 /* CategoryTableViewCellViewModel.swift in Sources */,
 				F5D5E5BA2AFA58B5008BB1F4 /* TransactionDetailView.swift in Sources */,
 				F5E251902AF1367100987511 /* IconCell.swift in Sources */,
 				F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */,
+				F53CA1612B1F517E002BEED7 /* CategoryTableViewCellViewModelType.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
 				F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */,
 				F53160082AA2509E00E5672F /* UIImage.swift in Sources */,
 				F57935C82A99F0680075A44D /* TransactionsViewModelType.swift in Sources */,
 				F5F042A02AEE97FF00AD6142 /* WalletType.swift in Sources */,
 				F5F042A32AEEA8B000AD6142 /* BorderFreeCellViewModel.swift in Sources */,
-				8E4C664D2B0633F20077F5C2 /* CategoryTableViewHeader.swift in Sources */,
 				F5E241242A8D296E00C7FAC5 /* WalletCellHeaderView.swift in Sources */,
 				F5EFA0E52A8B9F4500555859 /* WalletCellViewModelType.swift in Sources */,
 				F5EFA0E12A8B9F0700555859 /* WalletCell.swift in Sources */,
 				F56410822A87852C00182050 /* AppDelegate.swift in Sources */,
 				F5E2518A2AF1289C00987511 /* IconSelectionViewModel.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
-				8E4C664C2B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift in Sources */,
 				8E66E0D62AF7F6020029B807 /* WalletDetailViewModelType.swift in Sources */,
+				F53CA15C2B1F517E002BEED7 /* CategoryTableViewHeaderViewModelType.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
+				F53CA15B2B1F517E002BEED7 /* CategoryTableViewCell.swift in Sources */,
 				8E66E0C52AEE58850029B807 /* UIView.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewModel.swift in Sources */,
 				F546A48E2AEC07D300459DF5 /* TextField.swift in Sources */,
 				F546A49D2AEC07DE00459DF5 /* CurrencySelectionView.swift in Sources */,
-				F546A49B2AEC07DE00459DF5 /* CurrencyTableViewModelType.swift in Sources */,
+				F546A49B2AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift in Sources */,
 				F546A4A12AEC07DE00459DF5 /* Currency.swift in Sources */,
 				F5E241282A8D297E00C7FAC5 /* WalletCellHeaderViewModelType.swift in Sources */,
 				F550C7B92AFBC91800230639 /* TransactionCellHeaderViewModel.swift in Sources */,
 				F546A4862AEC07B100459DF5 /* String.swift in Sources */,
-				8E4C66502B0633F20077F5C2 /* CategorySelectionViewController.swift in Sources */,
 				F5D5E5BC2AFA58B5008BB1F4 /* TransactionDetailViewModelType.swift in Sources */,
-				F546A49A2AEC07DE00459DF5 /* CurrencyTableViewModel.swift in Sources */,
+				F546A49A2AEC07DE00459DF5 /* CurrencySelectionViewModel.swift in Sources */,
 				F5E251942AF1368000987511 /* IconCellViewModelType.swift in Sources */,
 				F5EFA0DD2A8B957900555859 /* WalletSelectionViewModelType.swift in Sources */,
-				8E4C66542B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift in Sources */,
 				F5A40AF22A87C5E500E91AF5 /* UIColor.swift in Sources */,
 				F55802F12AB347EE0056336D /* TransactionCellHeaderView.swift in Sources */,
 				F5EFA0D82A8B914500555859 /* WalletSelectionView.swift in Sources */,
 				F56410842A87852C00182050 /* SceneDelegate.swift in Sources */,
 				F5E251862AF1288E00987511 /* IconSelectionView.swift in Sources */,
 				F546A49E2AEC07DE00459DF5 /* CurrencyTableViewCellViewModelType.swift in Sources */,
-				8E4C664E2B0633F20077F5C2 /* CategoryTableViewViewModel.swift in Sources */,
+				F53CA15E2B1F517E002BEED7 /* CategorySelectionViewModel.swift in Sources */,
 				F56ACEEA2AF6945600F3110B /* ScrollView.swift in Sources */,
-				8E4C66522B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift in Sources */,
 				F55802F92AB3480F0056336D /* TransactionCellViewModel.swift in Sources */,
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewModel.swift in Sources */,
 				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,
 				F55802F52AB347FC0056336D /* TransactionCellHeaderViewModelType.swift in Sources */,
+				F53CA1622B1F517E002BEED7 /* CategoryTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,7 +40,7 @@ final class TransactionDetailView: ScrollableView {
         addConstraints()
         
         // ---------REMOVE---------
-        amountTextField.addCurrencyLabel(currency: Currency(code: CurrencyCode.pln))
+        amountTextField.addCurrencyLabel(currency: .pln)
         categoryButton.setTitle(NSLocalizedString("select_category_button", comment: "Select category"), for: .normal)
         dateButton.setTitle("29 Maj 23", for: .normal)
         walletButton.setTitle("Wallet binance usdt", for: .normal)
@@ -84,7 +84,7 @@ final class TransactionDetailView: ScrollableView {
     }
     
     private func setUpAmountTextField() {
-        amountTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.dollar.rawValue))
+        amountTextField.addLeftIcon(icon: UIImage(named: LinearIcon.dollar.rawValue))
         amountTextField.placeholder = NSLocalizedString("amount_placeholder", comment: "Amount placeholder")
         amountTextField.keyboardType = .decimalPad
         amountTextField.shadowType = .bottom
@@ -96,7 +96,7 @@ final class TransactionDetailView: ScrollableView {
         categoryButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                                  titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                                  leftImagePadding: 16,
-                                                 rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                                 rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                                  rightImagePosition: .fixed,
                                                  rightImagePadding: 8,
                                                  contentEdgesInsets: UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0))
@@ -110,7 +110,7 @@ final class TransactionDetailView: ScrollableView {
         
         dateButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                             leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
+                                             leftImage: UIImage(named: LinearIcon.calendar.rawValue),
                                              leftImageTintColor: .goldenrod,
                                              leftImagePadding: 8)
         dateButton.shadowType = .bottom
@@ -120,10 +120,10 @@ final class TransactionDetailView: ScrollableView {
         walletButton.titleLabel?.font = incomeButton.titleLabel?.font
         walletButton.addConfiguration(baseForegroundColor: .charcoal,
                                                titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                               leftImage: UIImage(named: Icon.Linear.walletTemplate.rawValue),
+                                               leftImage: UIImage(named: LinearIcon.walletTemplate.rawValue),
                                                leftImageTintColor: .goldenrod,
                                                leftImagePadding: 8,
-                                               rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                               rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                                rightImagePosition: .fixed,
                                                rightImagePadding: 8,
                                                contentEdgesInsets: UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0))

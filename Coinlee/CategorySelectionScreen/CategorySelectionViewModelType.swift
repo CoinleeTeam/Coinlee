@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CategoryTableViewViewModelType {
+protocol CategorySelectionViewModelType: AnyObject {
     var collapsedSections: Set<Int> { get set }
     var categoriesTransactionType: TransactionType { get }
     

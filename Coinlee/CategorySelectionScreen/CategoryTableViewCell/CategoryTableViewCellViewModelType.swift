@@ -8,5 +8,5 @@
 import UIKit
 
 protocol CategoryTableViewCellViewModelType: AnyObject {
-    var categoryName: String { get }
+    var transactionCategory: TransactionCategory { get }
 }

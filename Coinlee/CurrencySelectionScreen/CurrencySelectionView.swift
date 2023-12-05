@@ -56,7 +56,7 @@ final class CurrencySelectionView: UIView {
         searchTextField.maximumNumberOfSymbols = 10
         searchTextField.autocorrectionType = .no
         
-        searchTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.magnifyingGlass.rawValue) ?? UIImage())
+        searchTextField.addLeftIcon(icon: UIImage(named: LinearIcon.magnifyingGlass.rawValue) ?? UIImage())
         searchTextField.addClearIcon()
     }
     

@@ -24,7 +24,7 @@ enum CharacterConstants {
     /// Returns a string representing a newline character ("\n").
     static let newLine = "\n"
     
-    static let twoHyphens = "--"
+    static let doubleHyphen = "--"
 }
 
 enum RegexPattern {

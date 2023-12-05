@@ -8,7 +8,7 @@
 import Foundation
 
 final class IconSelectionViewModel: IconSelectionViewModelType {
-    let icons = Icon.Wallet.allCases
+    let icons = WalletIcon.allCases
     
     // MARK: - UICollectionViewDataSource data
     func numberOfSections() -> Int {

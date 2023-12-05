@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol TransactionCellViewModelType: AnyObject {
-    var transaction: BehaviorSubject<Transaction> { get }
+    var transaction: Observable<Transaction> { get }
 }

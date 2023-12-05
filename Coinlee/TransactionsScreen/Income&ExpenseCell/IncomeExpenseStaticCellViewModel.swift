@@ -9,12 +9,12 @@ import Foundation
 import RxSwift
 
 final class IncomeExpenseStaticCellViewModel: IncomeExpenseStaticCellViewModelType {
-    let incomeText: BehaviorSubject<String>
-    let expenseText: BehaviorSubject<String>
+    let incomeText: Observable<String>
+    let expenseText: Observable<String>
     
     // MARK: - Init
     init(incomeText: String, expenseText: String) {
-        self.incomeText = .Observer(value: incomeText)
-        self.expenseText = .Observer(value: expenseText)
+        self.incomeText = .just(incomeText)
+        self.expenseText = .just(expenseText)
     }
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 final class CategoryTableViewHeaderViewModel: CategoryTableViewHeaderViewModelType {
-    let categoryName: String
+    let categoryGroup: TransactionCategoryGroup
     
     // MARK: - Init
-    init(headCategory: Icon.TranasctionCategoryGroup) {
-        self.categoryName = headCategory.rawValue
+    init(categoryGroup: TransactionCategoryGroup) {
+        self.categoryGroup = categoryGroup
     }
 }

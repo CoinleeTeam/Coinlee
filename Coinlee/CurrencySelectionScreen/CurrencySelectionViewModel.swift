@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class CurrencyTableViewModel: CurrencyTableViewModelType {
-    let currencies = Currency.availableCurrencies()
+final class CurrencySelectionViewModel: CurrencySelectionViewModelType {
+    let currencies = Currency.availableCurrenciesSorted()
     var filteredCurrencies = [Currency]()
     
     init() {
@@ -18,7 +18,7 @@ final class CurrencyTableViewModel: CurrencyTableViewModelType {
     func updateFilteredCurrenciesWithSearchText(_ searchText: String) {
         filteredCurrencies = currencies.filter { currency in
             let searchTextLowercased = searchText.lowercased()
-            return currency.name.lowercased().contains(searchTextLowercased) || currency.code.rawValue.lowercased().contains(searchTextLowercased)
+            return currency.localizedName.lowercased().contains(searchTextLowercased) || currency.code.lowercased().contains(searchTextLowercased)
         }
     }
     

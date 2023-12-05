@@ -106,7 +106,7 @@ final class WalletDetailView: UIView {
         
         // balanceTextField
         balanceTextField.placeholder = String(0)
-        balanceTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.dollar.rawValue))
+        balanceTextField.addLeftIcon(icon: UIImage(named: LinearIcon.dollar.rawValue))
         balanceTextField.keyboardType = .decimalPad
         balanceTextField.shadowType = .bottom
         balanceTextField.backgroundColor = .white
@@ -116,9 +116,9 @@ final class WalletDetailView: UIView {
         // iconSelectionButton
         iconButton.addConfiguration(baseForegroundColor: .charcoal,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                             leftImage: UIImage(named: Icon.Wallet.wallet.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
+                                             leftImage: UIImage(named: WalletIcon.wallet.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                                              leftImagePadding: 8,
-                                             rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                             rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                              rightImagePosition: .fixed,
                                              rightImagePadding: 8,
                                              contentEdgesInsets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0))
@@ -129,7 +129,7 @@ final class WalletDetailView: UIView {
         currencyButton.addConfiguration(baseForegroundColor: .charcoal,
                                                  titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                                  leftImagePadding: 8,
-                                                 rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                                 rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                                  rightImagePosition: .fixed,
                                                  rightImagePadding: 8,
                                                  contentEdgesInsets: UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0))
@@ -140,7 +140,7 @@ final class WalletDetailView: UIView {
         typeButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                              leftImagePadding: 16,
-                                             rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                             rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                              rightImagePosition: .fixed,
                                              rightImagePadding: 8,
                                              contentEdgesInsets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))

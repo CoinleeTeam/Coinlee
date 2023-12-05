@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CategoryTableViewHeaderViewModelType: AnyObject {
-    var categoryName: String { get }
+    var categoryGroup: TransactionCategoryGroup { get }
 }
