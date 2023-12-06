@@ -61,18 +61,18 @@ final class TransactionsViewController: UIViewController {
 // MARK: - CollectionViewDataSource
 extension TransactionsViewController {
     private func collectionViewDataSource() -> RxCollectionViewSectionedReloadDataSource<SectionOfTransactions> {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfTransactions>(configureCell: { dataSource, collectionView, indexPath, item in
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfTransactions>(configureCell: { _, collectionView, indexPath, transaction in
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IncomeExpenseStaticCell.reuseIdentifier, for: indexPath)
                 (cell as? IncomeExpenseStaticCell)?.viewModel = self.viewModel.incomeExpenseStaticCellViewModel()
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.reuseIdentifier, for: indexPath)
-                (cell as? TransactionCell)?.viewModel = self.viewModel.transactionCellViewModel(at: indexPath)
+                (cell as? TransactionCell)?.viewModel = self.viewModel.transactionCellViewModel(transaction: transaction)
                 return cell
             }
         },
-        configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
+        configureSupplementaryView: { _, collectionView, kind, indexPath in
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier, for: indexPath)
             (headerView as? TransactionCellHeaderView)?.viewModel = self.viewModel.transactionCellHeaderViewViewModel(forSection: indexPath.section)
             return headerView

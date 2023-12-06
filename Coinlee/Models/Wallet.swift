@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Differentiator
 
 struct Wallet {
     var name: String
@@ -14,4 +15,17 @@ struct Wallet {
     var icon: WalletIcon
     var type: WalletType
     var isActive: Bool
+}
+
+struct SectionOfWallets {
+    var items: [Item]
+}
+
+extension SectionOfWallets: SectionModelType {
+    typealias Item = Wallet
+
+    init(original: SectionOfWallets, items: [Item]) {
+        self = original
+        self.items = items
+    }
 }

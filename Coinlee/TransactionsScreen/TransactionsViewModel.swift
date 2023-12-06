@@ -43,8 +43,8 @@ final class TransactionsViewModel: TransactionsViewModelType {
             }
             
             self.transactions.onNext(transactions)
-            self.incomeText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .income) ?? Double())) ?? CharacterConstants.doubleHyphen
-            self.expenseText = AccountingNumberFormatter().string(from: NSNumber(value: self.sumUpTransactions(ofTransactionType: .expense) ?? Double())) ?? CharacterConstants.doubleHyphen
+            self.incomeText = self.sumUpTransactions(ofTransactionType: .income)?.accountingFormatted() ?? CharacterConstants.doubleHyphen
+            self.expenseText = self.sumUpTransactions(ofTransactionType: .expense)?.accountingFormatted() ?? CharacterConstants.doubleHyphen
             self.balanceText.onNext("2,425.35 PLN")
         }
         // ------------------------ TO BE DELETED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -75,8 +75,7 @@ final class TransactionsViewModel: TransactionsViewModelType {
         return IncomeExpenseStaticCellViewModel(incomeText: incomeText, expenseText: expenseText)
     }
     
-    func transactionCellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
-        guard let transaction = try? transactions.value()[indexPath.section].items[indexPath.row] else { return nil }
+    func transactionCellViewModel(transaction: Transaction) -> TransactionCellViewModelType {
         return TransactionCellViewModel(transaction: transaction)
     }
     

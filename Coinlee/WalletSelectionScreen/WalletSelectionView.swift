@@ -23,12 +23,6 @@ final class WalletSelectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - CollectionView DataSource & Delegate
-    func assignWalletsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
-        walletsCollectionView.dataSource = delegate
-        walletsCollectionView.delegate = delegate
-    }
-    
     // MARK: - Subviews' setup
     private func setUpWalletsCollectionView() {
         addSubview(walletsCollectionView)
@@ -38,7 +32,6 @@ final class WalletSelectionView: UIView {
         walletsCollectionView.alwaysBounceVertical = true
         walletsCollectionView.register(WalletCellHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: WalletCellHeaderView.reuseIdentifier)
         walletsCollectionView.register(WalletCell.self, forCellWithReuseIdentifier: WalletCell.reuseIdentifier)
-        
     }
     
     // MARK: Subviews' constraints

@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
 final class WalletCellViewModel: WalletCellViewModelType {
-    let wallet: Wallet
-    
-    // MARK: Computed properties
-    var balanceText: String {
-        wallet.balance.accountingFormatted() + CharacterConstants.whitespace + wallet.currency.code
-    }
+    let wallet: Observable<Wallet>
     
     // MARK: - Init
     init(wallet: Wallet) {
-        self.wallet = wallet
+        self.wallet = .just(wallet)
+    }
+    
+    // MARK: - Texts
+    func balanceText(forWallet wallet: Wallet) -> String {
+        wallet.balance.accountingFormatted() + CharacterConstants.whitespace + wallet.currency.code
     }
 }

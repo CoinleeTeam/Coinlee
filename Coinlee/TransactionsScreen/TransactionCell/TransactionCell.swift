@@ -37,12 +37,12 @@ final class TransactionCell: IconTitleCell {
     // MARK: - Subscriptions
     private func subscribeToTransaction() {
         viewModel?.transaction
-            .subscribe { transaction in
+            .subscribe(onNext: { transaction in
                 self.titleLabel.text = transaction.category.localizedName
                 self.iconImageView.image = UIImage(named: transaction.category.rawValue)
                 self.desctiptionLabel.text = transaction.description
-                self.sumLabel.text = transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency.code
-            }
+                self.sumLabel.text = self.viewModel?.transactionSumText(forTransaction: transaction)
+            })
             .disposed(by: disposeBag)
     }
     

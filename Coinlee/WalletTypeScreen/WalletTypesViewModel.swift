@@ -18,7 +18,7 @@ final class WalletTypesViewModel: WalletTypesViewModelType {
         self.selectedType = selectedType
     }
     
-    // MARK: ViewModels
+    // MARK: - ViewModels
     func walletTypeCellViewModel(withWalletType walletType: WalletType, atIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType {
         let viewModel: BorderFreeCellViewModelType
         if let selectedType = selectedType {

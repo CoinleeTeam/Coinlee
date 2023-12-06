@@ -15,4 +15,9 @@ final class TransactionCellViewModel: TransactionCellViewModelType {
     init(transaction: Transaction) {
         self.transaction = .just(transaction)
     }
+    
+    // MARK: - Texts
+    func transactionSumText(forTransaction transaction: Transaction) -> String {
+        return transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency.code
+    }
 }

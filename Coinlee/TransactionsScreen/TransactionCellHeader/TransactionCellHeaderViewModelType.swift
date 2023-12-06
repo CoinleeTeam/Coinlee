@@ -6,15 +6,16 @@
 //
 
 import Foundation
-import RxRelay
+import RxSwift
 
 protocol TransactionCellHeaderViewModelType: AnyObject {
-    var date: BehaviorRelay<Date> { get }
-    var balance: BehaviorRelay<Double> { get }
+    var date: Observable<Date> { get }
+    var balance: Observable<Double> { get }
     var currency: Currency { get }
     
-    // MARK: Computed properties
-    var monthDay: String { get }
-    var weekDay: String { get }
-    var monthAndYear: String { get }
+    // MARK: Texts
+    func monthDayText(forDate date: Date) -> String
+    func weekDayText(forDate date: Date) -> String
+    func monthAndYearText(forDate date: Date) -> String
+    func balanceText(balance: Double) -> String
 }

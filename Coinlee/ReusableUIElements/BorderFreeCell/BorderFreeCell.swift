@@ -52,9 +52,9 @@ final class BorderFreeCell: UICollectionViewCell {
     
     private func subscribeToIsSelected() {
         viewModel?.isSelected
-            .subscribe { isSelected in
+            .subscribe(onNext: { isSelected in
                 self.selectionMarkImageView.isHidden = !isSelected
-            }
+            })
             .disposed(by: disposeBag)
     }
     

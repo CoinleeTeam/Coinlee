@@ -14,6 +14,6 @@ protocol TransactionsViewModelType: AnyObject {
     
     // MARK: ViewModels
     func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType?
-    func transactionCellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType?
+    func transactionCellViewModel(transaction: Transaction) -> TransactionCellViewModelType
     func transactionCellHeaderViewViewModel(forSection section: Int) -> TransactionCellHeaderViewModelType?
 }

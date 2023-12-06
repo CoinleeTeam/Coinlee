@@ -10,4 +10,7 @@ import RxSwift
 
 protocol TransactionCellViewModelType: AnyObject {
     var transaction: Observable<Transaction> { get }
+    
+    // MARK: - Texts
+    func transactionSumText(forTransaction transaction: Transaction) -> String
 }

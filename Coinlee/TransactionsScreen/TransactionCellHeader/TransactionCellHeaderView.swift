@@ -43,23 +43,20 @@ final class TransactionCellHeaderView: UICollectionReusableView {
     
     // MARK: - Subscriptions
     private func subscribeToDate() {
-        guard let viewModel = viewModel else { return }
-        viewModel.date
-            .subscribe { _ in
-                self.monthDayLabel.text = viewModel.monthDay
-                self.weekDayLabel.text = viewModel.weekDay
-                self.monthAndYearLabel.text = viewModel.monthAndYear
-            }
+        viewModel?.date
+            .subscribe(onNext: { date in
+                self.monthDayLabel.text = self.viewModel?.monthDayText(forDate: date)
+                self.weekDayLabel.text = self.viewModel?.weekDayText(forDate: date)
+                self.monthAndYearLabel.text = self.viewModel?.monthAndYearText(forDate: date)
+            })
             .disposed(by: disposeBag)
     }
     
     private func subscribeToBalance() {
-        guard let viewModel = viewModel else { return }
-        viewModel.balance
-            .subscribe { balance in
-                let currency = viewModel.currency.code
-                self.balanceLabel.text = balance.accountingFormatted() + CharacterConstants.whitespace + currency
-            }
+        viewModel?.balance
+            .subscribe(onNext: { balance in
+                self.balanceLabel.text = self.viewModel?.balanceText(balance: balance)
+            })
             .disposed(by: disposeBag)
     }
     
