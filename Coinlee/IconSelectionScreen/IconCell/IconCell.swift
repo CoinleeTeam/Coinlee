@@ -7,17 +7,28 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class IconCell: CornerRoundedCell {
     static let reuseIdentifier = "IconCell"
     
     let imageView = UIImageView()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: IconCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            imageView.image = UIImage(named: viewModel.icon.rawValue)
+        didSet {
+            subscribeToIcon()
         }
+    }
+    
+    // MARK: - Subscriptions
+    private func subscribeToIcon() {
+        viewModel?.icon
+            .subscribe(onNext: { icon in
+                self.imageView.image = UIImage(named: icon.rawValue)
+            })
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Init

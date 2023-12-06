@@ -71,7 +71,7 @@ final class TransactionsViewModel: TransactionsViewModelType {
     }
         
     // MARK: ViewModels
-    func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType? {
+    func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType {
         return IncomeExpenseStaticCellViewModel(incomeText: incomeText, expenseText: expenseText)
     }
     

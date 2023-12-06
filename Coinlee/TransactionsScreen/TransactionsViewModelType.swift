@@ -13,7 +13,7 @@ protocol TransactionsViewModelType: AnyObject {
     var transactions: BehaviorSubject<[SectionOfTransactions]> { get }
     
     // MARK: ViewModels
-    func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType?
+    func incomeExpenseStaticCellViewModel() -> IncomeExpenseStaticCellViewModelType
     func transactionCellViewModel(transaction: Transaction) -> TransactionCellViewModelType
     func transactionCellHeaderViewViewModel(forSection section: Int) -> TransactionCellHeaderViewModelType?
 }

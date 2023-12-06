@@ -21,7 +21,7 @@ final class BorderFreeCell: UICollectionViewCell {
     
     var viewModel: BorderFreeCellViewModelType? {
         didSet {
-            subscribeToTitle()
+            bindTitleToTitleLabel()
             subscribeToIsSelected()
         }
     }
@@ -44,7 +44,7 @@ final class BorderFreeCell: UICollectionViewCell {
     }
     
     // MARK: - Subscriptions
-    private func subscribeToTitle() {
+    private func bindTitleToTitleLabel() {
         viewModel?.title
             .bind(to: titleLabel.rx.text)
             .disposed(by: disposeBag)

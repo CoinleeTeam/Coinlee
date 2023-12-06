@@ -6,21 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
 final class IconSelectionViewModel: IconSelectionViewModelType {
-    let icons = WalletIcon.allCases
-    
-    // MARK: - UICollectionViewDataSource data
-    func numberOfSections() -> Int {
-        return 1
-    }
-    
-    func numberOfItems() -> Int {
-        return icons.count
-    }
-    
+    let icons: Observable<[WalletIcon]> = .just(WalletIcon.allCases)
+        
     // MARK: ViewModels
-    func iconCellViewModel(forIndexPath indexPath: IndexPath) -> IconCellViewModelType? {
-        return IconCellViewModel(icon: icons[indexPath.row])
+    func iconCellViewModel(icon: WalletIcon) -> IconCellViewModelType {
+        return IconCellViewModel(icon: icon)
     }
 }

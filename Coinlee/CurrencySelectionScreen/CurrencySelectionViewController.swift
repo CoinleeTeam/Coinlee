@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 final class CurrencySelectionViewController: UIViewController {
     let viewModel: CurrencySelectionViewModelType
     let currencySelectionView = CurrencySelectionView()
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Inits
     init(viewModel: CurrencySelectionViewModelType) {

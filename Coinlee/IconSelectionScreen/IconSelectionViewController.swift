@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class IconSelectionViewController: UIViewController {
     let viewModel: IconSelectionViewModelType
     let iconSelectionView = IconSelectionView()
+    
+    let disposeBag = DisposeBag()
     
     // MARK: - Init
     init(viewModel: IconSelectionViewModel) {
@@ -29,27 +33,18 @@ final class IconSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        iconSelectionView.assignIconsCollectionViewDelegates(to: self)
+        bindIconsToIconsCollectionView()
     }
 }
 
-// MARK: - CollectionViewDataSource
-extension IconSelectionViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections()
+// MARK: - UICollectionViewDataSource
+extension IconSelectionViewController {
+    private func bindIconsToIconsCollectionView() {
+        viewModel.icons
+            .bind(to: iconSelectionView.iconsCollectionView.rx.items(cellIdentifier: IconCell.reuseIdentifier,
+                                                                     cellType: IconCell.self)) { row, icon, cell in
+            cell.viewModel = self.viewModel.iconCellViewModel(icon: icon)
+        }
+        .disposed(by: disposeBag)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItems()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCell.reuseIdentifier, for: indexPath) as? IconCell else { return UICollectionViewCell() }
-        cell.viewModel = viewModel.iconCellViewModel(forIndexPath: indexPath)
-        return cell
-    }
-}
-
-// MARK: - CollectionViewDelegate
-extension IconSelectionViewController: UICollectionViewDelegate {
 }

@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol IconSelectionViewModelType: AnyObject {
-    var icons: [WalletIcon] { get }
+    var icons: Observable<[WalletIcon]> { get }
     
-    func numberOfSections() -> Int
-    func numberOfItems() -> Int
-    func iconCellViewModel(forIndexPath indexPath: IndexPath) -> IconCellViewModelType?
+    func iconCellViewModel(icon: WalletIcon) -> IconCellViewModelType
 }

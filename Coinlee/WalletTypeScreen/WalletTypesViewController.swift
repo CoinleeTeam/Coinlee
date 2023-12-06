@@ -33,13 +33,13 @@ final class WalletTypesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindToWalletTypes()
+        bindWalletTypesToWalletTypesCollectionView()
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension WalletTypesViewController {
-    private func bindToWalletTypes() {
+    private func bindWalletTypesToWalletTypesCollectionView() {
         viewModel.walletTypes.bind(to: walletTypesView.walletTypesCollectionView.rx.items(cellIdentifier: BorderFreeCell.reuseIdentifier, cellType: BorderFreeCell.self)) { row, walletType, cell in
             cell.viewModel = self.viewModel.walletTypeCellViewModel(withWalletType: walletType, atIndexPath: IndexPath(row: row, section: 0))
         }

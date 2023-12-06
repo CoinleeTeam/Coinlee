@@ -23,12 +23,6 @@ final class IconSelectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - CollectionView DataSource & Delegate
-    func assignIconsCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
-        iconsCollectionView.dataSource = delegate
-        iconsCollectionView.delegate = delegate
-    }
-    
     // MARK: - Subviews' setup
     private func setUpIconsCollectionView() {
         addSubview(iconsCollectionView)

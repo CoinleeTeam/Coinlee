@@ -34,11 +34,11 @@ final class WalletSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindWalletsToCollectionView()
+        bindWalletsToWalletsCollectionView()
     }
     
     // MARK: - Subscriptions
-    private func bindWalletsToCollectionView() {
+    private func bindWalletsToWalletsCollectionView() {
         viewModel.wallets
             .bind(to: walletSelectionView.walletsCollectionView.rx.items(dataSource: collectionViewDataSource()))
             .disposed(by: disposeBag)
