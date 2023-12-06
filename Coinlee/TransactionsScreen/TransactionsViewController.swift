@@ -107,7 +107,3 @@ extension TransactionsViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-
-// MARK: - CollectionViewDelegate
-extension TransactionsViewController: UICollectionViewDelegate {
-}

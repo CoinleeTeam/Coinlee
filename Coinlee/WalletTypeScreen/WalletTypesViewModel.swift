@@ -6,30 +6,26 @@
 //
 
 import Foundation
+import RxSwift
 
 final class WalletTypesViewModel: WalletTypesViewModelType {
-    let walletTypes = WalletType.allCases
+    let walletTypes: Observable<[WalletType]>
     var selectedType: WalletType?
     
     // MARK: - Init
     init(selectedType: WalletType?) {
+        walletTypes = .just(WalletType.allCases)
         self.selectedType = selectedType
     }
     
-    // MARK: - UICollectionViewDataSource data
-    func numberOfSections() -> Int {
-        return 1
-    }
-    
-    func numberOfItems() -> Int {
-        return walletTypes.count
-    }
-    
     // MARK: ViewModels
-    func walletTypeCellViewModel(forIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType? {
-        let viewModel = BorderFreeCellViewModel(title: walletTypes[indexPath.row].localizedTitle)
+    func walletTypeCellViewModel(withWalletType walletType: WalletType, atIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType {
+        let viewModel: BorderFreeCellViewModelType
         if let selectedType = selectedType {
-            viewModel.isSelected = viewModel.title == selectedType.localizedTitle
+            viewModel = BorderFreeCellViewModel(title: walletType.localizedTitle,
+                                                isSelected: walletType.localizedTitle == selectedType.localizedTitle)
+        } else {
+            viewModel = BorderFreeCellViewModel(title: walletType.localizedTitle)
         }
         return viewModel
     }

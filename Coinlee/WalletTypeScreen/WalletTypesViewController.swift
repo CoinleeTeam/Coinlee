@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class WalletTypesViewController: UIViewController {
     let walletTypesView = WalletTypesView()
     let viewModel: WalletTypesViewModelType
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Init
     init(viewModel: WalletTypesViewModelType) {
@@ -29,27 +33,16 @@ final class WalletTypesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        walletTypesView.assignWalletTypesCollectionViewDelegates(to: self)
+        bindToWalletTypes()
     }
 }
 
 // MARK: - UICollectionViewDataSource
-extension WalletTypesViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections()
+extension WalletTypesViewController {
+    private func bindToWalletTypes() {
+        viewModel.walletTypes.bind(to: walletTypesView.walletTypesCollectionView.rx.items(cellIdentifier: BorderFreeCell.reuseIdentifier, cellType: BorderFreeCell.self)) { row, walletType, cell in
+            cell.viewModel = self.viewModel.walletTypeCellViewModel(withWalletType: walletType, atIndexPath: IndexPath(row: row, section: 0))
+        }
+        .disposed(by: disposeBag)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItems()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BorderFreeCell.reuseIdentifier, for: indexPath) as? BorderFreeCell else { return UICollectionViewCell() }
-        cell.viewModel = viewModel.walletTypeCellViewModel(forIndexPath: indexPath)
-        return cell
-    }
-}
-
-// MARK: UITableViewDelegate
-extension WalletTypesViewController: UICollectionViewDelegate {
 }

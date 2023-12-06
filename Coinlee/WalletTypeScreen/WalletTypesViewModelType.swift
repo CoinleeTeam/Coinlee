@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WalletTypesViewModelType: AnyObject {
-    var walletTypes: [WalletType] { get }
+    var walletTypes: Observable<[WalletType]> { get }
     
-    func numberOfSections() -> Int
-    func numberOfItems() -> Int
-    func walletTypeCellViewModel(forIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType?
+    func walletTypeCellViewModel(withWalletType walletType: WalletType, atIndexPath indexPath: IndexPath) -> BorderFreeCellViewModelType
 }

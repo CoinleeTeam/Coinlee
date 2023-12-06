@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class BorderFreeCell: UICollectionViewCell {
     static let reuseIdentifier = "BorderFreeCell"
@@ -15,11 +17,12 @@ final class BorderFreeCell: UICollectionViewCell {
     let selectionMarkImageView = UIImageView()
     let bottomLineLayer = CALayer()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: BorderFreeCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            titleLabel.text = viewModel.title
-            selectionMarkImageView.isHidden = !viewModel.isSelected
+        didSet {
+            subscribeToTitle()
+            subscribeToIsSelected()
         }
     }
         
@@ -40,7 +43,22 @@ final class BorderFreeCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToTitle() {
+        viewModel?.title
+            .bind(to: titleLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToIsSelected() {
+        viewModel?.isSelected
+            .subscribe { isSelected in
+                self.selectionMarkImageView.isHidden = !isSelected
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUp() {
         // titleLabel
         addSubview(titleLabel)
