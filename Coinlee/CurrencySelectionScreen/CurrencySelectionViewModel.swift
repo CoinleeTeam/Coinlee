@@ -6,28 +6,25 @@
 //
 
 import Foundation
+import RxRelay
 
 final class CurrencySelectionViewModel: CurrencySelectionViewModelType {
     let currencies = Currency.availableCurrenciesSorted()
-    var filteredCurrencies = [Currency]()
+    var filteredCurrencies: BehaviorRelay<[Currency]>
     
     init() {
-        filteredCurrencies = currencies
+        self.filteredCurrencies = .init(value: currencies)
     }
 
     func updateFilteredCurrenciesWithSearchText(_ searchText: String) {
-        filteredCurrencies = currencies.filter { currency in
+        let searchTextFilteredCurrencies = currencies.filter { currency in
             let searchTextLowercased = searchText.lowercased()
             return currency.localizedName.lowercased().contains(searchTextLowercased) || currency.code.lowercased().contains(searchTextLowercased)
         }
+        filteredCurrencies.accept(searchTextFilteredCurrencies)
     }
     
-    func numberOfRows(forSection section: Int) -> Int {
-        filteredCurrencies.count
-    }
-    
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> CurrencyTableViewCellViewModelType? {
-        let currency = filteredCurrencies[indexPath.row]
+    func cellViewModel(currency: Currency) -> CurrencyTableViewCellViewModelType {
         return CurrencyTableViewCellViewModel(currency: currency)
     }
 }

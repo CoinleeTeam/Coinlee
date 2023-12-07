@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class TextField: UITextField {
     private let viewPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     private var textPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    var clearDelegate: ClearTextFieldDelegate?
     var maximumNumberOfSymbols = 0
+    
+    var currencyLabel: UILabel?
+    var clearIconImageView: UIImageView?
+    
+    var tapGestureRecognizer: UITapGestureRecognizer?
+    
+    private let disposeBag = DisposeBag()
     
     override var bounds: CGRect {
         didSet {
@@ -77,7 +85,6 @@ final class TextField: UITextField {
     }
     
     func addLeftIcon(icon: UIImage?) {
-        guard let icon = icon else { return }
         textPadding.left = 48
         
         let leftIcon = UIImageView(image: icon)
@@ -87,23 +94,25 @@ final class TextField: UITextField {
     }
     
     func addClearIcon() {
+        let clearIconImageView = UIImageView(image: UIImage(named: LinearIcon.clear.rawValue))
+        self.clearIconImageView = clearIconImageView
         textPadding.right = 48
         
-        let rightIcon = UIImageView(image: UIImage(named: LinearIcon.clear.rawValue))
-        rightIcon.tintColor = .goldenrod
+        clearIconImageView.tintColor = .goldenrod
         rightViewMode = .always
-        rightView = rightIcon
+        rightView = clearIconImageView
         
         rightView?.isHidden = true
-        addTapGestureRecognizer(to: rightIcon)
-        addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        setUpTapGestureRecognizer(for: clearIconImageView)
+        subscribeToTextChange()
     }
     
-    func addCurrencyLabel(currency: Currency) {
+    func addCurrencyLabelToRightView(currency: Currency) {
+        let currencyLabel = UILabel()
+        self.currencyLabel = currencyLabel
         textPadding.right = 48
         
-        let currencyLabel = UILabel()
-        currencyLabel.text = "| \(currency.code)"
+        currencyLabel.text = CharacterConstants.verticalBar + CharacterConstants.whitespace + currency.code
         currencyLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
         currencyLabel.textColor = .battleshipGrey
         
@@ -111,11 +120,42 @@ final class TextField: UITextField {
         rightView = currencyLabel
     }
     
-    // MARK: - Textfield's clear button UI and logic
-    private func addTapGestureRecognizer(to view: UIImageView) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clearButtonTapped))
+    private func setUpTapGestureRecognizer(for view: UIView) {
+        let tapGestureRecognizer = UITapGestureRecognizer()
+        self.tapGestureRecognizer = tapGestureRecognizer
         view.addGestureRecognizer(tapGestureRecognizer)
         view.isUserInteractionEnabled = true
+        subscribeToClearButtonTap()
+    }
+    
+    // MARK: Subscriptions
+    private func subscribeToClearButtonTap() {
+        tapGestureRecognizer?.rx.event
+            .subscribe { _ in
+                self.text = String()
+                self.toggleRightViewIsHidden()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToTextChange() {
+        rx.text
+            .orEmpty
+            .changed
+            .subscribe(onNext: { _ in
+                self.toggleRightViewIsHidden()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Utility Methods
+    private func toggleRightViewIsHidden() {
+        let text = text ?? String()
+        if text.isEmpty {
+            rightView?.isHidden = true
+        } else {
+            rightView?.isHidden = false
+        }
     }
     
     func applyAccountingNumberFormat(_ textField: UITextField, range: NSRange, string: String) -> Bool {
@@ -123,43 +163,28 @@ final class TextField: UITextField {
         let formatter = AccountingNumberFormatter()
         let newText = (textFieldText as NSString).replacingCharacters(in: range, with: string)
         let newTextWithoutGroupingSeparators = newText.replacingOccurrences(of: formatter.groupingSeparator, with: String())
-    
+        
         if !textFieldText.isEmpty &&
             string == formatter.decimalSeparator &&
             newText.components(separatedBy: formatter.decimalSeparator).count < 3 {
             return true
         }
-    
+        
         if let numberWithoutGroupingSeparator = formatter.number(from: newTextWithoutGroupingSeparators),
            let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
             if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.exactZero(separator: formatter.decimalSeparator)) {
                 textField.text = formattedText + formatter.decimalSeparator + String(0)
-    
+                
             } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.twoOrThreeZeros(separator: formatter.decimalSeparator)) {
                 textField.text = formattedText + formatter.decimalSeparator + String(0) + String(0)
-    
+                
             } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.zeroAtEnd(separator: formatter.decimalSeparator)) {
                 textField.text = formattedText + String(0)
-    
+                
             } else  {
                 textField.text = formattedText
             }
         }
         return newText.isEmpty ? true : false
-    }
-    
-    @objc private func clearButtonTapped() {
-        text = String()
-        textDidChange()
-        clearDelegate?.clearTextField(self)
-    }
-    
-    @objc private func textDidChange() {
-        guard let safeText = text else { return }
-        if safeText.isEmpty {
-            rightView?.isHidden = true
-        } else {
-            rightView?.isHidden = false
-        }
     }
 }

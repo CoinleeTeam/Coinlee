@@ -40,7 +40,7 @@ final class TransactionDetailView: ScrollableView {
         addConstraints()
         
         // ---------REMOVE---------
-        amountTextField.addCurrencyLabel(currency: .pln)
+        amountTextField.addCurrencyLabelToRightView(currency: .pln)
         categoryButton.setTitle(NSLocalizedString("select_category_button", comment: "Select category"), for: .normal)
         dateButton.setTitle("29 Maj 23", for: .normal)
         walletButton.setTitle("Wallet binance usdt", for: .normal)

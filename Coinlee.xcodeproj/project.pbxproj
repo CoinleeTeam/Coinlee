@@ -37,7 +37,6 @@
 		F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4872AEC07D200459DF5 /* NoResultsView.swift */; };
 		F546A48D2AEC07D300459DF5 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4882AEC07D200459DF5 /* ContainerView.swift */; };
 		F546A48E2AEC07D300459DF5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48A2AEC07D200459DF5 /* TextField.swift */; };
-		F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */; };
 		F546A49A2AEC07DE00459DF5 /* CurrencySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4912AEC07DE00459DF5 /* CurrencySelectionViewModel.swift */; };
 		F546A49B2AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4922AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift */; };
 		F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */; };
@@ -141,7 +140,6 @@
 		F546A4872AEC07D200459DF5 /* NoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
 		F546A4882AEC07D200459DF5 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		F546A48A2AEC07D200459DF5 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
 		F546A4912AEC07DE00459DF5 /* CurrencySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewModel.swift; sourceTree = "<group>"; };
 		F546A4922AEC07DE00459DF5 /* CurrencySelectionViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewModelType.swift; sourceTree = "<group>"; };
 		F546A4932AEC07DE00459DF5 /* CurrencySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +311,7 @@
 				F56ACEE92AF6945600F3110B /* ScrollView.swift */,
 				F5C96EC62AF6D83D00F07C87 /* NoteTextView.swift */,
 				F5C96EC82AF6DD9400F07C87 /* ScrollableView.swift */,
-				F546A4892AEC07D200459DF5 /* TextField */,
+				F546A48A2AEC07D200459DF5 /* TextField.swift */,
 				F5F042A12AEEA86200AD6142 /* BorderFreeCell */,
 			);
 			path = ReusableUIElements;
@@ -326,15 +324,6 @@
 				F53CA1662B1FA739002BEED7 /* TransactionCategoryGroup.swift */,
 			);
 			path = TransactionCategory;
-			sourceTree = "<group>";
-		};
-		F546A4892AEC07D200459DF5 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				F546A48A2AEC07D200459DF5 /* TextField.swift */,
-				F546A48B2AEC07D200459DF5 /* ClearTextFieldDelegate.swift */,
-			);
-			path = TextField;
 			sourceTree = "<group>";
 		};
 		F546A4902AEC07DE00459DF5 /* CurrencySelectionScreen */ = {
@@ -741,7 +730,6 @@
 				F53CA15D2B1F517E002BEED7 /* CategoryTableViewCellViewModel.swift in Sources */,
 				F5D5E5BA2AFA58B5008BB1F4 /* TransactionDetailView.swift in Sources */,
 				F5E251902AF1367100987511 /* IconCell.swift in Sources */,
-				F546A48F2AEC07D300459DF5 /* ClearTextFieldDelegate.swift in Sources */,
 				F53CA1612B1F517E002BEED7 /* CategoryTableViewCellViewModelType.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
 				F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */,

@@ -25,6 +25,8 @@ enum CharacterConstants {
     static let newLine = "\n"
     
     static let doubleHyphen = "--"
+    
+    static let verticalBar = "|"
 }
 
 enum RegexPattern {

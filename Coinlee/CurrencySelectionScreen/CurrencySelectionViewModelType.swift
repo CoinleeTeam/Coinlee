@@ -6,12 +6,12 @@
 //
 
 import Foundation
+import RxRelay
 
 protocol CurrencySelectionViewModelType: AnyObject {
     var currencies: [Currency] { get }
-    var filteredCurrencies: [Currency] { get set }
+    var filteredCurrencies: BehaviorRelay<[Currency]> { get set }
     
     func updateFilteredCurrenciesWithSearchText(_ searchText: String)
-    func numberOfRows(forSection section: Int) -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> CurrencyTableViewCellViewModelType?
+    func cellViewModel(currency: Currency) -> CurrencyTableViewCellViewModelType
 }

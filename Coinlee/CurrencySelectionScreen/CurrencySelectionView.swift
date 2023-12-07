@@ -25,17 +25,6 @@ final class CurrencySelectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Delegates
-    func assignCurrenciesTableViewDelegates<T>(to delegate: T) where T: UITableViewDataSource & UITableViewDelegate {
-        currenciesTableView.dataSource = delegate
-        currenciesTableView.delegate = delegate
-    }
-    
-    func assignSearchTextFieldDelegates<T>(to delegate: T) where T: UITextFieldDelegate & ClearTextFieldDelegate {
-        searchTextField.delegate = delegate
-        searchTextField.clearDelegate = delegate
-    }
-    
     // MARK: - Subviews' setup
     private func setUpCurrenciesTableView() {
         backgroundColor = .paleFrost
