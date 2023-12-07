@@ -158,33 +158,33 @@ final class TextField: UITextField {
         }
     }
     
-    func applyAccountingNumberFormat(_ textField: UITextField, range: NSRange, string: String) -> Bool {
-        guard let textFieldText = textField.text else { return false }
+    func applyAccountingNumberFormat(oldText: String, newText: String) -> String {
         let formatter = AccountingNumberFormatter()
-        let newText = (textFieldText as NSString).replacingCharacters(in: range, with: string)
         let newTextWithoutGroupingSeparators = newText.replacingOccurrences(of: formatter.groupingSeparator, with: String())
+        guard let newTextLast = newText.last else { return newText }
         
-        if !textFieldText.isEmpty &&
-            string == formatter.decimalSeparator &&
-            newText.components(separatedBy: formatter.decimalSeparator).count < 3 {
-            return true
+        if !oldText.isEmpty &&
+            String(newTextLast) == formatter.decimalSeparator &&
+            newText.components(separatedBy: formatter.decimalSeparator).count < 3 &&
+            oldText.components(separatedBy: formatter.decimalSeparator).count < 2 {
+            return newText
         }
         
         if let numberWithoutGroupingSeparator = formatter.number(from: newTextWithoutGroupingSeparators),
            let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
             if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.exactZero(separator: formatter.decimalSeparator)) {
-                textField.text = formattedText + formatter.decimalSeparator + String(0)
+                return formattedText + formatter.decimalSeparator + String(0)
                 
             } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.twoOrThreeZeros(separator: formatter.decimalSeparator)) {
-                textField.text = formattedText + formatter.decimalSeparator + String(0) + String(0)
+                return formattedText + formatter.decimalSeparator + String(0) + String(0)
                 
             } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.zeroAtEnd(separator: formatter.decimalSeparator)) {
-                textField.text = formattedText + String(0)
+                return formattedText + String(0)
                 
             } else  {
-                textField.text = formattedText
+                return formattedText
             }
         }
-        return newText.isEmpty ? true : false
+        return newText.isEmpty ? newText : oldText
     }
 }

@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class WalletDetailViewController: UIViewController {
     let viewModel: WalletDetailViewModelType
     let walletDetailView = WalletDetailView()
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Inits
     init(viewModel: WalletDetailViewModelType) {
@@ -29,29 +33,84 @@ final class WalletDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        walletDetailView.assignTextFieldsDelegates(to: self)
+        subscribeToTapRecognizerEvent()
+        subscribeToNameTextFieldText()
+        subscribeToBalanceTextFieldText()
+        subscribeToCurrency()
+        subscribeToIcon()
+        subscribeToWalletType()
     }
-}
-
-// MARK: - UITextFieldDelegate
-extension WalletDetailViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // balanceTextField
-        if textField == walletDetailView.balanceTextField {
-            return (textField as? TextField)?.applyAccountingNumberFormat(textField, range: range, string: string) ?? true
-        }
-        
-        // nameTextField
-        if textField == walletDetailView.nameTextField {
-            guard let textFieldText = textField.text else { return false }
-            let newText = (textFieldText as NSString).replacingCharacters(in: range, with: string)
-            let maxTextCount = 35
-            if newText.count > maxTextCount {
-                textField.text = newText.truncated(to: maxTextCount)
-                return false
+    
+    // MARK: Subscriptions
+    private func subscribeToTapRecognizerEvent() {
+        walletDetailView.tapRecognizer.rx.event
+            .subscribe { _ in
+                self.view.endEditing(true)
             }
-        }
-        
-        return true
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToNameTextFieldText() {
+        walletDetailView.nameTextField.rx
+            .text
+            .orEmpty
+            .scan(String(), accumulator: { _, newText in
+                let maxTextCount = 35
+                var acceptedText = newText
+                
+                if newText.count > maxTextCount {
+                    acceptedText = newText.truncated(to: maxTextCount)
+                }
+                
+                self.viewModel.walletName = acceptedText
+                return acceptedText
+            })
+            .bind(to: walletDetailView.nameTextField.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToBalanceTextFieldText() {
+        walletDetailView.balanceTextField.rx
+            .text
+            .orEmpty
+            .scan(String(), accumulator: { previousText, newText in
+                let acceptedText = self.walletDetailView.balanceTextField.applyAccountingNumberFormat(oldText: previousText,
+                                                                                                      newText: newText)
+                self.viewModel.balance = acceptedText.asDouble() ?? Double()
+                return acceptedText
+            })
+            .bind(to: walletDetailView.balanceTextField.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToCurrency() {
+        viewModel.currency
+            .subscribe(onNext: { currency in
+                self.walletDetailView.currencyButton.setTitle(currency.code, for: .normal)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToIcon() {
+        viewModel.icon
+            .subscribe(onNext: { icon in
+                let image = UIImage(named: icon.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40))
+                self.walletDetailView.iconButton.setImage(image, for: .normal)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToWalletType() {
+        viewModel.walletType
+            .subscribe(onNext: { walletType in
+                let typeButtonTitle: String
+                if let walletType = walletType {
+                    typeButtonTitle = walletType.localizedTitle
+                } else {
+                    typeButtonTitle = NSLocalizedString("select_type_button", comment: "Select type button")
+                }
+                self.walletDetailView.typeButton.setTitle(typeButtonTitle, for: .normal)
+            })
+            .disposed(by: disposeBag)
     }
 }

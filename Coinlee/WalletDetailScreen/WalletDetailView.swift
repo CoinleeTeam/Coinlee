@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class WalletDetailView: UIView {
-    private let tapRecognizer = UITapGestureRecognizer()
+    let tapRecognizer = UITapGestureRecognizer()
     
     // MARK: Top stacks
     private let nameAndIconLabelsStack = UIStackView()
@@ -36,38 +36,17 @@ final class WalletDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .paleFrost
-        
+        addGestureRecognizer(tapRecognizer)
         setUpHeaderLabels()
         setUpTextFields()
         setUpButtons()
         configureTopStacks()
         configureMiddleStacks()
-        setUpTapRecognizer()
         addConstraints()
-        
-        // ---------REMOVE---------
-        currencyButton.setTitle("EUR", for: .normal)
-        typeButton.setTitle(NSLocalizedString("select_type_button", comment: "Select type button"), for: .normal)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - TapGestureRecognizer
-    private func setUpTapRecognizer() {
-        addGestureRecognizer(tapRecognizer)
-        tapRecognizer.addTarget(self, action: #selector(didTapView))
-    }
-    
-    @objc private func didTapView() {
-        endEditing(true)
-    }
-    
-    // MARK: - Delegates
-    func assignTextFieldsDelegates<T>(to delegate: T) where T: UITextFieldDelegate {
-        balanceTextField.delegate = delegate
-        nameTextField.delegate = delegate
     }
     
     // MARK: - Subviews' setup
@@ -116,7 +95,6 @@ final class WalletDetailView: UIView {
         // iconSelectionButton
         iconButton.addConfiguration(baseForegroundColor: .charcoal,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                             leftImage: UIImage(named: WalletIcon.wallet.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40)),
                                              leftImagePadding: 8,
                                              rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                              rightImagePosition: .fixed,
@@ -144,6 +122,7 @@ final class WalletDetailView: UIView {
                                              rightImagePosition: .fixed,
                                              rightImagePadding: 8,
                                              contentEdgesInsets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))
+        typeButton.rightImageView?.tintColor = .charcoal
         typeButton.shadowType = .bottom
         typeButton.backgroundColor = .white
         

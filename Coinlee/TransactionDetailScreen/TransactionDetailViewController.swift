@@ -36,9 +36,9 @@ final class TransactionDetailViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 extension TransactionDetailViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        (textField as? TextField)?.applyAccountingNumberFormat(textField, range: range, string: string) ?? true
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        (textField as? TextField)?.applyAccountingNumberFormat(textField, range: range, string: string) ?? true
+//    }
 }
 
 // MARK: - UITextViewDelegate
