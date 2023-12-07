@@ -106,6 +106,7 @@ final class WalletDetailViewController: UIViewController {
                 let typeButtonTitle: String
                 if let walletType = walletType {
                     typeButtonTitle = walletType.localizedTitle
+                    self.walletDetailView.typeButton.configuration?.baseForegroundColor = .charcoal
                 } else {
                     typeButtonTitle = NSLocalizedString("select_type_button", comment: "Select type button")
                 }

@@ -107,12 +107,11 @@ final class TextField: UITextField {
         subscribeToTextChange()
     }
     
-    func addCurrencyLabelToRightView(currency: Currency) {
+    func addCurrencyLabelToRightView() {
         let currencyLabel = UILabel()
         self.currencyLabel = currencyLabel
         textPadding.right = 48
         
-        currencyLabel.text = CharacterConstants.verticalBar + CharacterConstants.whitespace + currency.code
         currencyLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 16)
         currencyLabel.textColor = .battleshipGrey
         

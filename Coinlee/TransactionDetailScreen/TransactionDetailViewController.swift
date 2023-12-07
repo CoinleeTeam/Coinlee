@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class TransactionDetailViewController: UIViewController {
     let viewModel: TransactionDetailViewModelType
     let transactionDetailView = TransactionDetailView()
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Inits
     init(viewModel: TransactionDetailViewModelType) {
@@ -29,55 +33,130 @@ final class TransactionDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transactionDetailView.assignSubviewsDelegates(to: self)
-        addNotificationCenterObservers()
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension TransactionDetailViewController: UITextFieldDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        (textField as? TextField)?.applyAccountingNumberFormat(textField, range: range, string: string) ?? true
-//    }
-}
-
-// MARK: - UITextViewDelegate
-extension TransactionDetailViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        transactionDetailView.noteTextView.togglePlaceholderVisibility(isTextPresent: textView.text.isEmpty)
+        addRxObservers()
+        transactionDetailView.incomeButton.isUserInteractionEnabled = true
+        subscribeToTransactionTypeButtonsTap()
+        subscribeToAmountTextFieldText()
+        subscribeToNoteTextViewEvents()
+        subscribeToWallet()
+        subscribeToTransactionCategory()
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        transactionDetailView.noteTextView.togglePlaceholderVisibility(isTextPresent: textView.text.isEmpty)
+    // MARK: Subscriptions
+    private func subscribeToWallet() {
+        viewModel.wallet
+            .subscribe(onNext: { wallet in
+                let image = UIImage(named: wallet.icon.rawValue)?.preparingThumbnail(of: CGSize(width: 40, height: 40))
+                self.transactionDetailView.walletButton.setImage(image, for: .normal)
+                self.transactionDetailView.walletButton.setTitle(wallet.name, for: .normal)
+                self.transactionDetailView.amountTextField.currencyLabel?.text = CharacterConstants.verticalBar + CharacterConstants.whitespace + wallet.currency.code
+            })
+            .disposed(by: disposeBag)
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        if text == CharacterConstants.newLine {
-            textView.resignFirstResponder()
-            return false
-        } else if newText.count > 100 || newText.contains(CharacterConstants.newLine) {
-            return false
-        }
-        return true
+    private func subscribeToTransactionCategory() {
+        viewModel.transactionCategory
+            .subscribe(onNext: { transactionCategory in
+                let categoryButtonTitle: String
+                if let transactionCategory = transactionCategory {
+                    categoryButtonTitle = transactionCategory.localizedName
+                    self.transactionDetailView.categoryButton.configuration?.baseForegroundColor = .charcoal
+                } else {
+                    categoryButtonTitle = NSLocalizedString("select_type_button", comment: "Select type button")
+                }
+                self.transactionDetailView.categoryButton.setTitle(categoryButtonTitle, for: .normal)
+            })
+            .disposed(by: disposeBag)
     }
-}
-
-// MARK: - NotificationCenter
-extension TransactionDetailViewController {
-    private func addNotificationCenterObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardNotificationTriggered(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
+    
+    private func subscribeToAmountTextFieldText() {
+        transactionDetailView.amountTextField.rx
+            .text
+            .orEmpty
+            .scan(String(), accumulator: { previousText, newText in
+                let acceptedText = self.transactionDetailView.amountTextField.applyAccountingNumberFormat(oldText: previousText,
+                                                                                                          newText: newText)
+                self.viewModel.amount = acceptedText.asDouble() ?? Double()
+                return acceptedText
+            })
+            .bind(to: transactionDetailView.amountTextField.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToTransactionTypeButtonsTap() {
+        transactionDetailView.incomeButton.rx
+            .tap
+            .subscribe(onNext: { _ in
+                self.transactionDetailView.animateLayerMotion(x: 6, color: UIColor.paleLimeGreen.cgColor)
+                self.viewModel.transactionType = .income
+            })
+            .disposed(by: disposeBag)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardNotificationTriggered(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        transactionDetailView.expenseButton.rx
+            .tap
+            .subscribe(onNext: { _ in
+                self.transactionDetailView.animateLayerMotion(x: 96.5, color: UIColor.salmonPink.cgColor)
+                self.viewModel.transactionType = .expense
+            })
+            .disposed(by: disposeBag)
     }
     
-    @objc private func keyboardNotificationTriggered(notification: Notification) {
+    private func subscribeToNoteTextViewEvents() {
+        transactionDetailView.noteTextView.rx
+            .didBeginEditing
+            .subscribe(onNext: { _ in
+                let currentText = self.transactionDetailView.noteTextView.text
+                self.transactionDetailView.noteTextView.togglePlaceholderVisibilityIfPossible(textViewText: currentText)
+            })
+            .disposed(by: disposeBag)
+        
+        transactionDetailView.noteTextView.rx
+            .didEndEditing
+            .subscribe(onNext: { _ in
+                let currentText = self.transactionDetailView.noteTextView.text
+                self.transactionDetailView.noteTextView.togglePlaceholderVisibilityIfPossible(textViewText: currentText)
+            })
+            .disposed(by: disposeBag)
+        
+        transactionDetailView.noteTextView.rx
+            .text
+            .orEmpty
+            .scan(String(), accumulator: { previousText, newText in
+                var acceptedText = newText
+                if newText.contains(CharacterConstants.newLine) {
+                    self.transactionDetailView.noteTextView.resignFirstResponder()
+                    self.transactionDetailView.noteTextView.togglePlaceholderVisibilityIfPossible(textViewText: previousText)
+                    acceptedText = previousText
+                } else if newText.count > 100 {
+                    acceptedText = previousText
+                }
+                self.viewModel.note = acceptedText
+                return acceptedText
+            })
+            .bind(to: transactionDetailView.noteTextView.rx.text)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: NotificationCenter Subscriptions
+extension TransactionDetailViewController {
+    private func addRxObservers() {
+         NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillShowNotification)
+             .subscribe(onNext: { notification in
+                 self.toggleScrollViewContentOffset(notification: notification)
+             })
+             .disposed(by: disposeBag)
+
+         NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillHideNotification)
+             .subscribe(onNext: { notification in
+                 self.toggleScrollViewContentOffset(notification: notification)
+             })
+             .disposed(by: disposeBag)
+     }
+    
+    private func toggleScrollViewContentOffset(notification: Notification) {
         guard let userInfo = notification.userInfo as? [String: Any],
               let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height
         else { return }

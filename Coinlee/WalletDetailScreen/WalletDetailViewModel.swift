@@ -10,10 +10,10 @@ import RxSwift
 
 final class WalletDetailViewModel: WalletDetailViewModelType {
     var walletName: String 
-    var icon: BehaviorSubject<WalletIcon>
     var balance: Double
-    var currency: BehaviorSubject<Currency>
-    var walletType: BehaviorSubject<WalletType?>
+    let icon: BehaviorSubject<WalletIcon>
+    let currency: BehaviorSubject<Currency>
+    let walletType: BehaviorSubject<WalletType?>
     
     init() {
         self.walletName = String()

@@ -48,9 +48,10 @@ final class NoteTextView: UITextView {
         returnKeyType = .done
     }
     
-    func togglePlaceholderVisibility(isTextPresent: Bool) {
-        if isTextPresent {
-            noteTextViewPlaceholder.isHidden = !noteTextViewPlaceholder.isHidden
+    func togglePlaceholderVisibilityIfPossible(textViewText: String?) {
+        guard let text = textViewText else { return }
+        if text.isEmpty {
+            noteTextViewPlaceholder.isHidden.toggle()
         }
     }
     
