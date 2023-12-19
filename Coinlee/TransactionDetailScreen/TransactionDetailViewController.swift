@@ -74,8 +74,9 @@ final class TransactionDetailViewController: UIViewController {
             .text
             .orEmpty
             .scan(String(), accumulator: { previousText, newText in
-                let acceptedText = self.transactionDetailView.amountTextField.applyAccountingNumberFormat(oldText: previousText,
-                                                                                                          newText: newText)
+                let numberFormatter = AccountingNumberFormatter()
+                let acceptedText = numberFormatter.applyFormat(previousText: previousText,
+                                                               currentText: newText)
                 self.viewModel.amount = acceptedText.asDouble() ?? Double()
                 return acceptedText
             })
@@ -87,7 +88,8 @@ final class TransactionDetailViewController: UIViewController {
         transactionDetailView.incomeButton.rx
             .tap
             .subscribe(onNext: { _ in
-                self.transactionDetailView.animateLayerMotion(x: 6, color: UIColor.paleLimeGreen.cgColor)
+                self.transactionDetailView.animateLayerMotion(x: 6,
+                                                              color: UIColor.paleLimeGreen.cgColor)
                 self.viewModel.transactionType = .income
             })
             .disposed(by: disposeBag)
@@ -95,7 +97,8 @@ final class TransactionDetailViewController: UIViewController {
         transactionDetailView.expenseButton.rx
             .tap
             .subscribe(onNext: { _ in
-                self.transactionDetailView.animateLayerMotion(x: 96.5, color: UIColor.salmonPink.cgColor)
+                self.transactionDetailView.animateLayerMotion(x: 96.5,
+                                                              color: UIColor.salmonPink.cgColor)
                 self.viewModel.transactionType = .expense
             })
             .disposed(by: disposeBag)

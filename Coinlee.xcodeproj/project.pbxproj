@@ -288,7 +288,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F5107EBF2AE570E400B3BC34 /* WalletTypeScreen */ = {
+		F5107EBF2AE570E400B3BC34 /* WalletTypesScreen */ = {
 			isa = PBXGroup;
 			children = (
 				F5107EC22AE5727B00B3BC34 /* WalletTypesView.swift */,
@@ -296,7 +296,7 @@
 				F5107EC42AE572B800B3BC34 /* WalletTypesViewModel.swift */,
 				F5107EC62AE572E900B3BC34 /* WalletTypesViewModelType.swift */,
 			);
-			path = WalletTypeScreen;
+			path = WalletTypesScreen;
 			sourceTree = "<group>";
 		};
 		F51D1D392A90F407002B3FE7 /* ReusableUIElements */ = {
@@ -400,7 +400,7 @@
 				8E4C663C2B0633F20077F5C2 /* CategorySelectionScreen */,
 				F57935C02A99EFD30075A44D /* TransactionsScreen */,
 				F5EFA0D22A8B8C0400555859 /* WalletSelectionScreen */,
-				F5107EBF2AE570E400B3BC34 /* WalletTypeScreen */,
+				F5107EBF2AE570E400B3BC34 /* WalletTypesScreen */,
 				F51D1D392A90F407002B3FE7 /* ReusableUIElements */,
 				8E4C66552B0692010077F5C2 /* Models */,
 				F5A40AF02A87C5C000E91AF5 /* Extensions */,

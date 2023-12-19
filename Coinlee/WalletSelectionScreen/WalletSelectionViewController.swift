@@ -49,12 +49,13 @@ final class WalletSelectionViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension WalletSelectionViewController {
     private func collectionViewDataSource() -> RxCollectionViewSectionedReloadDataSource<SectionOfWallets> {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfWallets>(configureCell: { _, collectionView, indexPath, wallet in
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfWallets>(
+            configureCell: { _, collectionView, indexPath, wallet in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalletCell.reuseIdentifier, for: indexPath)
                 (cell as? WalletCell)?.viewModel = self.viewModel.walletCellViewModel(wallet: wallet)
                 return cell
         },
-        configureSupplementaryView: { _, collectionView, kind, indexPath in
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: WalletCellHeaderView.reuseIdentifier, for: indexPath)
             (headerView as? WalletCellHeaderView)?.viewModel = self.viewModel.walletCellHeaderViewViewModel(forSection: indexPath.section)
             return headerView

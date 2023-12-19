@@ -40,7 +40,8 @@ final class WalletTypesViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension WalletTypesViewController {
     private func bindWalletTypesToWalletTypesCollectionView() {
-        viewModel.walletTypes.bind(to: walletTypesView.walletTypesCollectionView.rx.items(cellIdentifier: BorderFreeCell.reuseIdentifier, cellType: BorderFreeCell.self)) { row, walletType, cell in
+        viewModel.walletTypes.bind(to: walletTypesView.walletTypesCollectionView.rx.items(cellIdentifier: BorderFreeCell.reuseIdentifier,
+                                                                                          cellType: BorderFreeCell.self)) { row, walletType, cell in
             cell.viewModel = self.viewModel.walletTypeCellViewModel(withWalletType: walletType, atIndexPath: IndexPath(row: row, section: 0))
         }
         .disposed(by: disposeBag)

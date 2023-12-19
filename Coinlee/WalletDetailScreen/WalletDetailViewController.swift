@@ -74,8 +74,9 @@ final class WalletDetailViewController: UIViewController {
             .text
             .orEmpty
             .scan(String(), accumulator: { previousText, newText in
-                let acceptedText = self.walletDetailView.balanceTextField.applyAccountingNumberFormat(oldText: previousText,
-                                                                                                      newText: newText)
+                let numberFormatter = AccountingNumberFormatter()
+                let acceptedText = numberFormatter.applyFormat(previousText: previousText,
+                                                               currentText: newText)
                 self.viewModel.balance = acceptedText.asDouble() ?? Double()
                 return acceptedText
             })

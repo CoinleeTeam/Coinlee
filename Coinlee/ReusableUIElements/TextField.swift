@@ -156,34 +156,4 @@ final class TextField: UITextField {
             rightView?.isHidden = false
         }
     }
-    
-    func applyAccountingNumberFormat(oldText: String, newText: String) -> String {
-        let formatter = AccountingNumberFormatter()
-        let newTextWithoutGroupingSeparators = newText.replacingOccurrences(of: formatter.groupingSeparator, with: String())
-        guard let newTextLast = newText.last else { return newText }
-        
-        if !oldText.isEmpty &&
-            String(newTextLast) == formatter.decimalSeparator &&
-            newText.components(separatedBy: formatter.decimalSeparator).count < 3 &&
-            oldText.components(separatedBy: formatter.decimalSeparator).count < 2 {
-            return newText
-        }
-        
-        if let numberWithoutGroupingSeparator = formatter.number(from: newTextWithoutGroupingSeparators),
-           let formattedText = formatter.string(from: numberWithoutGroupingSeparator), formattedText.count <= 19 {
-            if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.exactZero(separator: formatter.decimalSeparator)) {
-                return formattedText + formatter.decimalSeparator + String(0)
-                
-            } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.twoOrThreeZeros(separator: formatter.decimalSeparator)) {
-                return formattedText + formatter.decimalSeparator + String(0) + String(0)
-                
-            } else if newTextWithoutGroupingSeparators.isValidWith(regex: RegexPattern.zeroAtEnd(separator: formatter.decimalSeparator)) {
-                return formattedText + String(0)
-                
-            } else  {
-                return formattedText
-            }
-        }
-        return newText.isEmpty ? newText : oldText
-    }
 }

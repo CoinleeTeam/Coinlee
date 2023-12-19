@@ -17,9 +17,9 @@ final class WalletDetailViewModel: WalletDetailViewModelType {
     
     init() {
         self.walletName = String()
-        self.icon = .Observer(value: .wallet)
+        self.icon = BehaviorSubject(value: .wallet)
         self.balance = Double()
-        self.currency = .Observer(value: .eur)
-        self.walletType = .Observer(value: .none)
+        self.currency = BehaviorSubject(value: .eur)
+        self.walletType = BehaviorSubject(value: .none)
     }
 }
