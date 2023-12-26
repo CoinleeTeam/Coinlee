@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol BorderFreeCellViewModelType: AnyObject {
-    var title: String { get }
-    var isSelected: Bool { get }
+    var title: Observable<String> { get }
+    var isSelected: Observable<Bool> { get }
 }

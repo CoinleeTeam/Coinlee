@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class CurrencyTableViewCell: UITableViewCell {
     static let reuseIdentifier = "CurrencyTableViewCell"
@@ -15,15 +16,15 @@ final class CurrencyTableViewCell: UITableViewCell {
     let currencyNameLabel = UILabel()
     let currencyCodeLabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     weak var viewModel: CurrencyTableViewCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            currencyNameLabel.text = viewModel.currencyName
-            currencyCodeLabel.text = viewModel.currencyCode
-            flagImageView.image = UIImage(named: viewModel.currencyCode)
+        didSet {
+            subscribeToCurrency()
         }
     }
     
+    // MARK: - Inits
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .paleFrost
@@ -35,6 +36,18 @@ final class CurrencyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Subscriptions
+    private func subscribeToCurrency() {
+        viewModel?.currency
+            .subscribe(onNext: { currency in
+                self.currencyNameLabel.text = currency.localizedName
+                self.currencyCodeLabel.text = currency.code
+                self.flagImageView.image = UIImage(named: currency.rawValue)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews setup
     private func setUp() {
         // vStack
         vStack.addArrangedSubview(currencyNameLabel)

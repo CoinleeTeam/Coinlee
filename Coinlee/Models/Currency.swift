@@ -7,46 +7,40 @@
 
 import Foundation
 
-struct Currency {
-    var name: String {
-        NSLocalizedString(code.rawValue, comment: "Localized name")
+enum Currency: String, CaseIterable {
+    case aed
+    case aud
+    case cad
+    case chf
+    case cny
+    case czk
+    case dkk
+    case eur
+    case gbp
+    case ils
+    case inr
+    case jpy
+    case krw
+    case kzt
+    case nok
+    case pln
+    case rub
+    case sek
+    case `try`
+    case uah
+    case usd
+    case zar
+    
+    var code: String {
+        rawValue.uppercased()
     }
     
-    var code: CurrencyCode
-    
-    static func availableCurrencies() -> [Currency] {
-        var availableCurrencies = [Currency]()
-        CurrencyCode.allCases.forEach { currencyCode in
-            let currency = Currency(code: currencyCode)
-            availableCurrencies.append(currency)
-        }
-        
-        return availableCurrencies.sorted { $0.code.rawValue < $1.code.rawValue }
+    var localizedName: String {
+        NSLocalizedString(code, comment: "Localized name")
     }
-}
-
-enum CurrencyCode: String, CaseIterable {
-    case aed = "AED"
-    case aud = "AUD"
-    case cad = "CAD"
-    case chf = "CHF"
-    case cny = "CNY"
-    case czk = "CZK"
-    case dkk = "DKK"
-    case eur = "EUR"
-    case gbp = "GBP"
-    case ils = "ILS"
-    case inr = "INR"
-    case jpy = "JPY"
-    case krw = "KRW"
-    case kzt = "KZT"
-    case nok = "NOK"
-    case pln = "PLN"
-    case rub = "RUB"
-    case sek = "SEK"
-    case `try` = "TRY"
-    case uah = "UAH"
-    case usd = "USD"
-    case zar = "ZAR"
+    
+    static func availableCurrenciesSorted() -> [Currency] {
+        return allCases.sorted { $0.code < $1.code }
+    }
 }
 

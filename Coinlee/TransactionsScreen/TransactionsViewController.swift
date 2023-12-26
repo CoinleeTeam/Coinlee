@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 final class TransactionsViewController: UIViewController {
     let viewModel: TransactionsViewModelType
     let transactionsView = TransactionsView()
+    
+    private let disposeBag = DisposeBag()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -33,41 +38,47 @@ final class TransactionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transactionsView.assignTransactionsCollectionViewDelegates(to: self)
+        transactionsView.transactionsCollectionView.delegate = self
+        subscribeToBalanceAmount()
+        bindTransactionsToCollectionView()
+    }
+    
+    // MARK: - Subscriptions
+    private func subscribeToBalanceAmount() {
+        viewModel.balanceText
+            .bind(to: transactionsView.balanceAmountLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindTransactionsToCollectionView() {
+        viewModel.transactions
+            .bind(to: transactionsView.transactionsCollectionView.rx.items(dataSource: collectionViewDataSource()))
+            .disposed(by: disposeBag)
+        
     }
 }
 
 // MARK: - CollectionViewDataSource
-extension TransactionsViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return viewModel.numberOfTransactions(inSection: section)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = transactionsView.transactionsCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier, for: indexPath) as? TransactionCellHeaderView else { return UICollectionReusableView() }
-            headerView.viewModel = viewModel.transactionCellHeaderViewViewModel(forSection: indexPath.section)
-        
-        return headerView
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            guard let cell = transactionsView.transactionsCollectionView.dequeueReusableCell(withReuseIdentifier: IncomeExpenseStaticCell.reuseIdentifier, for: indexPath) as? IncomeExpenseStaticCell else { return UICollectionViewCell() }
-            cell.viewModel = viewModel.incomeExpenseStaticCellViewModel()
-            return cell
-        } else {
-            guard let cell = transactionsView.transactionsCollectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.reuseIdentifier, for: indexPath) as? TransactionCell else { return UICollectionViewCell() }
-            cell.viewModel = viewModel.transactionCellViewModel(at: indexPath)
-            return cell
-        }
+extension TransactionsViewController {
+    private func collectionViewDataSource() -> RxCollectionViewSectionedReloadDataSource<SectionOfTransactions> {
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfTransactions>(
+            configureCell: { _, collectionView, indexPath, transaction in
+            if indexPath.section == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IncomeExpenseStaticCell.reuseIdentifier, for: indexPath)
+                (cell as? IncomeExpenseStaticCell)?.viewModel = self.viewModel.incomeExpenseStaticCellViewModel()
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.reuseIdentifier, for: indexPath)
+                (cell as? TransactionCell)?.viewModel = self.viewModel.transactionCellViewModel(transaction: transaction)
+                return cell
+            }
+        },
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TransactionCellHeaderView.reuseIdentifier, for: indexPath)
+            (headerView as? TransactionCellHeaderView)?.viewModel = self.viewModel.transactionCellHeaderViewViewModel(forSection: indexPath.section)
+            return headerView
+        })
+        return dataSource
     }
 }
 
@@ -96,8 +107,4 @@ extension TransactionsViewController: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 12, left: 0, bottom: 20, right: 0)
         }
     }
-}
-
-// MARK: - CollectionViewDelegate
-extension TransactionsViewController: UICollectionViewDelegate {
 }

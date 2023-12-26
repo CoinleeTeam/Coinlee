@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class WalletCell: IconTitleCell {
     static let reuseIdentifier = "WalletCell"
@@ -13,13 +14,11 @@ final class WalletCell: IconTitleCell {
     let selectionMarkImageView = UIImageView()
     let balanceLabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: WalletCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            titleLabel.text = viewModel.wallet.name
-            balanceLabel.text = viewModel.balanceText
-            iconImageView.image = UIImage(named: viewModel.wallet.icon.rawValue)
-            selectionMarkImageView.isHidden = !viewModel.wallet.isActive
+        didSet {
+            subscribeToWallet()
         }
     }
     
@@ -34,10 +33,22 @@ final class WalletCell: IconTitleCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToWallet() {
+        viewModel?.wallet
+            .subscribe(onNext: { wallet in
+                self.titleLabel.text = wallet.name
+                self.balanceLabel.text = self.viewModel?.balanceText(forWallet: wallet)
+                self.iconImageView.image = UIImage(named: wallet.icon.rawValue)
+                self.selectionMarkImageView.isHidden = !wallet.isActive
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUpSelectionMarkImageView() {
         hStack.addArrangedSubview(selectionMarkImageView)
-        selectionMarkImageView.image = UIImage(named: Icon.Linear.checkMark.rawValue)
+        selectionMarkImageView.image = UIImage(named: LinearIcon.checkMark.rawValue)
         selectionMarkImageView.contentMode = .scaleAspectFit
         selectionMarkImageView.tintColor = .goldenrod
     }

@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import RxSwift
 
 final class IncomeExpenseStaticCellViewModel: IncomeExpenseStaticCellViewModelType {
-    let incomeAmount: Double
-    let expenseAmount: Double
+    let incomeText: Observable<String>
+    let expenseText: Observable<String>
     
     // MARK: - Init
-    init(incomeAmount: Double, expenseAmount: Double) {
-        self.incomeAmount = incomeAmount
-        self.expenseAmount = expenseAmount
+    init(incomeText: String, expenseText: String) {
+        self.incomeText = .just(incomeText)
+        self.expenseText = .just(expenseText)
     }
 }

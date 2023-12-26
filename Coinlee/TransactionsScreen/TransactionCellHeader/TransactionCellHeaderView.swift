@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class TransactionCellHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "TransactionCellHeaderView"
@@ -19,13 +20,12 @@ final class TransactionCellHeaderView: UICollectionReusableView {
     let monthAndYearLabel = UILabel()
     let balanceLabel = UILabel()
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: TransactionCellHeaderViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            monthDayLabel.text = viewModel.monthDay
-            weekDayLabel.text = viewModel.weekDay
-            monthAndYearLabel.text = viewModel.monthAndYear
-            balanceLabel.text = viewModel.balance.accountingFormatted() + CharacterConstants.whitespace + viewModel.currency
+        didSet {
+            subscribeToDate()
+            subscribeToBalance()
         }
     }
     
@@ -41,7 +41,26 @@ final class TransactionCellHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToDate() {
+        viewModel?.date
+            .subscribe(onNext: { date in
+                self.monthDayLabel.text = self.viewModel?.monthDayText(forDate: date)
+                self.weekDayLabel.text = self.viewModel?.weekDayText(forDate: date)
+                self.monthAndYearLabel.text = self.viewModel?.monthAndYearText(forDate: date)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToBalance() {
+        viewModel?.balance
+            .subscribe(onNext: { balance in
+                self.balanceLabel.text = self.viewModel?.balanceText(balance: balance)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUpLabels() {
         [monthDayLabel, weekDayLabel, monthAndYearLabel, balanceLabel].forEach { label in
             label.textAlignment = .center

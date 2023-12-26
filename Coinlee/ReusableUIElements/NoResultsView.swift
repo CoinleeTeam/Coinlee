@@ -28,7 +28,7 @@ final class NoResultsView: UIView {
     
     // MARK: - Subviews' setup
     private func setUpMagnifierImageView() {
-        magnifierImageView.image = UIImage(named: Icon.Linear.magnifyingGlass.rawValue)
+        magnifierImageView.image = UIImage(named: LinearIcon.magnifyingGlass.rawValue)
         magnifierImageView.tintColor = .goldenrod
     }
     

@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 final class WalletCellHeaderViewModel: WalletCellHeaderViewModelType {
-    let walletType: WalletType
+    let walletType: Observable<WalletType>
     
     init(walletType: WalletType) {
-        self.walletType = walletType
+        self.walletType = .just(walletType)
     }
 }

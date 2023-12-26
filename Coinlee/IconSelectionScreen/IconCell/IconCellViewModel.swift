@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
 final class IconCellViewModel: IconCellViewModelType {
-    let icon: Icon.Wallet
+    let icon: Observable<WalletIcon>
     
     // MARK: - Init
-    init(icon: Icon.Wallet) {
-        self.icon = icon
+    init(icon: WalletIcon) {
+        self.icon = .just(icon)
     }
 }

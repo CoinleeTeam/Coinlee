@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import RxSwift
 
 final class BorderFreeCellViewModel: BorderFreeCellViewModelType {
-    let title: String
-    var isSelected: Bool
+    let title: Observable<String>
+    var isSelected: Observable<Bool>
     
     // MARK: - Init
     init(title: String, isSelected: Bool = false) {
-        self.title = title
-        self.isSelected = isSelected
+        self.title = .just(title)
+        self.isSelected = .just(isSelected)
     }
 }

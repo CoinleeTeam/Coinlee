@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol TransactionCellViewModelType: AnyObject {
-    var transaction: Transaction { get }
+    var transaction: Observable<Transaction> { get }
     
-    // MARK: Computed properties
-    var balanceText: String { get }
+    // MARK: - Texts
+    func transactionSumText(forTransaction transaction: Transaction) -> String
 }

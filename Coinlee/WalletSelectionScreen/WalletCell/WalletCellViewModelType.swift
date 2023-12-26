@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WalletCellViewModelType: AnyObject {
-    var wallet: Wallet { get }
+    var wallet: Observable<Wallet> { get }
     
-    // MARK: Computed properties
-    var balanceText: String { get }
+    // MARK: - Texts
+    func balanceText(forWallet wallet: Wallet) -> String
 }

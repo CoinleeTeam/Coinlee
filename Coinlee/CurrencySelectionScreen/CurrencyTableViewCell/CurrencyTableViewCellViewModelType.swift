@@ -6,8 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CurrencyTableViewCellViewModelType: AnyObject {
-    var currencyName: String { get }
-    var currencyCode: String { get }
+    var currency: Observable<Currency> { get }
 }

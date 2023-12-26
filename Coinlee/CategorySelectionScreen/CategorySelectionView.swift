@@ -36,8 +36,8 @@ final class CategorySelectionView: UIView {
         categoriesTableView.rowHeight = 55
         categoriesTableView.sectionHeaderHeight = 70
         categoriesTableView.sectionHeaderTopPadding = -10
-        categoriesTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.reuseIdentifier)
-        categoriesTableView.register(CategoryTableViewHeader.self, forHeaderFooterViewReuseIdentifier: CategoryTableViewHeader.reuseIdentifier)
+        categoriesTableView.register(CategoryCell.self, forCellReuseIdentifier: CategoryCell.reuseIdentifier)
+        categoriesTableView.register(CategoryGroupHeader.self, forHeaderFooterViewReuseIdentifier: CategoryGroupHeader.reuseIdentifier)
     }
     
     // MARK: - Constraints
@@ -45,7 +45,7 @@ final class CategorySelectionView: UIView {
         addSubview(categoriesTableView)
         categoriesTableView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(48)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }

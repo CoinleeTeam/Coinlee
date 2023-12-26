@@ -38,24 +38,15 @@ final class TransactionDetailView: ScrollableView {
         setUpButtons()
         configureMiddleStack()
         addConstraints()
-        
-        // ---------REMOVE---------
-        amountTextField.addCurrencyLabel(currency: Currency(code: CurrencyCode.pln))
-        categoryButton.setTitle(NSLocalizedString("select_category_button", comment: "Select category"), for: .normal)
+        amountTextField.addCurrencyLabelToRightView()
+        // REMOVE
         dateButton.setTitle("29 Maj 23", for: .normal)
-        walletButton.setTitle("Wallet binance usdt", for: .normal)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Delegates
-    func assignSubviewsDelegates<T>(to delegate: T) where T: UITextFieldDelegate & UITextViewDelegate {
-        amountTextField.delegate = delegate
-        noteTextView.delegate = delegate
-    }
-    
+        
     // MARK: - Subviews' setup
     private func setUpTransactionTypeButtons() {
         // Income Transaction Type Button
@@ -63,14 +54,12 @@ final class TransactionDetailView: ScrollableView {
         incomeButton.setTitleColor(.charcoal, for: .normal)
         incomeButton.titleLabel?.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 14)
         incomeButton.layer.cornerRadius = 10
-        incomeButton.addTarget(self, action: #selector(transactionTypeButtonTapped(_:)), for: .touchUpInside)
         
         // Expense Transaction Type Button
         expenseButton.setTitle(NSLocalizedString("expense_transaction_type", comment: "Expense transaction"), for: .normal)
         expenseButton.setTitleColor(.charcoal, for: .normal)
         expenseButton.titleLabel?.font = incomeButton.titleLabel?.font
         expenseButton.layer.cornerRadius = incomeButton.layer.cornerRadius
-        expenseButton.addTarget(self, action: #selector(transactionTypeButtonTapped(_:)), for: .touchUpInside)
         
         // transactionTypeButtonsContainerView
         transactionTypeButtonsContainerView.layer.addSublayer(containerViewLayer)
@@ -84,7 +73,7 @@ final class TransactionDetailView: ScrollableView {
     }
     
     private func setUpAmountTextField() {
-        amountTextField.addLeftIcon(icon: UIImage(named: Icon.Linear.dollar.rawValue))
+        amountTextField.addLeftIcon(icon: UIImage(named: LinearIcon.dollar.rawValue))
         amountTextField.placeholder = NSLocalizedString("amount_placeholder", comment: "Amount placeholder")
         amountTextField.keyboardType = .decimalPad
         amountTextField.shadowType = .bottom
@@ -96,10 +85,11 @@ final class TransactionDetailView: ScrollableView {
         categoryButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                                  titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
                                                  leftImagePadding: 16,
-                                                 rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                                 rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                                  rightImagePosition: .fixed,
                                                  rightImagePadding: 8,
                                                  contentEdgesInsets: UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0))
+        categoryButton.rightImageView?.tintColor = .charcoal
         categoryButton.shadowType = .bottom
         categoryButton.backgroundColor = .white
 
@@ -110,7 +100,7 @@ final class TransactionDetailView: ScrollableView {
         
         dateButton.addConfiguration(baseForegroundColor: .battleshipGrey,
                                              titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                             leftImage: UIImage(named: Icon.Linear.calendar.rawValue),
+                                             leftImage: UIImage(named: LinearIcon.calendar.rawValue),
                                              leftImageTintColor: .goldenrod,
                                              leftImagePadding: 8)
         dateButton.shadowType = .bottom
@@ -120,13 +110,11 @@ final class TransactionDetailView: ScrollableView {
         walletButton.titleLabel?.font = incomeButton.titleLabel?.font
         walletButton.addConfiguration(baseForegroundColor: .charcoal,
                                                titleFont: UIFont(name: Fonts.Inter.medium.rawValue, size: 16),
-                                               leftImage: UIImage(named: Icon.Linear.walletTemplate.rawValue),
-                                               leftImageTintColor: .goldenrod,
-                                               leftImagePadding: 8,
-                                               rightImage: UIImage(named: Icon.Linear.angleRight.rawValue),
+                                               leftImagePadding: 4,
+                                               rightImage: UIImage(named: LinearIcon.angleRight.rawValue),
                                                rightImagePosition: .fixed,
                                                rightImagePadding: 8,
-                                               contentEdgesInsets: UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0))
+                                               contentEdgesInsets: UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0))
         walletButton.shadowType = .bottom
         walletButton.backgroundColor = .white
 
@@ -217,18 +205,10 @@ final class TransactionDetailView: ScrollableView {
     }
     
     // MARK: - Animations
-    private func animateLayerMotion(x: CGFloat, color: CGColor) {
+    func animateLayerMotion(x: CGFloat, color: CGColor) {
         UIView.animate(withDuration: 0.5) {
             self.containerViewLayer.frame = CGRect(x: x, y: 6, width: 90.5, height: 38)
             self.containerViewLayer.backgroundColor = color
-        }
-    }
-    
-    @objc private func transactionTypeButtonTapped(_ sender: UIButton) {
-        if sender == incomeButton {
-            animateLayerMotion(x: 6, color: UIColor.paleLimeGreen.cgColor)
-        } else if sender == expenseButton {
-            animateLayerMotion(x: 96.5, color: UIColor.salmonPink.cgColor)
         }
     }
 }

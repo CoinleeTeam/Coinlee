@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WalletSelectionViewModelType: AnyObject {
-    func numberOfSections() -> Int
-    func numberOfWallets(inSection section: Int) -> Int
-    func walletCellViewModel(at indexPath: IndexPath) -> WalletCellViewModelType?
+    var wallets: BehaviorSubject<[SectionOfWallets]> { get }
+    
+    func walletCellViewModel(wallet: Wallet) -> WalletCellViewModelType
     func walletCellHeaderViewViewModel(forSection section: Int) -> WalletCellHeaderViewModelType?
 }

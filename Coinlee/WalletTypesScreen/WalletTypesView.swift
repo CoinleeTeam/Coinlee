@@ -23,12 +23,6 @@ final class WalletTypesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - CollectionView DataSource & Delegate
-    func assignWalletTypesCollectionViewDelegates<T>(to delegate: T) where T: UICollectionViewDataSource & UICollectionViewDelegate {
-        walletTypesCollectionView.dataSource = delegate
-        walletTypesCollectionView.delegate = delegate
-    }
-    
     // MARK: - Subviews' setup
     private func setUpWalletTypesCollectionView() {
         addSubview(walletTypesCollectionView)

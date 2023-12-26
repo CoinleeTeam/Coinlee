@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol IconCellViewModelType: AnyObject {
-    var icon: Icon.Wallet { get }
+    var icon: Observable<WalletIcon> { get }
 }

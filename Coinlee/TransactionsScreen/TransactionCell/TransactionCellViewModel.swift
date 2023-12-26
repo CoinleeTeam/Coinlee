@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
 final class TransactionCellViewModel: TransactionCellViewModelType {
-    let transaction: Transaction
-    
-    // MARK: Computed properties
-    var balanceText: String {
-        transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency
-    }
+    let transaction: Observable<Transaction>
     
     // MARK: - Init
     init(transaction: Transaction) {
-        self.transaction = transaction
+        self.transaction = .just(transaction)
+    }
+    
+    // MARK: - Texts
+    func transactionSumText(forTransaction transaction: Transaction) -> String {
+        return transaction.sum.accountingFormatted() + CharacterConstants.whitespace + transaction.currency.code
     }
 }

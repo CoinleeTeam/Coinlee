@@ -6,19 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 final class CurrencyTableViewCellViewModel: CurrencyTableViewCellViewModelType {
-    private var currency: Currency
-    
-    var currencyName: String {
-        return currency.name
-    }
-    
-    var currencyCode: String {
-        return currency.code.rawValue
-    }
+    let currency: Observable<Currency>
     
     init(currency: Currency) {
-        self.currency = currency
+        self.currency = .just(currency)
     }
 }

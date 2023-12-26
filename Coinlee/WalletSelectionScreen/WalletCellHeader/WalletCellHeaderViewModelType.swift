@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WalletCellHeaderViewModelType: AnyObject {
-    var walletType: WalletType { get }
+    var walletType: Observable<WalletType> { get }
 }

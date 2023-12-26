@@ -6,33 +6,34 @@
 //
 
 import Foundation
+import RxSwift
 
 final class TransactionCellHeaderViewModel: TransactionCellHeaderViewModelType {
-    let date: Date
-    let balance: Double
-    let currency: String
+    let date: Observable<Date>
+    let balance: Observable<Double>
+    let currency: Currency
     
-    // MARK: Computed properties
-    var monthDay: String {
+    // MARK: - Init
+    init(date: Date, balance: Double, currency: Currency) {
+        self.date = .just(date)
+        self.balance = .just(balance)
+        self.currency = currency
+    }
+    
+    // MARK: - Texts
+    func monthDayText(forDate date: Date) -> String {
         date.formatted(.dateTime.day())
     }
     
-    var month: String {
-        date.formatted(.dateTime.month())
-    }
-    
-    var weekDay: String {
+    func weekDayText(forDate date: Date) -> String {
         date.formatted(.dateTime.weekday(.wide))
     }
     
-    var monthAndYear: String {
+    func monthAndYearText(forDate date: Date) -> String {
         date.formatted(.dateTime.month(.wide)) + CharacterConstants.whitespace + date.formatted(.dateTime.year())
     }
     
-    // MARK: - Init
-    init(date: Date, balance: Double, currency: String) {
-        self.date = date
-        self.balance = balance
-        self.currency = currency
+    func balanceText(balance: Double) -> String {
+        balance.accountingFormatted() + CharacterConstants.whitespace + currency.code
     }
 }

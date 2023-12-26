@@ -7,13 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class CategorySelectionViewController: UIViewController {
-    var viewModel: CategoryTableViewViewModelType
+    var viewModel: CategorySelectionViewModelType
     let categorySelectionView = CategorySelectionView()
     
+    private let disposeBag = DisposeBag()
+    
     // MARK: - Inits
-    init(viewModel: CategoryTableViewViewModelType) {
+    init(viewModel: CategorySelectionViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,19 +37,23 @@ final class CategorySelectionViewController: UIViewController {
         categorySelectionView.assignCategoriesTableViewDelegates(to: self)
     }
     
-    // MARK: - Methods
-    @objc private func headerTapped(_ sender: UITapGestureRecognizer) {
-        guard let section = sender.view else { return }
-        viewModel.toggleSectionCollapse(forSection: section.tag)
-        if viewModel.collapsedSections.contains(section.tag) {
-            (section.superview as? CategoryTableViewHeader)?.isExpanded = false
-            categorySelectionView.categoriesTableView.deleteRows(at: viewModel.indexPaths(atSection: section.tag), with: .fade)
-        } else {
-            (section.superview as? CategoryTableViewHeader)?.isExpanded = true
-            categorySelectionView.categoriesTableView.insertRows(at: viewModel.indexPaths(atSection: section.tag), with: .fade)
-            categorySelectionView.categoriesTableView.reloadRows(at: viewModel.indexPaths(atSection: section.tag), with: .fade)
-        }
-        
+    // MARK: - Subscriptions
+    private func subscribeToHeaderTapped(header: CategoryGroupHeader) {
+        header.tapGestureRecognizer.rx
+            .event
+            .subscribe { _ in
+                self.viewModel.toggleSectionCollapse(forSection: (header.tag))
+                if self.viewModel.collapsedSections.contains(header.tag) {
+                    header.isExpanded.accept(false)
+                    let indexPaths = self.viewModel.indexPaths(atSection: header.tag)
+                    self.categorySelectionView.categoriesTableView.deleteRows(at: indexPaths, with: .fade)
+                } else {
+                    header.isExpanded.accept(true)
+                    let indexPaths = self.viewModel.indexPaths(atSection: header.tag)
+                    self.categorySelectionView.categoriesTableView.insertRows(at: indexPaths, with: .fade)
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
 
@@ -64,33 +72,27 @@ extension CategorySelectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = categorySelectionView.categoriesTableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.reuseIdentifier, for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
+        let cell = categorySelectionView.categoriesTableView.dequeueReusableCell(withIdentifier: CategoryCell.reuseIdentifier, for: indexPath)
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        cell.viewModel = cellViewModel
+        (cell as? CategoryCell)?.viewModel = cellViewModel
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = categorySelectionView.categoriesTableView.dequeueReusableHeaderFooterView(withIdentifier: CategoryTableViewHeader.reuseIdentifier) as? CategoryTableViewHeader else { return nil }
-                
-        headerView.viewModel = viewModel.headerViewModel(forSection: section)
-        
-        headerView.tapGestureRecognizer.addTarget(self, action: #selector(headerTapped(_:)))
-        headerView.headerContentView.tag = section
-        
-        if viewModel.categoriesTransactionType == .income {
-            headerView.isExpanded = true
-        }
-        
-        return headerView
     }
 }
 
 // MARK: - UITableViewDelegate
 extension CategorySelectionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = categorySelectionView.categoriesTableView.dequeueReusableHeaderFooterView(withIdentifier: CategoryGroupHeader.reuseIdentifier) as? CategoryGroupHeader else { return nil }
+        header.viewModel = viewModel.headerViewModel(forSection: section)
+        header.tag = section
+        subscribeToHeaderTapped(header: header)
+        
+        if viewModel.transactionType == .income {
+            header.isExpanded.accept(true)
+        }
+        
+        return header
+    }
 }
-
-
-

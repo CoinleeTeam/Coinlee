@@ -7,15 +7,18 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class WalletCellHeaderView: UICollectionReusableView {
     static let reuseIdentifier = "WalletCellHeaderView"
     
     let walletTypeLabel = UILabel()
+    
+    private let disposeBag = DisposeBag()
+    
     var viewModel: WalletCellHeaderViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            walletTypeLabel.text = NSLocalizedString(viewModel.walletType.rawValue, comment: "wallet type")
+        didSet {
+            subscribeToWalletType()
         }
     }
     
@@ -30,7 +33,16 @@ final class WalletCellHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Subviews' setup
+    // MARK: - Subscriptions
+    private func subscribeToWalletType() {
+        viewModel?.walletType
+            .subscribe(onNext: { walletType in
+                self.walletTypeLabel.text = walletType.localizedTitle
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    // MARK: Subviews' setup
     private func setUpWalletTypeLabel() {
         addSubview(walletTypeLabel)
         walletTypeLabel.font = UIFont(name: Fonts.Inter.medium.rawValue, size: 18)
