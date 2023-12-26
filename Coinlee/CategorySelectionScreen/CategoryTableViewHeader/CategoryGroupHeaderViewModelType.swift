@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol CategoryTableViewHeaderViewModelType: AnyObject {
-    var categoryGroup: TransactionCategoryGroup { get }
+protocol CategoryGroupHeaderViewModelType: AnyObject {
+    var categoryGroup: Observable<TransactionCategoryGroup> { get }
 }

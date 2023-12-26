@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
-final class CategoryTableViewHeaderViewModel: CategoryTableViewHeaderViewModelType {
-    let categoryGroup: TransactionCategoryGroup
+final class CategoryGroupHeaderViewModel: CategoryGroupHeaderViewModelType {
+    let categoryGroup: Observable<TransactionCategoryGroup>
     
     // MARK: - Init
     init(categoryGroup: TransactionCategoryGroup) {
-        self.categoryGroup = categoryGroup
+        self.categoryGroup = .just(categoryGroup)
     }
 }

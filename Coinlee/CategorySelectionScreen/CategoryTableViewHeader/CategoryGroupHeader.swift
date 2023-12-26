@@ -6,27 +6,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
-final class CategoryTableViewHeader: UITableViewHeaderFooterView {
+final class CategoryGroupHeader: UITableViewHeaderFooterView {
     static let reuseIdentifier = "CategoryTableViewHeader"
-    let headerContentView = UIView()
     let iconImageView = UIImageView()
     let titleLabel = UILabel()
     let expansionAngleBracket = UIImageView()
-    let tapGestureRecognizer = UITapGestureRecognizer()
+    var tapGestureRecognizer = UITapGestureRecognizer()
+    var isExpanded: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
-    var isExpanded = false {
+    private let disposeBag = DisposeBag()
+    
+    weak var viewModel: CategoryGroupHeaderViewModelType? {
         didSet {
-            rotateExpansionAngleBracket()
+            subscribeToCategoryGroup()
         }
     }
     
-    weak var viewModel: CategoryTableViewHeaderViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            iconImageView.image = UIImage(named: viewModel.categoryGroup.rawValue)
-            titleLabel.text = viewModel.categoryGroup.localizedName
-        }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        tapGestureRecognizer = UITapGestureRecognizer()
+        addGestureRecognizer()
     }
     
     // MARK: - Inits
@@ -35,10 +38,29 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
         configureHeader()
         addConstraints()
         addGestureRecognizer()
+        subscribeToIsExpanded()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Subscriptions
+    private func subscribeToCategoryGroup() {
+        viewModel?.categoryGroup
+            .subscribe(onNext: { categoryGroup in
+                self.iconImageView.image = UIImage(named: categoryGroup.rawValue)
+                self.titleLabel.text = categoryGroup.localizedName
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToIsExpanded() {
+        isExpanded
+            .subscribe { _ in
+                self.rotateExpansionAngleBracket()
+            }
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Subview setup
@@ -52,12 +74,11 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
     }
     
     private func addGestureRecognizer() {
-        headerContentView.addGestureRecognizer(tapGestureRecognizer)
-        headerContentView.isUserInteractionEnabled = true
+        addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func rotateExpansionAngleBracket() {
-        if isExpanded == false {
+        if isExpanded.value == false {
             applyRotation(to: expansionAngleBracket, angle: -90)
         } else {
             applyRotation(to: expansionAngleBracket, angle: 0)
@@ -73,18 +94,13 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
     
     // MARK: - Constraints
     private func addConstraints() {
-        headerContentView.addSubview(iconImageView)
-        headerContentView.addSubview(titleLabel)
-        headerContentView.addSubview(expansionAngleBracket)
-        
-        addSubview(headerContentView)
-        
-        headerContentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        addSubview(iconImageView)
+        addSubview(titleLabel)
+        addSubview(expansionAngleBracket)
         
         iconImageView.snp.makeConstraints { make in
-            make.centerY.leading.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
             make.height.width.equalTo(70)
         }
         
@@ -100,4 +116,3 @@ final class CategoryTableViewHeader: UITableViewHeaderFooterView {
         }
     }
 }
-

@@ -6,22 +6,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
 
 final class CategorySelectionViewModel: CategorySelectionViewModelType {
-    let categories: [SectionOfTransactionCategory]
-    let categoriesTransactionType: TransactionType
-    var collapsedSections: Set<Int>
+    let categories: BehaviorRelay<[SectionOfTransactionCategory]>
+    let transactionType: TransactionType
+    var collapsedSections: Set<Int> = []
     
-    init(categoriesTransactionType: TransactionType) {
-        self.categoriesTransactionType = categoriesTransactionType
-        self.categories = categoriesTransactionType == .income ? TransactionCategory.categories(ofType: .income) : TransactionCategory.categories(ofType: .expense)
+    init(transactionType: TransactionType) {
+        self.transactionType = transactionType
+        let categories = transactionType == .income ? TransactionCategory.categories(ofType: .income) : TransactionCategory.categories(ofType: .expense)
         
-        self.collapsedSections = []
-        if categoriesTransactionType == .expense {
-            (0..<categories.count).forEach { section in
+        if transactionType == .expense {
+            for section in 0..<categories.count {
                 collapsedSections.insert(section)
             }
         }
+        
+        self.categories = BehaviorRelay(value: categories)
     }
     
     func toggleSectionCollapse(forSection section: Int) {
@@ -34,28 +37,29 @@ final class CategorySelectionViewModel: CategorySelectionViewModelType {
     
     func indexPaths(atSection section: Int) -> [IndexPath] {
         var indexPaths = [IndexPath]()
-        (0..<categories[section].items.count).forEach { row in
+        
+        (0..<categories.value[section].items.count).forEach { row in
             indexPaths.append(IndexPath(row: row, section: section))
         }
-        
         return indexPaths
     }
     
     func numberOfSections() -> Int {
-        return categories.count
+        return categories.value.count
     }
     
     func numberOfRows(forSection section: Int) -> Int {
-        return categories[section].items.count
+        return categories.value[section].items.count
     }
     
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> CategoryTableViewCellViewModelType? {
-        let transactionCategory = categories[indexPath.section].items[indexPath.row]
-        return CategoryTableViewCellViewModel(transactionCategory: transactionCategory)
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> CategoryCellViewModelType {
+        let transactionCategory = categories.value[indexPath.section].items[indexPath.row]
+        return CategoryCellViewModel(category: transactionCategory)
+        
     }
     
-    func headerViewModel(forSection section: Int) -> CategoryTableViewHeaderViewModelType? {
-        guard let categoryGroup = categories[section].items.first?.categoryGroup else { return nil }
-        return CategoryTableViewHeaderViewModel(categoryGroup: categoryGroup)
+    func headerViewModel(forSection section: Int) -> CategoryGroupHeaderViewModelType? {
+        guard let categoryGroup = categories.value[section].items.first?.categoryGroup else { return nil }
+        return CategoryGroupHeaderViewModel(categoryGroup: categoryGroup)
     }
 }

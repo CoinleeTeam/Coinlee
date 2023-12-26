@@ -6,19 +6,20 @@
 //
 
 import UIKit
+import RxSwift
 
-final class CategoryTableViewCell: UITableViewCell {
+final class CategoryCell: UITableViewCell {
     static let reuseIdentifier = "CategoryTableViewCell"
     
     var circleImageView = UIImageView()
     var categoryIconImageView = UIImageView()
     var categoryNameLabel = UILabel()
     
-    weak var viewModel: CategoryTableViewCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            categoryNameLabel.text = viewModel.transactionCategory.localizedName
-            categoryIconImageView.image = UIImage(named: viewModel.transactionCategory.rawValue)
+    private let disposeBag = DisposeBag()
+    
+    weak var viewModel: CategoryCellViewModelType? {
+        didSet {
+            subscribeToCategory()
         }
     }
     
@@ -32,6 +33,16 @@ final class CategoryTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //  MARK: - Subscriptions
+    private func subscribeToCategory() {
+        viewModel?.category
+            .subscribe { category in
+                self.categoryNameLabel.text = category.localizedName
+                self.categoryIconImageView.image = UIImage(named: category.rawValue)
+            }
+            .disposed(by: disposeBag)
     }
     
     //MARK: - Subviews' setup

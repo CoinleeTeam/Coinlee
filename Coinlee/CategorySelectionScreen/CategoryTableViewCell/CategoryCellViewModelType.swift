@@ -6,7 +6,8 @@
 //
 
 import UIKit
+import RxSwift
 
-protocol CategoryTableViewCellViewModelType: AnyObject {
-    var transactionCategory: TransactionCategory { get }
+protocol CategoryCellViewModelType: AnyObject {
+    var category: Observable<TransactionCategory> { get }
 }

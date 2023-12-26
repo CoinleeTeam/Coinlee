@@ -22,16 +22,16 @@
 		F51D1D362A90D467002B3FE7 /* CornerRoundedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D1D352A90D467002B3FE7 /* CornerRoundedCell.swift */; };
 		F51E88072A88F6A600FF20CE /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E88062A88F6A600FF20CE /* Icons.swift */; };
 		F53160082AA2509E00E5672F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53160072AA2509E00E5672F /* UIImage.swift */; };
-		F53CA15B2B1F517E002BEED7 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66482B0633F20077F5C2 /* CategoryTableViewCell.swift */; };
-		F53CA15C2B1F517E002BEED7 /* CategoryTableViewHeaderViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */; };
-		F53CA15D2B1F517E002BEED7 /* CategoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66472B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift */; };
+		F53CA15B2B1F517E002BEED7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66482B0633F20077F5C2 /* CategoryCell.swift */; };
+		F53CA15C2B1F517E002BEED7 /* CategoryGroupHeaderViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66402B0633F20077F5C2 /* CategoryGroupHeaderViewModelType.swift */; };
+		F53CA15D2B1F517E002BEED7 /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66472B0633F20077F5C2 /* CategoryCellViewModel.swift */; };
 		F53CA15E2B1F517E002BEED7 /* CategorySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66422B0633F20077F5C2 /* CategorySelectionViewModel.swift */; };
 		F53CA15F2B1F517E002BEED7 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */; };
 		F53CA1602B1F517E002BEED7 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */; };
-		F53CA1612B1F517E002BEED7 /* CategoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66492B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift */; };
-		F53CA1622B1F517E002BEED7 /* CategoryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */; };
+		F53CA1612B1F517E002BEED7 /* CategoryCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66492B0633F20077F5C2 /* CategoryCellViewModelType.swift */; };
+		F53CA1622B1F517E002BEED7 /* CategoryGroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C66412B0633F20077F5C2 /* CategoryGroupHeader.swift */; };
 		F53CA1632B1F517E002BEED7 /* CategorySelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663D2B0633F20077F5C2 /* CategorySelectionViewModelType.swift */; };
-		F53CA1642B1F517E002BEED7 /* CategoryTableViewHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */; };
+		F53CA1642B1F517E002BEED7 /* CategoryGroupHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C663F2B0633F20077F5C2 /* CategoryGroupHeaderViewModel.swift */; };
 		F53CA1672B1FA739002BEED7 /* TransactionCategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53CA1662B1FA739002BEED7 /* TransactionCategoryGroup.swift */; };
 		F546A4862AEC07B100459DF5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4852AEC07B100459DF5 /* String.swift */; };
 		F546A48C2AEC07D300459DF5 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A4872AEC07D200459DF5 /* NoResultsView.swift */; };
@@ -108,16 +108,16 @@
 
 /* Begin PBXFileReference section */
 		8E4C663D2B0633F20077F5C2 /* CategorySelectionViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModelType.swift; sourceTree = "<group>"; };
-		8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModel.swift; sourceTree = "<group>"; };
-		8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeaderViewModelType.swift; sourceTree = "<group>"; };
-		8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewHeader.swift; sourceTree = "<group>"; };
+		8E4C663F2B0633F20077F5C2 /* CategoryGroupHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGroupHeaderViewModel.swift; sourceTree = "<group>"; };
+		8E4C66402B0633F20077F5C2 /* CategoryGroupHeaderViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGroupHeaderViewModelType.swift; sourceTree = "<group>"; };
+		8E4C66412B0633F20077F5C2 /* CategoryGroupHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGroupHeader.swift; sourceTree = "<group>"; };
 		8E4C66422B0633F20077F5C2 /* CategorySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModel.swift; sourceTree = "<group>"; };
 		8E4C66432B0633F20077F5C2 /* TransactionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
 		8E4C66442B0633F20077F5C2 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		8E4C66452B0633F20077F5C2 /* CategorySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
-		8E4C66472B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		8E4C66482B0633F20077F5C2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		8E4C66492B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		8E4C66472B0633F20077F5C2 /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
+		8E4C66482B0633F20077F5C2 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8E4C66492B0633F20077F5C2 /* CategoryCellViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModelType.swift; sourceTree = "<group>"; };
 		8E66E0C42AEE58850029B807 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8E66E0D22AF7F6020029B807 /* WalletDetailViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailViewModelType.swift; sourceTree = "<group>"; };
 		8E66E0D32AF7F6020029B807 /* WalletDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailViewController.swift; sourceTree = "<group>"; };
@@ -239,9 +239,9 @@
 		8E4C663E2B0633F20077F5C2 /* CategoryTableViewHeader */ = {
 			isa = PBXGroup;
 			children = (
-				8E4C66412B0633F20077F5C2 /* CategoryTableViewHeader.swift */,
-				8E4C663F2B0633F20077F5C2 /* CategoryTableViewHeaderViewModel.swift */,
-				8E4C66402B0633F20077F5C2 /* CategoryTableViewHeaderViewModelType.swift */,
+				8E4C66412B0633F20077F5C2 /* CategoryGroupHeader.swift */,
+				8E4C663F2B0633F20077F5C2 /* CategoryGroupHeaderViewModel.swift */,
+				8E4C66402B0633F20077F5C2 /* CategoryGroupHeaderViewModelType.swift */,
 			);
 			path = CategoryTableViewHeader;
 			sourceTree = "<group>";
@@ -249,9 +249,9 @@
 		8E4C66462B0633F20077F5C2 /* CategoryTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				8E4C66482B0633F20077F5C2 /* CategoryTableViewCell.swift */,
-				8E4C66472B0633F20077F5C2 /* CategoryTableViewCellViewModel.swift */,
-				8E4C66492B0633F20077F5C2 /* CategoryTableViewCellViewModelType.swift */,
+				8E4C66482B0633F20077F5C2 /* CategoryCell.swift */,
+				8E4C66472B0633F20077F5C2 /* CategoryCellViewModel.swift */,
+				8E4C66492B0633F20077F5C2 /* CategoryCellViewModelType.swift */,
 			);
 			path = CategoryTableViewCell;
 			sourceTree = "<group>";
@@ -693,7 +693,7 @@
 				F53CA1632B1F517E002BEED7 /* CategorySelectionViewModelType.swift in Sources */,
 				F5107EC12AE5712600B3BC34 /* WalletTypesViewController.swift in Sources */,
 				F50A34CB2A9BAC9E00AC3631 /* ConfigurableButton.swift in Sources */,
-				F53CA1642B1F517E002BEED7 /* CategoryTableViewHeaderViewModel.swift in Sources */,
+				F53CA1642B1F517E002BEED7 /* CategoryGroupHeaderViewModel.swift in Sources */,
 				F53CA1602B1F517E002BEED7 /* CategorySelectionView.swift in Sources */,
 				F5107EC52AE572B800B3BC34 /* WalletTypesViewModel.swift in Sources */,
 				F5BCCD3E2AFA956300887109 /* AccountingNumberFormatter.swift in Sources */,
@@ -727,10 +727,10 @@
 				F55802EA2AB329DC0056336D /* IncomeExpenseStaticCellViewModelType.swift in Sources */,
 				F57935CC2A9A028A0075A44D /* BottomCornerRoundedView.swift in Sources */,
 				F5E251882AF1289600987511 /* IconSelectionViewController.swift in Sources */,
-				F53CA15D2B1F517E002BEED7 /* CategoryTableViewCellViewModel.swift in Sources */,
+				F53CA15D2B1F517E002BEED7 /* CategoryCellViewModel.swift in Sources */,
 				F5D5E5BA2AFA58B5008BB1F4 /* TransactionDetailView.swift in Sources */,
 				F5E251902AF1367100987511 /* IconCell.swift in Sources */,
-				F53CA1612B1F517E002BEED7 /* CategoryTableViewCellViewModelType.swift in Sources */,
+				F53CA1612B1F517E002BEED7 /* CategoryCellViewModelType.swift in Sources */,
 				F57935C22A99F0070075A44D /* TransactionsViewController.swift in Sources */,
 				F546A49C2AEC07DE00459DF5 /* CurrencySelectionViewController.swift in Sources */,
 				F53160082AA2509E00E5672F /* UIImage.swift in Sources */,
@@ -744,9 +744,9 @@
 				F5E2518A2AF1289C00987511 /* IconSelectionViewModel.swift in Sources */,
 				F5EFA0D62A8B90E100555859 /* WalletSelectionViewController.swift in Sources */,
 				8E66E0D62AF7F6020029B807 /* WalletDetailViewModelType.swift in Sources */,
-				F53CA15C2B1F517E002BEED7 /* CategoryTableViewHeaderViewModelType.swift in Sources */,
+				F53CA15C2B1F517E002BEED7 /* CategoryGroupHeaderViewModelType.swift in Sources */,
 				F55802F72AB348080056336D /* TransactionCell.swift in Sources */,
-				F53CA15B2B1F517E002BEED7 /* CategoryTableViewCell.swift in Sources */,
+				F53CA15B2B1F517E002BEED7 /* CategoryCell.swift in Sources */,
 				8E66E0C52AEE58850029B807 /* UIView.swift in Sources */,
 				F57935C62A99F04B0075A44D /* TransactionsViewModel.swift in Sources */,
 				F546A48E2AEC07D300459DF5 /* TextField.swift in Sources */,
@@ -772,7 +772,7 @@
 				F5EFA0DA2A8B919500555859 /* WalletSelectionViewModel.swift in Sources */,
 				F5E3B7282AB8788600E2A352 /* Double.swift in Sources */,
 				F55802F52AB347FC0056336D /* TransactionCellHeaderViewModelType.swift in Sources */,
-				F53CA1622B1F517E002BEED7 /* CategoryTableViewHeader.swift in Sources */,
+				F53CA1622B1F517E002BEED7 /* CategoryGroupHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
